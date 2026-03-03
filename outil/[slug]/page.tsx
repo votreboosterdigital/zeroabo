@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { TOOL_ALTERNATIVES } from "../../data/tools";
+import { TOOL_ALTERNATIVES } from "@/app/data/tools";
 import Link from "next/link";
 
 type Props = {
