@@ -1,33 +1,47 @@
+// app/layout.tsx
 import type { Metadata } from "next";
+import { Geist } from "next/font/google";
 import "./globals.css";
 
+const geist = Geist({ subsets: ["latin"] });
+
 export const metadata: Metadata = {
-  title: "ZéroAbo — Trouvez une alternative sans abonnement",
-  description:
-    "Découvrez des logiciels en achat unique pour remplacer vos abonnements Adobe, Notion, Microsoft 365 et plus encore.",
   metadataBase: new URL("https://zeroabo.fr"),
+  title: {
+    default: "ZéroAbo — Logiciels en achat unique, sans abonnement",
+    template: "%s | ZéroAbo",
+  },
+  description:
+    "Trouvez les meilleures alternatives en achat unique aux logiciels par abonnement. Payez une fois, utilisez pour toujours.",
+  keywords: [
+    "logiciel achat unique",
+    "alternative abonnement",
+    "licence perpétuelle",
+    "sans abonnement",
+    "buy once software",
+  ],
   openGraph: {
-    title: "ZéroAbo — Trouvez une alternative sans abonnement",
-    description:
-      "Découvrez des logiciels en achat unique pour remplacer vos abonnements Adobe, Notion, Microsoft 365 et plus encore.",
+    type: "website",
+    locale: "fr_FR",
     url: "https://zeroabo.fr",
     siteName: "ZéroAbo",
-    locale: "fr_FR",
-    type: "website",
+    title: "ZéroAbo — Logiciels en achat unique, sans abonnement",
+    description:
+      "Trouvez les meilleures alternatives en achat unique aux logiciels par abonnement.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "ZéroAbo – Alternatives sans abonnement",
+        alt: "ZéroAbo — Logiciels sans abonnement",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ZéroAbo — Trouvez une alternative sans abonnement",
+    title: "ZéroAbo — Logiciels en achat unique",
     description:
-      "Découvrez des logiciels en achat unique pour remplacer vos abonnements Adobe, Notion, Microsoft 365 et plus encore.",
+      "Trouvez les meilleures alternatives en achat unique aux logiciels par abonnement.",
     images: ["/og-image.png"],
   },
 };
@@ -39,7 +53,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body>{children}</body>
+      <body className={geist.className}>{children}</body>
     </html>
   );
 }
