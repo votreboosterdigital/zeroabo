@@ -2,7 +2,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 
 type Props = {
   domain: string;
@@ -25,14 +24,15 @@ export default function ToolLogo({ domain, nom, size = 32 }: Props) {
   }
 
   return (
-    <Image
-      src={`https://logo.clearbit.com/${domain}`}
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={`https://logo.clearbit.com/${domain}?size=128`}
       alt={`Logo ${nom}`}
       width={size}
       height={size}
       className="rounded-md object-contain bg-white p-0.5 shrink-0"
       onError={() => setError(true)}
-      unoptimized
+      style={{ width: size, height: size }}
     />
   );
 }
