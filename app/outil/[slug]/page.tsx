@@ -2,18 +2,8 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import { TOOL_ALTERNATIVES } from "@/app/data/tools";
-
-const ToolLogo = dynamic(() => import("@/app/components/ToolLogo"), {
-  ssr: false,
-  loading: () => (
-    <div
-      className="rounded-md bg-slate-700 shrink-0"
-      style={{ width: 56, height: 56 }}
-    />
-  ),
-});
+import ToolLogoWrapper from "@/app/components/ToolLogoWrapper";
 
 type ToolItem = (typeof TOOL_ALTERNATIVES)[number];
 type Props = { params: Promise<{ slug: string }> };
@@ -59,7 +49,7 @@ export default async function PageOutil({ params }: Props) {
 
         {/* Logo + titre */}
         <div className="flex items-center gap-4 mb-4">
-          <ToolLogo domain={outil.logoDomain} nom={outil.nom} size={56} />
+          <ToolLogoWrapper domain={outil.logoDomain} nom={outil.nom} size={56} />
           <div>
             <div className="flex items-center gap-3 flex-wrap">
               <h1 className="text-3xl font-bold text-slate-50">{outil.nom}</h1>
