@@ -1,3 +1,4 @@
+// app/outil/[slug]/page.tsx
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -29,7 +30,7 @@ export default async function PageOutil({ params }: Props) {
   if (!outil) return notFound();
 
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="min-h-screen flex flex-col bg-slate-950 text-slate-50">
       <header className="border-b border-slate-800 bg-slate-950/80 backdrop-blur">
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/">
@@ -46,23 +47,39 @@ export default async function PageOutil({ params }: Props) {
         </div>
       </header>
 
-      <main className="flex-1 max-w-3xl mx-auto px-4 pt-10 pb-16 w-full">
+      <section className="flex-1 max-w-3xl mx-auto px-4 pt-10 pb-16 w-full">
+        {/* Titre + badge */}
         <div className="flex flex-wrap items-center gap-3 mb-2">
           <h2 className="text-3xl font-bold text-slate-50">{outil.nom}</h2>
           <span className="rounded-full bg-emerald-500/20 border border-emerald-500 px-3 py-1 text-xs font-semibold text-emerald-400">
             Achat unique
           </span>
         </div>
+
         <p className="text-sm text-slate-400 mb-6">
           Alternative à{" "}
-          <span className="text-slate-200 font-medium">
-            {outil.originalApp}
-          </span>
+          <span className="text-slate-200 font-medium">{outil.originalApp}</span>
         </p>
+
+        {/* Bloc économies */}
+        {outil.savings > 0 && (
+          <div className="mb-6 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 flex items-center gap-3">
+            <span className="text-2xl">💸</span>
+            <p className="text-sm text-emerald-300">
+              En payant une seule fois, vous économisez environ{" "}
+              <span className="font-bold text-emerald-400">
+                {outil.savings} €
+              </span>{" "}
+              sur 3 ans par rapport à un abonnement.
+            </p>
+          </div>
+        )}
+
         <p className="text-slate-200 leading-relaxed mb-8">
           {outil.longDescription}
         </p>
 
+        {/* Fonctionnalités */}
         <div className="mb-8">
           <h3 className="text-lg font-semibold text-slate-50 mb-3">
             Fonctionnalités clés
@@ -80,15 +97,25 @@ export default async function PageOutil({ params }: Props) {
           </ul>
         </div>
 
-        <a
-          href={outil.affiliateUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-2 rounded-md bg-emerald-500 px-6 py-3 text-base font-semibold text-slate-950 hover:bg-emerald-400 transition-colors"
-        >
-          Voir l&apos;alternative →
-        </a>
-      </main>
+        {/* Prix + CTA */}
+        <div className="rounded-lg border border-slate-700 bg-slate-900 p-5 mb-6">
+          <p className="text-xs text-slate-500 uppercase tracking-wide mb-1">
+            Paiement unique
+          </p>
+          <p className="text-2xl font-bold text-slate-50 mb-4">{outil.prix}</p>
+          <a
+            href={outil.affiliateUrl}
+            target="_blank"
+            rel="noreferrer sponsored"
+            className="inline-flex items-center gap-2 rounded-md bg-emerald-500 px-6 py-3 text-base font-semibold text-slate-950 hover:bg-emerald-400 transition-colors"
+          >
+            Voir l&apos;alternative →
+          </a>
+          <p className="mt-3 text-xs text-slate-500">
+            Lien affilié — vous soutenez ZéroAbo sans payer plus cher.
+          </p>
+        </div>
+      </section>
 
       <footer className="border-t border-slate-800 bg-slate-950/80">
         <div className="max-w-5xl mx-auto px-4 py-4">
