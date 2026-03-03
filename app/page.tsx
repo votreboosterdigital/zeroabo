@@ -22,12 +22,19 @@ export default function Home() {
     <main className="min-h-screen bg-slate-950 text-slate-50">
       <header className="border-b border-slate-800 bg-slate-950/80 backdrop-blur">
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-2xl font-semibold text-emerald-400">
-            ZéroAbo
-          </h1>
-          <p className="text-xs text-slate-400">
-            Trouvez des logiciels en achat unique.
-          </p>
+          <Link href="/">
+            <h1 className="text-2xl font-semibold text-emerald-400">
+              ZéroAbo
+            </h1>
+          </Link>
+          <nav className="flex items-center gap-4 text-xs text-slate-400">
+            <Link
+              href="/a-propos"
+              className="hover:text-emerald-400 transition-colors"
+            >
+              À propos
+            </Link>
+          </nav>
         </div>
       </header>
 
@@ -58,7 +65,8 @@ export default function Home() {
         <div id="resultats" className="space-y-4">
           {filteredTools.length === 0 ? (
             <p className="text-sm text-slate-400">
-              Aucune alternative trouvée. Essayez un autre mot-clé (ex : Office, antivirus, photo…).
+              Aucune alternative trouvée. Essayez un autre mot-clé (ex : Office,
+              antivirus, photo…).
             </p>
           ) : (
             filteredTools.map((tool) => (
