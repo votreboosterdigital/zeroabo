@@ -1,99 +1,102 @@
-// app/page.tsx
-import { useState } from "react";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { TOOL_ALTERNATIVES } from "@/app/data/tools";
 
-export default function Home() {
-  const [searchQuery, setSearchQuery] = useState("");
+type ToolItem = (typeof TOOL_ALTERNATIVES)[number];
 
-  const filteredTools = TOOL_ALTERNATIVES.filter((tool) => {
-    if (!searchQuery) return true;
-    const q = searchQuery.toLowerCase();
-    return (
-      tool.nom.toLowerCase().includes(q) ||
-      tool.originalApp.toLowerCase().includes(q) ||
-      tool.motsCles.some((mot) => mot.toLowerCase().includes(q))
-    );
-  });
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const outil = TOOL_ALTERNATIVES.find((t: ToolItem) => t.slug === slug);
+  if (!outil) return {};
+  return {
+    title: `${outil.nom} — Alternative à ${outil.originalApp} | ZéroAbo`,
+    description: outil.longDescription,
+  };
+}
+
+export async function generateStaticParams() {
+  return TOOL_ALTERNATIVES.map((t: ToolItem) => ({ slug: t.slug }));
+}
+
+export default async function PageOutil({ params }: Props) {
+  const { slug } = await params;
+  const outil = TOOL_ALTERNATIVES.find((t: ToolItem) => t.slug === slug);
+  if (!outil) return notFound();
 
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-50">
+    <main className="min-h-screen flex flex-col">
       <header className="border-b border-slate-800 bg-slate-950/80 backdrop-blur">
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-2xl font-semibold text-emerald-400">
-            ZéroAbo
-          </h1>
-          <p className="text-xs text-slate-400">
-            Trouvez des logiciels en achat unique.
-          </p>
+          <Link href="/">
+            <h1 className="text-2xl font-semibold text-emerald-400 hover:text-emerald-300 cursor-pointer">
+              ZéroAbo
+            </h1>
+          </Link>
+          <Link
+            href="/"
+            className="text-sm text-slate-400 hover:text-emerald-400 transition-colors"
+          >
+            ← Retour
+          </Link>
         </div>
       </header>
 
-      <section className="max-w-5xl mx-auto px-4 py-10">
+      <main className="flex-1 max-w-3xl mx-auto px-4 pt-10 pb-16 w-full">
+        <div className="flex flex-wrap items-center gap-3 mb-2">
+          <h2 className="text-3xl font-bold text-slate-50">{outil.nom}</h2>
+          <span className="rounded-full bg-emerald-500/20 border border-emerald-500 px-3 py-1 text-xs font-semibold text-emerald-400">
+            Achat unique
+          </span>
+        </div>
+        <p className="text-sm text-slate-400 mb-6">
+          Alternative à{" "}
+          <span className="text-slate-200 font-medium">
+            {outil.originalApp}
+          </span>
+        </p>
+        <p className="text-slate-200 leading-relaxed mb-8">
+          {outil.longDescription}
+        </p>
+
         <div className="mb-8">
-          <h2 className="text-3xl font-bold mb-3">
-            Marre des abonnements logiciels ?
-          </h2>
-          <p className="text-slate-300 text-sm">
-            Entrez le nom d&apos;un logiciel par abonnement (ex : Microsoft 365)
-            ou d&apos;un type d&apos;outil (bureautique, montage vidéo…) pour
-            trouver une alternative en achat unique.
+          <h3 className="text-lg font-semibold text-slate-50 mb-3">
+            Fonctionnalités clés
+          </h3>
+          <ul className="space-y-2">
+            {outil.features.map((feature: string, index: number) => (
+              <li
+                key={index}
+                className="flex items-start gap-2 text-sm text-slate-200"
+              >
+                <span className="text-emerald-400 mt-0.5">✓</span>
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <a
+          href={outil.affiliateUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 rounded-md bg-emerald-500 px-6 py-3 text-base font-semibold text-slate-950 hover:bg-emerald-400 transition-colors"
+        >
+          Voir l&apos;alternative →
+        </a>
+      </main>
+
+      <footer className="border-t border-slate-800 bg-slate-950/80">
+        <div className="max-w-5xl mx-auto px-4 py-4">
+          <p className="text-xs text-slate-500">
+            ZéroAbo — Données non contractuelles.
           </p>
         </div>
-
-        {/* Barre de recherche */}
-        <div className="mb-8">
-          <input
-            type="text"
-            placeholder="Rechercher une alternative (ex : Office, antivirus, montage vidéo)…"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-3 text-sm text-slate-50 placeholder:text-slate-500 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
-          />
-        </div>
-
-        {/* Résultats */}
-        <div id="resultats" className="space-y-4">
-          {filteredTools.length === 0 ? (
-            <p className="text-sm text-slate-400">
-              Aucune alternative trouvée. Essayez un autre mot-clé (ex : Office, antivirus, photo…).
-            </p>
-          ) : (
-            filteredTools.map((tool) => (
-              <div
-                key={tool.id}
-                className="flex flex-col gap-3 rounded-lg border border-slate-800 bg-slate-900/60 p-4 md:flex-row md:items-center md:justify-between"
-              >
-                <div>
-                  <h3 className="text-base font-semibold text-slate-50">
-                    {tool.nom}
-                  </h3>
-                  <p className="text-xs text-slate-400">
-                    Alternative à{" "}
-                    <span className="text-slate-200 font-medium">
-                      {tool.originalApp}
-                    </span>
-                  </p>
-                  <p className="mt-2 text-sm text-slate-300">
-                    {tool.description}
-                  </p>
-                </div>
-                <div className="mt-3 flex flex-col items-start gap-2 md:mt-0 md:items-end">
-                  <p className="text-sm font-semibold text-emerald-400">
-                    {tool.prix}
-                  </p>
-                  <Link
-                    href={`/outil/${tool.slug}`}
-                    className="inline-flex items-center gap-1 rounded-md bg-emerald-500 px-3 py-1.5 text-xs font-semibold text-slate-950 hover:bg-emerald-400"
-                  >
-                    Voir l&apos;alternative →
-                  </Link>
-                </div>
-              </div>
-            ))
-          )}
-        </div>
-      </section>
+      </footer>
     </main>
   );
 }
