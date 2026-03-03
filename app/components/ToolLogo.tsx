@@ -26,11 +26,11 @@ export default function ToolLogo({ domain, nom, size = 32 }: Props) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={`https://logo.clearbit.com/${domain}?size=128`}
+      src={`https://www.google.com/s2/favicons?domain=${domain}&sz=64`}
       alt={`Logo ${nom}`}
       width={size}
       height={size}
-      className="rounded-md object-contain bg-white p-0.5 shrink-0"
+      className="rounded-md object-contain bg-white p-1 shrink-0"
       onError={() => setError(true)}
       style={{ width: size, height: size }}
     />
