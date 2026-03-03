@@ -2,7 +2,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "ZéroAbo — Logiciels sans abonnement";
+export const alt = "ZeroAbo — Logiciels sans abonnement";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -29,7 +29,7 @@ export default function OgImage() {
             letterSpacing: "-2px",
           }}
         >
-          <span style={{ color: "#10b981" }}>Zéro</span>Abo
+          <span style={{ color: "#10b981" }}>Zero</span>Abo
         </div>
         <div
           style={{
@@ -40,7 +40,7 @@ export default function OgImage() {
             maxWidth: 700,
           }}
         >
-          Logiciels en achat unique — Payez une fois, utilisez pour toujours.
+         "Logiciels en achat unique - Payez une fois, utilisez pour toujours."
         </div>
         <div
           style={{
