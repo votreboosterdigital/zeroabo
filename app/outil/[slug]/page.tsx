@@ -2,13 +2,21 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { TOOL_ALTERNATIVES } from "@/app/data/tools";
 
-type ToolItem = (typeof TOOL_ALTERNATIVES)[number];
+const ToolLogo = dynamic(() => import("@/app/components/ToolLogo"), {
+  ssr: false,
+  loading: () => (
+    <div
+      className="rounded-md bg-slate-700 shrink-0"
+      style={{ width: 56, height: 56 }}
+    />
+  ),
+});
 
-type Props = {
-  params: Promise<{ slug: string }>;
-};
+type ToolItem = (typeof TOOL_ALTERNATIVES)[number];
+type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
@@ -30,36 +38,43 @@ export default async function PageOutil({ params }: Props) {
   if (!outil) return notFound();
 
   return (
-    <main className="min-h-screen flex flex-col bg-slate-950 text-slate-50">
-      <header className="border-b border-slate-800 bg-slate-950/80 backdrop-blur">
+    <div className="min-h-screen flex flex-col bg-slate-950 text-slate-50">
+      <header className="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-10">
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/">
-            <h1 className="text-2xl font-semibold text-emerald-400 hover:text-emerald-300 cursor-pointer">
-              ZéroAbo
-            </h1>
+            <span className="text-xl font-bold text-emerald-400 tracking-tight hover:text-emerald-300 transition-colors">
+              Zéro<span className="text-slate-50">Abo</span>
+            </span>
           </Link>
           <Link
             href="/"
-            className="text-sm text-slate-400 hover:text-emerald-400 transition-colors"
+            className="text-xs text-slate-400 hover:text-emerald-400 transition-colors"
           >
             ← Retour
           </Link>
         </div>
       </header>
 
-      <section className="flex-1 max-w-3xl mx-auto px-4 pt-10 pb-16 w-full">
-        {/* Titre + badge */}
-        <div className="flex flex-wrap items-center gap-3 mb-2">
-          <h2 className="text-3xl font-bold text-slate-50">{outil.nom}</h2>
-          <span className="rounded-full bg-emerald-500/20 border border-emerald-500 px-3 py-1 text-xs font-semibold text-emerald-400">
-            Achat unique
-          </span>
-        </div>
+      <main className="flex-1 max-w-3xl mx-auto px-4 pt-10 pb-16 w-full">
 
-        <p className="text-sm text-slate-400 mb-6">
-          Alternative à{" "}
-          <span className="text-slate-200 font-medium">{outil.originalApp}</span>
-        </p>
+        {/* Logo + titre */}
+        <div className="flex items-center gap-4 mb-4">
+          <ToolLogo domain={outil.logoDomain} nom={outil.nom} size={56} />
+          <div>
+            <div className="flex items-center gap-3 flex-wrap">
+              <h1 className="text-3xl font-bold text-slate-50">{outil.nom}</h1>
+              <span className="rounded-full bg-emerald-500/20 border border-emerald-500 px-3 py-1 text-xs font-semibold text-emerald-400">
+                Achat unique
+              </span>
+            </div>
+            <p className="text-sm text-slate-400 mt-1">
+              Alternative à{" "}
+              <span className="text-slate-200 font-medium">
+                {outil.originalApp}
+              </span>
+            </p>
+          </div>
+        </div>
 
         {/* Bloc économies */}
         {outil.savings > 0 && (
@@ -81,9 +96,9 @@ export default async function PageOutil({ params }: Props) {
 
         {/* Fonctionnalités */}
         <div className="mb-8">
-          <h3 className="text-lg font-semibold text-slate-50 mb-3">
+          <h2 className="text-lg font-semibold text-slate-50 mb-3">
             Fonctionnalités clés
-          </h3>
+          </h2>
           <ul className="space-y-2">
             {outil.features.map((feature: string, index: number) => (
               <li
@@ -98,32 +113,32 @@ export default async function PageOutil({ params }: Props) {
         </div>
 
         {/* Prix + CTA */}
-        <div className="rounded-lg border border-slate-700 bg-slate-900 p-5 mb-6">
+        <div className="rounded-xl border border-slate-700 bg-slate-900 p-6">
           <p className="text-xs text-slate-500 uppercase tracking-wide mb-1">
             Paiement unique
           </p>
-          <p className="text-2xl font-bold text-slate-50 mb-4">{outil.prix}</p>
+          <p className="text-2xl font-bold text-slate-50 mb-5">{outil.prix}</p>
           <a
             href={outil.affiliateUrl}
             target="_blank"
-            rel="noreferrer sponsored"
-            className="inline-flex items-center gap-2 rounded-md bg-emerald-500 px-6 py-3 text-base font-semibold text-slate-950 hover:bg-emerald-400 transition-colors"
+            rel="noopener noreferrer sponsored"
+            className="inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-6 py-3 text-base font-semibold text-slate-950 hover:bg-emerald-400 transition-colors"
           >
             Voir l&apos;alternative →
           </a>
-          <p className="mt-3 text-xs text-slate-500">
+          <p className="mt-4 text-xs text-slate-500">
             Lien affilié — vous soutenez ZéroAbo sans payer plus cher.
           </p>
         </div>
-      </section>
+      </main>
 
-      <footer className="border-t border-slate-800 bg-slate-950/80">
+      <footer className="border-t border-slate-800 bg-slate-950">
         <div className="max-w-5xl mx-auto px-4 py-4">
           <p className="text-xs text-slate-500">
             ZéroAbo — Données non contractuelles.
           </p>
         </div>
       </footer>
-    </main>
+    </div>
   );
 }
