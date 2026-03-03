@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { TOOL_ALTERNATIVES } from "./data/tools";
+import { TOOL_ALTERNATIVES } from "@/app/data/tools";
 import { SearchBar } from "../components/SearchBar";
 
 const suggestionsPopulaires = [
