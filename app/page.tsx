@@ -4,6 +4,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { TOOL_ALTERNATIVES } from "@/app/data/tools";
+import ToolLogo from "@/app/components/ToolLogo";
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -71,13 +72,13 @@ export default function Home() {
         {/* Suggestions rapides */}
         {!searchQuery && (
           <div className="flex flex-wrap justify-center gap-2 mt-4">
-            {["Office", "PDF", "Antivirus", "Vidéo", "Mind mapping"].map((suggestion) => (
+            {["Office", "PDF", "Antivirus", "Vidéo", "Audio", "Illustration"].map((s) => (
               <button
-                key={suggestion}
-                onClick={() => setSearchQuery(suggestion)}
+                key={s}
+                onClick={() => setSearchQuery(s)}
                 className="rounded-full border border-slate-700 bg-slate-900 px-3 py-1 text-xs text-slate-400 hover:border-emerald-500 hover:text-emerald-400 transition-colors"
               >
-                {suggestion}
+                {s}
               </button>
             ))}
           </div>
@@ -110,23 +111,24 @@ export default function Home() {
                 className="group flex flex-col justify-between rounded-xl border border-slate-800 bg-slate-900/60 p-5 hover:border-emerald-500/50 hover:bg-slate-900 transition-all"
               >
                 <div>
-                  {/* Nom + badge */}
-                  <div className="flex items-start justify-between gap-2 mb-2">
-                    <h2 className="text-base font-semibold text-slate-50 group-hover:text-emerald-400 transition-colors">
-                      {tool.nom}
-                    </h2>
-                    <span className="shrink-0 rounded-full bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 text-[10px] font-semibold text-emerald-400">
-                      Achat unique
-                    </span>
+                  {/* Logo + Nom + badge */}
+                  <div className="flex items-center gap-3 mb-3">
+                    <ToolLogo domain={tool.logoDomain} nom={tool.nom} size={36} />
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <h2 className="text-base font-semibold text-slate-50 group-hover:text-emerald-400 transition-colors truncate">
+                          {tool.nom}
+                        </h2>
+                        <span className="shrink-0 rounded-full bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 text-[10px] font-semibold text-emerald-400">
+                          Achat unique
+                        </span>
+                      </div>
+                      <p className="text-xs text-slate-500 mt-0.5">
+                        Remplace{" "}
+                        <span className="text-slate-300">{tool.originalApp}</span>
+                      </p>
+                    </div>
                   </div>
-
-                  {/* Remplace */}
-                  <p className="text-xs text-slate-500 mb-3">
-                    Remplace{" "}
-                    <span className="text-slate-300 font-medium">
-                      {tool.originalApp}
-                    </span>
-                  </p>
 
                   <p className="text-sm text-slate-400 leading-relaxed mb-4">
                     {tool.description}
@@ -134,11 +136,9 @@ export default function Home() {
                 </div>
 
                 {/* Prix + économies + CTA */}
-                <div className="flex items-center justify-between gap-3 mt-2 pt-4 border-t border-slate-800">
+                <div className="flex items-center justify-between gap-3 pt-4 border-t border-slate-800">
                   <div>
-                    <p className="text-sm font-bold text-emerald-400">
-                      {tool.prix}
-                    </p>
+                    <p className="text-sm font-bold text-emerald-400">{tool.prix}</p>
                     {tool.savings > 0 && (
                       <p className="text-[11px] text-slate-500">
                         💸 ~{tool.savings} € économisés sur 3 ans

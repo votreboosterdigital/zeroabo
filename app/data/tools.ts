@@ -14,6 +14,7 @@ export type ToolAlternative = {
   features: string[];
   lien: string;
   affiliateUrl: string;
+  logoDomain: string;
 };
 
 export const TOOL_ALTERNATIVES: ToolAlternative[] = [
@@ -38,8 +39,8 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     ],
     lien: "https://www.onlyoffice.com",
     affiliateUrl: "https://www.onlyoffice.com/?via=Zeroabo",
+    logoDomain: "onlyoffice.com",
   },
-
   {
     id: "pdf-xchange-editor",
     slug: "pdf-xchange-editor",
@@ -62,8 +63,8 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.tracker-software.com/product/pdf-xchange-editor",
     affiliateUrl:
       "https://www.tracker-software.com/product/pdf-xchange-editor?ref=zeroabo",
+    logoDomain: "tracker-software.com",
   },
-
   {
     id: "movavi-video-suite",
     slug: "movavi-video-suite",
@@ -85,8 +86,8 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     ],
     lien: "https://www.movavi.com/suite/",
     affiliateUrl: "https://www.movavi.com/suite/?ref=zeroabo",
+    logoDomain: "movavi.com",
   },
-
   {
     id: "bitdefender-premium-security",
     slug: "bitdefender-premium-security",
@@ -108,8 +109,8 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     ],
     lien: "https://www.bitdefender.com",
     affiliateUrl: "https://www.bitdefender.com/?affid=zeroabo",
+    logoDomain: "bitdefender.com",
   },
-
   {
     id: "xmind-pro",
     slug: "xmind-pro",
@@ -131,8 +132,8 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     ],
     lien: "https://xmind.app",
     affiliateUrl: "https://xmind.app/?ref=zeroabo",
+    logoDomain: "xmind.app",
   },
-
   {
     id: "affinity-publisher-2",
     slug: "affinity-publisher-2",
@@ -143,7 +144,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     prix: "Gratuit (racheté par Canva)",
     savings: 360,
     description:
-      "Logiciel de mise en page professionnelle, anciennement payant et désormais gratuit depuis le rachat par Canva.",
+      "Logiciel de mise en page professionnelle, désormais gratuit depuis le rachat par Canva.",
     longDescription:
       "Affinity Publisher 2 est une alternative sérieuse à Adobe InDesign pour créer des livres, magazines, brochures et supports imprimés. Depuis son rachat par Canva en 2025, il est disponible gratuitement.",
     features: [
@@ -154,12 +155,12 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     ],
     lien: "https://affinity.serif.com/publisher",
     affiliateUrl: "https://affinity.serif.com/publisher",
+    logoDomain: "affinity.serif.com",
   },
-
   {
     id: "clip-studio-paint",
     slug: "clip-studio-paint",
-    abonnement: "Adobe Illustrator, Photoshop abonnement",
+    abonnement: "Adobe Illustrator abonnement",
     originalApp: "Adobe Illustrator",
     motsCles: ["illustration", "dessin", "manga", "bande dessinée", "adobe illustrator"],
     nom: "Clip Studio Paint",
@@ -177,8 +178,8 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     ],
     lien: "https://www.clipstudio.net",
     affiliateUrl: "https://www.clipstudio.net/?ref=zeroabo",
+    logoDomain: "clipstudio.net",
   },
-
   {
     id: "vmix",
     slug: "vmix",
@@ -200,31 +201,8 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     ],
     lien: "https://www.vmix.com",
     affiliateUrl: "https://www.vmix.com/?ref=zeroabo",
+    logoDomain: "vmix.com",
   },
-
-  {
-    id: "codelobster",
-    slug: "codelobster",
-    abonnement: "PHPStorm abonnement JetBrains",
-    originalApp: "PHPStorm",
-    motsCles: ["éditeur code", "php", "html", "css", "développement web", "ide"],
-    nom: "CodeLobster PHP Edition Pro",
-    prix: "Environ 50 € licence à vie",
-    savings: 130,
-    description:
-      "IDE PHP et développement web vendu en licence perpétuelle, alternative à PHPStorm.",
-    longDescription:
-      "CodeLobster PHP Edition Pro est un éditeur de code complet pour PHP, HTML, CSS et JavaScript. Il propose l'auto-complétion, le débogage et le support des frameworks majeurs sans abonnement.",
-    features: [
-      "Auto-complétion intelligente PHP, HTML, CSS, JS",
-      "Support Laravel, Symfony, WordPress",
-      "Débogueur intégré",
-      "FTP/SFTP intégré pour déploiement direct",
-    ],
-    lien: "https://codelobster.com",
-    affiliateUrl: "https://codelobster.com/?ref=zeroabo",
-  },
-
   {
     id: "focusplan",
     slug: "focusplan",
@@ -246,35 +224,12 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     ],
     lien: "https://focusplan.app",
     affiliateUrl: "https://focusplan.app/?ref=zeroabo",
+    logoDomain: "focusplan.app",
   },
-
-  {
-    id: "screenium",
-    slug: "screenium",
-    abonnement: "Loom abonnement",
-    originalApp: "Loom",
-    motsCles: ["capture écran", "enregistrement", "screenshot", "screencast"],
-    nom: "Screenium 3",
-    prix: "~15 € achat unique (Mac App Store)",
-    savings: 80,
-    description:
-      "Outil de capture et enregistrement d'écran Mac vendu en achat unique sur le Mac App Store.",
-    longDescription:
-      "Screenium 3 est une application Mac légère et rapide pour capturer des écrans et enregistrer des vidéos sans abonnement. Disponible directement sur le Mac App Store.",
-    features: [
-      "Capture d'écran et enregistrement vidéo",
-      "Annotations directement sur les captures",
-      "Partage rapide vers le cloud",
-      "Interface minimaliste et réactive",
-    ],
-    lien: "https://apps.apple.com/app/screenium-3/id1381004916",
-    affiliateUrl: "https://apps.apple.com/app/screenium-3/id1381004916",
-  },
-
   {
     id: "sublime-text",
     slug: "sublime-text",
-    abonnement: "VS Code Cloud, éditeurs par abonnement",
+    abonnement: "Éditeurs de code par abonnement",
     originalApp: "Éditeurs de code par abonnement",
     motsCles: ["éditeur texte", "code", "développement", "programmation", "javascript"],
     nom: "Sublime Text",
@@ -292,21 +247,21 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     ],
     lien: "https://www.sublimetext.com",
     affiliateUrl: "https://www.sublimetext.com",
+    logoDomain: "sublimetext.com",
   },
-
   {
     id: "malwarebytes-lifetime",
     slug: "malwarebytes-lifetime",
-    abonnement: "Antivirus Norton, McAfee abonnement",
+    abonnement: "Norton 360, McAfee abonnement",
     originalApp: "Norton 360",
     motsCles: ["antivirus", "malware", "sécurité", "norton", "mcafee", "protection"],
-    nom: "Malwarebytes Premium (offre à vie)",
+    nom: "Malwarebytes Premium",
     prix: "Offre lifetime disponible sur StackSocial",
     savings: 200,
     description:
       "Protection anti-malware reconnue, disponible en licence à vie via des offres spéciales.",
     longDescription:
-      "Malwarebytes Premium est l'un des anti-malwares les plus réputés au monde. Des offres de licence à vie sont régulièrement disponibles sur StackSocial et similaires, permettant d'éviter l'abonnement annuel.",
+      "Malwarebytes Premium est l'un des anti-malwares les plus réputés au monde. Des offres de licence à vie sont régulièrement disponibles sur StackSocial, permettant d'éviter l'abonnement annuel.",
     features: [
       "Détection et suppression de malwares avancés",
       "Protection en temps réel",
@@ -315,8 +270,8 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     ],
     lien: "https://www.malwarebytes.com",
     affiliateUrl: "https://www.malwarebytes.com/?ref=zeroabo",
+    logoDomain: "malwarebytes.com",
   },
-
   {
     id: "magix-sound-forge",
     slug: "magix-sound-forge",
@@ -338,13 +293,13 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     ],
     lien: "https://www.magix.com/sound-forge-audio-studio",
     affiliateUrl: "https://www.magix.com/sound-forge-audio-studio/?ref=zeroabo",
+    logoDomain: "magix.com",
   },
-
   {
     id: "techsmith-snagit",
     slug: "techsmith-snagit",
-    abonnement: "Outils de capture par abonnement",
-    originalApp: "Loom, Droplr",
+    abonnement: "Loom, Droplr abonnement",
+    originalApp: "Loom",
     motsCles: ["capture écran", "annotation", "screenshot", "documentation", "tutoriel"],
     nom: "TechSmith Snagit",
     prix: "~80 € licence perpétuelle",
@@ -361,5 +316,29 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     ],
     lien: "https://www.techsmith.com/snagit",
     affiliateUrl: "https://www.techsmith.com/snagit/?ref=zeroabo",
+    logoDomain: "techsmith.com",
+  },
+  {
+    id: "aiseesoft-screen-recorder",
+    slug: "aiseesoft-screen-recorder",
+    abonnement: "Outils de capture par abonnement",
+    originalApp: "Loom, Screencast-O-Matic",
+    motsCles: ["capture écran", "enregistrement", "tutoriels vidéo", "screencast"],
+    nom: "Aiseesoft Screen Recorder",
+    prix: "Licence à vie ~40 €",
+    savings: 120,
+    description:
+      "Outil de capture d'écran et d'enregistrement vidéo simple, vendu en licence à vie.",
+    longDescription:
+      "Aiseesoft Screen Recorder permet d'enregistrer l'écran, le son système et le micro pour créer des tutoriels, démos produits ou cours en ligne, sans abonnement récurrent.",
+    features: [
+      "Enregistrement plein écran ou zone spécifique",
+      "Capture du son système et du micro",
+      "Ajout de surlignages et clics souris visibles",
+      "Export dans de nombreux formats vidéo",
+    ],
+    lien: "https://www.aiseesoft.com/screen-recorder/",
+    affiliateUrl: "https://www.aiseesoft.com/screen-recorder/?ref=zeroabo",
+    logoDomain: "aiseesoft.com",
   },
 ];
