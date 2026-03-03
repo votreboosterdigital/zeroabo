@@ -27,22 +27,13 @@ export const metadata: Metadata = {
     siteName: "ZéroAbo",
     title: "ZéroAbo — Logiciels en achat unique, sans abonnement",
     description:
-      "Trouvez les meilleures alternatives en achat unique aux logiciels par abonnement.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "ZéroAbo — Logiciels sans abonnement",
-      },
-    ],
+      "Trouvez les meilleures alternatives en achat unique aux logiciels par abonnement. Payez une fois, utilisez pour toujours.",
   },
   twitter: {
     card: "summary_large_image",
     title: "ZéroAbo — Logiciels en achat unique",
     description:
       "Trouvez les meilleures alternatives en achat unique aux logiciels par abonnement.",
-    images: ["/og-image.png"],
   },
 };
 
