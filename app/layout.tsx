@@ -35,6 +35,11 @@ export const metadata: Metadata = {
     description:
       "Trouvez les meilleures alternatives en achat unique aux logiciels par abonnement.",
   },
+  // ✅ Vérification Impact
+  other: {
+    "impact-site-verification":
+      "caff8fda-d50d-4251-ad03-6c20eabcc500",
+  },
 };
 
 export default function RootLayout({
