@@ -6,14 +6,14 @@ import { useSearchParams } from "next/navigation";
 import { SUBSCRIPTIONS } from "@/app/data/subscriptions";
 import type { Subscription } from "@/app/data/subscriptions";
 
-function getEquivalence(montant: number): string {
-  if (montant <= 0) return '';
-  if (montant < 150) return "c'est plusieurs sorties resto ou livraisons qui ne te coûtent plus rien 🍽️";
-  if (montant < 300) return "c'est un vrai week‑end pour souffler à deux ou en solo 🧳";
-  if (montant < 600) return "c'est une semaine de vacances simples mais complètes ☀️";
-  if (montant < 1200) return "c'est de quoi remplacer un gros électroménager sans stress 🧺";
-  if (montant < 2500) return "c'est un bon PC ou téléphone payé cash, sans crédit 💻📱";
-  return "c'est un vrai matelas de sécurité pour les imprévus 🛟";
+function getEquivalence(montant: number): { emoji: string; text: string } | null {
+  if (montant <= 0) return null;
+  if (montant < 150)  return { emoji: "🍽️", text: "c'est plusieurs sorties resto ou livraisons qui ne te coûtent plus rien" };
+  if (montant < 300)  return { emoji: "🧳", text: "c'est un vrai week‑end pour souffler à deux ou en solo" };
+  if (montant < 600)  return { emoji: "☀️", text: "c'est une semaine de vacances simples mais complètes" };
+  if (montant < 1200) return { emoji: "🧺", text: "c'est de quoi remplacer un gros électroménager sans stress" };
+  if (montant < 2500) return { emoji: "💻", text: "c'est un bon PC ou téléphone payé cash, sans crédit" };
+  return { emoji: "🛟", text: "c'est un vrai matelas de sécurité pour les imprévus" };
 }
 
 export default function CalculateurClient() {
@@ -86,25 +86,35 @@ export default function CalculateurClient() {
         {SUBSCRIPTIONS.map((sub) => {
           const isSelected = selectedIds.has(sub.id);
           return (
-            <button
+            <label
               key={sub.id}
-              onClick={() => toggle(sub.id)}
-              className={`text-left rounded-xl border px-4 py-3 transition-all ${
+              htmlFor={`sub-${sub.id}`}
+              className={`cursor-pointer text-left rounded-xl border px-4 py-3 transition-all block ${
                 isSelected
                   ? 'border-emerald-500 bg-emerald-500/10 text-slate-50'
                   : 'border-white/10 bg-white/5 text-slate-300 hover:border-white/20 hover:text-slate-50'
               }`}
             >
+              <input
+                type="checkbox"
+                id={`sub-${sub.id}`}
+                checked={isSelected}
+                onChange={() => toggle(sub.id)}
+                className="sr-only"
+              />
               <div className="flex items-center justify-between mb-1">
                 <span className="font-semibold text-sm">{sub.nom}</span>
-                <span className={`text-xs font-bold ${isSelected ? 'text-emerald-400' : 'text-slate-500'}`}>
+                <span
+                  aria-hidden="true"
+                  className={`text-xs font-bold ${isSelected ? 'text-emerald-400' : 'text-slate-500'}`}
+                >
                   {isSelected ? '✓' : '+'}
                 </span>
               </div>
               <div className="text-xs text-slate-400">
                 {sub.prixAnnuel} €/an · économise {sub.economie3ans} € sur 3 ans
               </div>
-            </button>
+            </label>
           );
         })}
       </div>
@@ -119,7 +129,10 @@ export default function CalculateurClient() {
             Vous pourriez économiser {totalEconomie} € sur 3 ans
           </p>
           {equivalence && (
-            <p className="text-slate-400 italic mb-6">{equivalence}</p>
+            <p className="text-slate-400 italic mb-6">
+              <span aria-hidden="true">{equivalence.emoji} </span>
+              {equivalence.text}
+            </p>
           )}
 
           <Link
