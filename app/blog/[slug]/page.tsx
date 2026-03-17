@@ -48,11 +48,25 @@ export default async function BlogArticlePage({ params }: Props) {
     mainEntityOfPage: { "@type": "WebPage", "@id": `https://zeroabo.fr/blog/${post.slug}` },
   };
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://zeroabo.fr" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://zeroabo.fr/blog" },
+      { "@type": "ListItem", position: 3, name: post.titre, item: `https://zeroabo.fr/blog/${post.slug}` },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-[#020817] text-slate-50">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <Header />
       <div className="max-w-2xl mx-auto px-4 pt-20 md:pt-[108px] py-16">

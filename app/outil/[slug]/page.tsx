@@ -49,11 +49,24 @@ export default async function PageOutil({ params }: Props) {
     url: outil.lien,
   };
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://zeroabo.fr" },
+      { "@type": "ListItem", position: 2, name: outil.nom, item: `https://zeroabo.fr/outil/${outil.slug}` },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <ToolDetailClient outil={outil} related={related} />
     </>
