@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import sanitizeHtml from "sanitize-html";
 import Header from "@/app/components/Header";
 import { BLOG_POSTS } from "@/app/data/blog";
 
@@ -81,7 +82,10 @@ export default async function BlogArticlePage({ params }: Props) {
         {/* Contenu article */}
         <div
           className="prose prose-invert max-w-none prose-a:text-emerald-400 prose-a:no-underline hover:prose-a:underline prose-headings:text-slate-100 prose-p:text-slate-300 prose-strong:text-slate-100 prose-li:text-slate-300 prose-table:text-sm prose-th:text-slate-300 prose-td:text-slate-400"
-          dangerouslySetInnerHTML={{ __html: post.contenu }}
+          dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.contenu, {
+            allowedTags: sanitizeHtml.defaults.allowedTags.concat(["h1", "h2", "h3", "h4", "table", "thead", "tbody", "tr", "th", "td"]),
+            allowedAttributes: { ...sanitizeHtml.defaults.allowedAttributes, a: ["href", "target", "rel"], "*": ["class"] },
+          }) }}
         />
 
         {/* Articles liés */}

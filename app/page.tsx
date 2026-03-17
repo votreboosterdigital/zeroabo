@@ -26,7 +26,7 @@ const container = {
   visible: { transition: { staggerChildren: 0.07 } },
 };
 
-const QUICK_FILTERS = ["Office", "PDF", "Antivirus", "Vidéo", "Audio", "Illustration"];
+const QUICK_FILTERS = ["Adobe", "Office", "PDF", "Antivirus", "Vidéo", "Audio", "Photo", "3D", "Notes", "Email"];
 
 export default function Home() {
   const prefersReducedMotion = useReducedMotion();

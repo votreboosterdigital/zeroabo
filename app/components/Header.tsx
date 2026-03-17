@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
   { label: "Outils", href: "/" },
@@ -12,6 +13,7 @@ const NAV_LINKS = [
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!isOpen) return;
@@ -58,15 +60,19 @@ export default function Header() {
 
           {/* Right: desktop links + CTA */}
           <div className="hidden md:flex items-center gap-6">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm text-slate-400 hover:text-slate-50 transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`text-sm transition-colors ${isActive ? "text-slate-50 font-medium" : "text-slate-400 hover:text-slate-50"}`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
             <Link
               href="/calculateur"
               className="text-sm font-semibold text-white bg-emerald-500 hover:bg-emerald-400 px-4 py-2 rounded-lg shadow-[0_0_20px_rgba(16,185,129,0.25)] transition-all"
@@ -93,16 +99,20 @@ export default function Header() {
             id="mobile-menu"
             className="absolute top-full left-0 right-0 bg-[#020817] border-b border-white/5 px-4 py-4 flex flex-col gap-4"
           >
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm text-slate-400 hover:text-slate-50 transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`text-sm transition-colors ${isActive ? "text-slate-50 font-medium" : "text-slate-400 hover:text-slate-50"}`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
             <Link
               href="/calculateur"
               className="text-sm font-semibold text-white bg-emerald-500 hover:bg-emerald-400 px-4 py-2 rounded-lg shadow-[0_0_20px_rgba(16,185,129,0.25)] transition-all text-center"
