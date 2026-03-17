@@ -1,31 +1,14 @@
 // app/a-propos/page.tsx
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import Header from "@/app/components/Header";
 
 export default function APropos() {
   return (
     <div className="min-h-screen bg-[#020817] text-slate-50 flex flex-col">
 
-      {/* Navbar */}
-      <header className="fixed inset-x-0 top-0 z-50 bg-[#020817]/80 backdrop-blur-md border-b border-white/5">
-        <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/">
-            <span className="text-xl font-bold tracking-tight">
-              <span className="text-sky-400">Zéro</span>
-              <span className="text-slate-50">Abo</span>
-            </span>
-          </Link>
-          <Link
-            href="/"
-            className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-slate-300 hover:border-white/20 hover:text-white transition-colors"
-          >
-            <ArrowLeft className="h-3.5 w-3.5" />
-            Retour
-          </Link>
-        </div>
-      </header>
+      <Header />
 
-      <main className="flex-1 max-w-3xl mx-auto px-4 pt-28 pb-20 w-full">
+      <main className="flex-1 max-w-3xl mx-auto px-4 pt-20 md:pt-[108px] pb-20 w-full">
         {/* Decorative blob */}
         <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 overflow-hidden">
           <div className="absolute inset-x-[-40%] top-0 h-[280px] bg-gradient-to-br from-sky-500/12 via-emerald-500/6 to-transparent blur-3xl" />

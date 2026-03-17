@@ -7,6 +7,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Search } from "lucide-react";
 import { TOOL_ALTERNATIVES } from "@/app/data/tools";
 import ToolLogo from "@/app/components/ToolLogo";
+import Header from "@/app/components/Header";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -44,28 +45,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#020817] text-slate-50 flex flex-col">
 
-      {/* Navbar */}
-      <header className="fixed inset-x-0 top-0 z-50 bg-[#020817]/80 backdrop-blur-md border-b border-white/5">
-        <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/">
-            <span className="text-xl font-bold tracking-tight">
-              <span className="text-sky-400">Zéro</span>
-              <span className="text-slate-50">Abo</span>
-            </span>
-          </Link>
-          <nav className="flex items-center gap-6 text-xs text-slate-400">
-            <Link
-              href="/a-propos"
-              className="hover:text-slate-200 transition-colors"
-            >
-              À propos
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero */}
-      <section className="relative max-w-5xl mx-auto px-4 pt-36 pb-16 text-center w-full">
+      <section className="relative max-w-5xl mx-auto px-4 pt-28 md:pt-[108px] pb-16 text-center w-full">
         {/* Gradient blobs */}
         <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
           <div className="absolute inset-x-[-40%] top-[-10%] h-[360px] bg-gradient-to-br from-sky-500/20 via-emerald-500/10 to-transparent blur-3xl" />
