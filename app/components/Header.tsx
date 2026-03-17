@@ -34,7 +34,7 @@ export default function Header() {
 
       {/* Top Bar — desktop only */}
       <div className="hidden md:flex items-center justify-center gap-1 text-sm text-slate-400 bg-[#0d1526] py-2">
-        💡 Les utilisateurs ZéroAbo économisent en moyenne 280 €/an —{" "}
+        <span aria-hidden="true">💡</span>{" "}Les utilisateurs ZéroAbo économisent en moyenne 280 €/an —{" "}
         <Link href="/calculateur" className="text-emerald-400 underline">
           Calcule tes économies →
         </Link>

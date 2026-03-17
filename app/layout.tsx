@@ -40,6 +40,9 @@ export const metadata: Metadata = {
       "Trouvez les meilleures alternatives en achat unique aux logiciels par abonnement.",
     images: ["/opengraph-image"],
   },
+  alternates: {
+    canonical: "https://zeroabo.fr",
+  },
   // ✅ Vérification Impact
   other: {
     "impact-site-verification": "caff8fda-d50d-4251-ad03-6c20eabcc500",

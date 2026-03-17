@@ -55,7 +55,7 @@ export default function Home() {
       <Header />
 
       {/* Hero */}
-      <section className="relative max-w-5xl mx-auto px-4 pt-28 md:pt-[108px] pb-16 text-center w-full">
+      <section id="main-content" className="relative max-w-5xl mx-auto px-4 pt-28 md:pt-[108px] pb-16 text-center w-full">
         {/* Gradient blobs */}
         <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
           <div className="absolute inset-x-[-40%] top-[-10%] h-[360px] bg-gradient-to-br from-sky-500/20 via-emerald-500/10 to-transparent blur-3xl" />

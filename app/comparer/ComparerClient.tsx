@@ -90,82 +90,64 @@ function CompareTable({ a, b }: { a: ToolAlternative; b: ToolAlternative }) {
   const maxFeatures = Math.max(a.features.length, b.features.length);
 
   return (
-    <div className="rounded-xl border border-white/8 bg-[#0d1526] ring-1 ring-white/5 overflow-hidden">
-      {/* Column headers */}
-      <div className="grid grid-cols-3 border-b border-white/8">
-        <div className="px-5 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-          Critère
-        </div>
-        <div className="px-5 py-4 border-l border-white/8">
-          <p className="text-sm font-bold text-slate-50">{a.nom}</p>
-          <p className="text-xs text-slate-500 mt-0.5">Remplace {a.originalApp}</p>
-        </div>
-        <div className="px-5 py-4 border-l border-white/8">
-          <p className="text-sm font-bold text-slate-50">{b.nom}</p>
-          <p className="text-xs text-slate-500 mt-0.5">Remplace {b.originalApp}</p>
-        </div>
-      </div>
-
-      {/* Prix */}
-      <Row label="Prix">
-        <Cell highlight={a.savings >= b.savings}>{a.prix}</Cell>
-        <Cell highlight={b.savings >= a.savings}>{b.prix}</Cell>
-      </Row>
-
-      {/* Économies */}
-      <Row label="Économies 3 ans">
-        <Cell highlight={a.savings > b.savings}>~{a.savings} €</Cell>
-        <Cell highlight={b.savings > a.savings}>~{b.savings} €</Cell>
-      </Row>
-
-      {/* Features */}
-      {Array.from({ length: maxFeatures }).map((_, i) => (
-        <Row key={i} label={i === 0 ? "Fonctionnalités" : ""}>
-          <Cell>{a.features[i] ? <FeatureItem text={a.features[i]} /> : <span className="text-slate-600">—</span>}</Cell>
-          <Cell>{b.features[i] ? <FeatureItem text={b.features[i]} /> : <span className="text-slate-600">—</span>}</Cell>
-        </Row>
-      ))}
-
-      {/* Lien */}
-      <Row label="Lien">
-        <Cell>
-          <a
-            href={a.affiliateUrl}
-            target="_blank"
-            rel="noopener noreferrer sponsored"
-            className="inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 transition-colors text-xs font-semibold"
-          >
-            Voir {a.nom} →
-          </a>
-        </Cell>
-        <Cell>
-          <a
-            href={b.affiliateUrl}
-            target="_blank"
-            rel="noopener noreferrer sponsored"
-            className="inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 transition-colors text-xs font-semibold"
-          >
-            Voir {b.nom} →
-          </a>
-        </Cell>
-      </Row>
-    </div>
-  );
-}
-
-function Row({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <div className="grid grid-cols-3 border-b border-white/5 last:border-0">
-      <div className="px-5 py-3.5 text-xs text-slate-500 flex items-start pt-4">{label}</div>
-      {children}
-    </div>
-  );
-}
-
-function Cell({ children, highlight }: { children: React.ReactNode; highlight?: boolean }) {
-  return (
-    <div className={`px-5 py-3.5 border-l border-white/5 text-sm ${highlight ? "text-emerald-400 font-semibold" : "text-slate-300"}`}>
-      {children}
+    <div className="rounded-xl border border-white/8 bg-[#0d1526] ring-1 ring-white/5 overflow-x-auto">
+      <table className="w-full text-sm border-collapse">
+        <thead>
+          <tr className="border-b border-white/8">
+            <th scope="col" className="px-5 py-4 text-left text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 w-1/3">
+              Critère
+            </th>
+            <th scope="col" className="px-5 py-4 text-left border-l border-white/8 w-1/3">
+              <p className="text-sm font-bold text-slate-50">{a.nom}</p>
+              <p className="text-xs text-slate-500 mt-0.5 font-normal">Remplace {a.originalApp}</p>
+            </th>
+            <th scope="col" className="px-5 py-4 text-left border-l border-white/8 w-1/3">
+              <p className="text-sm font-bold text-slate-50">{b.nom}</p>
+              <p className="text-xs text-slate-500 mt-0.5 font-normal">Remplace {b.originalApp}</p>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr className="border-b border-white/5">
+            <th scope="row" className="px-5 py-3.5 text-left text-xs text-slate-500 font-normal">Prix</th>
+            <td className={`px-5 py-3.5 border-l border-white/5 ${a.savings >= b.savings ? "text-emerald-400 font-semibold" : "text-slate-300"}`}>{a.prix}</td>
+            <td className={`px-5 py-3.5 border-l border-white/5 ${b.savings >= a.savings ? "text-emerald-400 font-semibold" : "text-slate-300"}`}>{b.prix}</td>
+          </tr>
+          <tr className="border-b border-white/5">
+            <th scope="row" className="px-5 py-3.5 text-left text-xs text-slate-500 font-normal">Économies 3 ans</th>
+            <td className={`px-5 py-3.5 border-l border-white/5 ${a.savings > b.savings ? "text-emerald-400 font-semibold" : "text-slate-300"}`}>~{a.savings} €</td>
+            <td className={`px-5 py-3.5 border-l border-white/5 ${b.savings > a.savings ? "text-emerald-400 font-semibold" : "text-slate-300"}`}>~{b.savings} €</td>
+          </tr>
+          {Array.from({ length: maxFeatures }).map((_, i) => (
+            <tr key={i} className="border-b border-white/5">
+              <th scope="row" className="px-5 py-3.5 text-left text-xs text-slate-500 font-normal align-top">
+                {i === 0 ? "Fonctionnalités" : ""}
+              </th>
+              <td className="px-5 py-3.5 border-l border-white/5 text-slate-300">
+                {a.features[i] ? <FeatureItem text={a.features[i]} /> : <span className="text-slate-600">—</span>}
+              </td>
+              <td className="px-5 py-3.5 border-l border-white/5 text-slate-300">
+                {b.features[i] ? <FeatureItem text={b.features[i]} /> : <span className="text-slate-600">—</span>}
+              </td>
+            </tr>
+          ))}
+          <tr>
+            <th scope="row" className="px-5 py-3.5 text-left text-xs text-slate-500 font-normal">Lien</th>
+            <td className="px-5 py-3.5 border-l border-white/5">
+              <a href={a.affiliateUrl} target="_blank" rel="noopener noreferrer sponsored"
+                className="inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 transition-colors text-xs font-semibold">
+                Voir {a.nom} →
+              </a>
+            </td>
+            <td className="px-5 py-3.5 border-l border-white/5">
+              <a href={b.affiliateUrl} target="_blank" rel="noopener noreferrer sponsored"
+                className="inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 transition-colors text-xs font-semibold">
+                Voir {b.nom} →
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 }

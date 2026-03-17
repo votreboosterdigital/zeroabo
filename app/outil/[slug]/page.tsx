@@ -41,9 +41,10 @@ export default async function PageOutil({ params }: Props) {
     applicationCategory: "BusinessApplication",
     offers: {
       "@type": "Offer",
-      price: outil.savings,
+      price: outil.savings > 0 ? outil.savings : 0,
       priceCurrency: "EUR",
       description: outil.prix,
+      availability: "https://schema.org/InStock",
     },
     url: outil.lien,
   };
