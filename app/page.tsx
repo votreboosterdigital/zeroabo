@@ -31,6 +31,7 @@ const QUICK_FILTERS = ["Office", "PDF", "Antivirus", "Vidéo", "Audio", "Illustr
 export default function Home() {
   const prefersReducedMotion = useReducedMotion();
   const [searchQuery, setSearchQuery] = useState("");
+  const [sortBy, setSortBy] = useState<"savings" | "az">("savings");
   const deferredQuery = useDeferredValue(searchQuery);
 
   const filteredTools = TOOL_ALTERNATIVES.filter((tool) => {
@@ -41,6 +42,11 @@ export default function Home() {
       tool.originalApp.toLowerCase().includes(q) ||
       tool.motsCles.some((mot) => mot.toLowerCase().includes(q))
     );
+  });
+
+  const sorted = [...filteredTools].sort((a, b) => {
+    if (sortBy === "az") return a.nom.localeCompare(b.nom, "fr");
+    return b.savings - a.savings;
   });
 
   return (
@@ -108,36 +114,46 @@ export default function Home() {
           />
         </motion.div>
 
-        {/* Quick filters */}
-        {!searchQuery && (
-          <motion.div
-            variants={fadeUp}
-            initial={prefersReducedMotion ? undefined : "hidden"}
-            animate={prefersReducedMotion ? undefined : "visible"}
-            className="flex flex-wrap justify-center gap-2 mt-4"
+        {/* Quick filters + sort */}
+        <motion.div
+          variants={fadeUp}
+          initial={prefersReducedMotion ? undefined : "hidden"}
+          animate={prefersReducedMotion ? undefined : "visible"}
+          className="flex flex-wrap justify-center gap-2 mt-4"
+        >
+          {!searchQuery && QUICK_FILTERS.map((s) => (
+            <button
+              key={s}
+              onClick={() => setSearchQuery(s)}
+              className="inline-flex items-center gap-1.5 rounded-full bg-sky-400/10 px-3 py-1 text-xs font-semibold text-sky-300 ring-1 ring-sky-500/30 hover:bg-sky-400/20 transition-colors"
+            >
+              {s}
+            </button>
+          ))}
+          <button
+            onClick={() => setSortBy("savings")}
+            className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold ring-1 transition-colors ${sortBy === "savings" ? "bg-emerald-500/20 text-emerald-300 ring-emerald-500/40" : "bg-white/5 text-slate-400 ring-white/10 hover:bg-white/10"}`}
           >
-            {QUICK_FILTERS.map((s) => (
-              <button
-                key={s}
-                onClick={() => setSearchQuery(s)}
-                className="inline-flex items-center gap-1.5 rounded-full bg-sky-400/10 px-3 py-1 text-xs font-semibold text-sky-300 ring-1 ring-sky-500/30 hover:bg-sky-400/20 transition-colors"
-              >
-                {s}
-              </button>
-            ))}
-          </motion.div>
-        )}
+            Économies ↓
+          </button>
+          <button
+            onClick={() => setSortBy("az")}
+            className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold ring-1 transition-colors ${sortBy === "az" ? "bg-emerald-500/20 text-emerald-300 ring-emerald-500/40" : "bg-white/5 text-slate-400 ring-white/10 hover:bg-white/10"}`}
+          >
+            Nom A–Z
+          </button>
+        </motion.div>
       </section>
 
       {/* Results */}
       <section className="max-w-5xl mx-auto px-4 pb-20 w-full flex-1">
         {searchQuery && (
           <p className="text-xs text-slate-500 mb-5">
-            {filteredTools.length} résultat{filteredTools.length !== 1 ? "s" : ""} pour &quot;{searchQuery}&quot;
+            {sorted.length} résultat{sorted.length !== 1 ? "s" : ""} pour &quot;{searchQuery}&quot;
           </p>
         )}
 
-        {filteredTools.length === 0 ? (
+        {sorted.length === 0 ? (
           <div className="text-center py-20">
             <p className="text-slate-400 text-sm mb-3">Aucune alternative trouvée.</p>
             <button
@@ -155,7 +171,7 @@ export default function Home() {
             whileInView={prefersReducedMotion ? undefined : "visible"}
             viewport={{ once: true, margin: "-40px" }}
           >
-            {filteredTools.map((tool) => (
+            {sorted.map((tool) => (
               <motion.div
                 key={tool.id}
                 variants={fadeUp}
@@ -198,12 +214,20 @@ export default function Home() {
                       </p>
                     )}
                   </div>
-                  <Link
-                    href={`/outil/${tool.slug}`}
-                    className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium text-slate-300 backdrop-blur-sm transition-colors hover:border-sky-500/40 hover:text-sky-300"
-                  >
-                    Voir l&apos;outil →
-                  </Link>
+                  <div className="flex items-center gap-2">
+                    <Link
+                      href={`/outil/${tool.slug}`}
+                      className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium text-slate-300 backdrop-blur-sm transition-colors hover:border-sky-500/40 hover:text-sky-300"
+                    >
+                      Voir l&apos;outil →
+                    </Link>
+                    <Link
+                      href={`/comparer?a=${tool.slug}`}
+                      className="text-xs text-slate-500 hover:text-sky-400 transition-colors"
+                    >
+                      Comparer →
+                    </Link>
+                  </div>
                 </div>
               </motion.div>
             ))}
