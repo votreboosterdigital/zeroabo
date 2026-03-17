@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const NAV_LINKS = [
@@ -13,8 +13,25 @@ const NAV_LINKS = [
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    document.addEventListener("keydown", handler);
+    return () => document.removeEventListener("keydown", handler);
+  }, [isOpen]);
+
   return (
     <div className="fixed top-0 inset-x-0 z-50">
+      {/* Skip link */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded-lg focus:bg-emerald-500 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+      >
+        Aller au contenu
+      </a>
+
       {/* Top Bar — desktop only */}
       <div className="hidden md:flex items-center justify-center gap-1 text-sm text-slate-400 bg-[#0d1526] py-2">
         💡 Les utilisateurs ZéroAbo économisent en moyenne 280 €/an —{" "}
@@ -62,7 +79,9 @@ export default function Header() {
           <button
             className="md:hidden text-slate-400 hover:text-slate-50 transition-colors text-xl"
             onClick={() => setIsOpen((v) => !v)}
-            aria-label="Menu"
+            aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
             {isOpen ? "✕" : "☰"}
           </button>
@@ -70,7 +89,10 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="absolute top-full left-0 right-0 bg-[#020817] border-b border-white/5 px-4 py-4 flex flex-col gap-4">
+          <div
+            id="mobile-menu"
+            className="absolute top-full left-0 right-0 bg-[#020817] border-b border-white/5 px-4 py-4 flex flex-col gap-4"
+          >
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}

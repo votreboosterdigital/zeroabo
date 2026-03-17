@@ -1,7 +1,7 @@
 // app/page.tsx
 "use client";
 
-import { useState } from "react";
+import { useState, useDeferredValue } from "react";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { Search } from "lucide-react";
@@ -31,10 +31,11 @@ const QUICK_FILTERS = ["Office", "PDF", "Antivirus", "Vidéo", "Audio", "Illustr
 export default function Home() {
   const prefersReducedMotion = useReducedMotion();
   const [searchQuery, setSearchQuery] = useState("");
+  const deferredQuery = useDeferredValue(searchQuery);
 
   const filteredTools = TOOL_ALTERNATIVES.filter((tool) => {
-    if (!searchQuery) return true;
-    const q = searchQuery.toLowerCase();
+    if (!deferredQuery) return true;
+    const q = deferredQuery.toLowerCase();
     return (
       tool.nom.toLowerCase().includes(q) ||
       tool.originalApp.toLowerCase().includes(q) ||

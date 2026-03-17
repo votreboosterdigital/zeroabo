@@ -36,8 +36,23 @@ export default async function BlogArticlePage({ params }: Props) {
     post.articlesLies.includes(p.slug)
   ).slice(0, 3);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.titre,
+    description: post.description,
+    datePublished: post.date,
+    author: { "@type": "Organization", name: "ZéroAbo", url: "https://zeroabo.fr" },
+    publisher: { "@type": "Organization", name: "ZéroAbo", url: "https://zeroabo.fr" },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://zeroabo.fr/blog/${post.slug}` },
+  };
+
   return (
     <div className="min-h-screen bg-[#020817] text-slate-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <div className="max-w-2xl mx-auto px-4 pt-20 md:pt-[108px] py-16">
 

@@ -26,5 +26,35 @@ export default async function PageOutil({ params }: Props) {
   const outil = TOOL_ALTERNATIVES.find((t: ToolItem) => t.slug === slug);
   if (!outil) return notFound();
 
-  return <ToolDetailClient outil={outil} />;
+  const related = TOOL_ALTERNATIVES
+    .filter((t: ToolItem) => t.slug !== outil.slug && (
+      t.abonnement === outil.abonnement ||
+      t.motsCles.some((m: string) => outil.motsCles.includes(m))
+    ))
+    .slice(0, 3);
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: outil.nom,
+    description: outil.longDescription,
+    applicationCategory: "BusinessApplication",
+    offers: {
+      "@type": "Offer",
+      price: outil.savings,
+      priceCurrency: "EUR",
+      description: outil.prix,
+    },
+    url: outil.lien,
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ToolDetailClient outil={outil} related={related} />
+    </>
+  );
 }

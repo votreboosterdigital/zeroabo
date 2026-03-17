@@ -1,6 +1,7 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist", display: "swap" });
@@ -30,17 +31,27 @@ export const metadata: Metadata = {
     title: "ZéroAbo — Logiciels en achat unique, sans abonnement",
     description:
       "Trouvez les meilleures alternatives en achat unique aux logiciels par abonnement. Payez une fois, utilisez pour toujours.",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "ZéroAbo" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "ZéroAbo — Logiciels en achat unique",
     description:
       "Trouvez les meilleures alternatives en achat unique aux logiciels par abonnement.",
+    images: ["/opengraph-image"],
   },
   // ✅ Vérification Impact
   other: {
     "impact-site-verification": "caff8fda-d50d-4251-ad03-6c20eabcc500",
   },
+};
+
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "ZéroAbo",
+  url: "https://zeroabo.fr",
+  description: "Annuaire francophone d'alternatives logicielles en achat unique, sans abonnement.",
 };
 
 export default function RootLayout({
@@ -50,7 +61,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className={`${geist.variable} ${geistMono.variable} ${inter.variable}`}>
-      <body className="bg-[#020817] text-slate-50">{children}</body>
+      <body className="bg-[#020817] text-slate-50">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

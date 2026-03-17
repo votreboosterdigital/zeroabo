@@ -25,7 +25,7 @@ const container = {
   visible: { transition: { staggerChildren: 0.08 } },
 };
 
-export default function ToolDetailClient({ outil }: { outil: ToolAlternative }) {
+export default function ToolDetailClient({ outil, related = [] }: { outil: ToolAlternative; related?: ToolAlternative[] }) {
   const prefersReducedMotion = useReducedMotion();
 
   return (
@@ -156,6 +156,29 @@ export default function ToolDetailClient({ outil }: { outil: ToolAlternative }) 
           </p>
         </motion.div>
       </main>
+
+      {/* Outils similaires */}
+      {related.length > 0 && (
+        <div className="max-w-3xl mx-auto px-4 pb-10 w-full">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 mb-4">
+            Voir aussi
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {related.map((r) => (
+              <Link
+                key={r.slug}
+                href={`/outil/${r.slug}`}
+                className="group rounded-xl border border-white/10 bg-white/5 px-4 py-3 hover:border-white/20 transition-colors"
+              >
+                <p className="text-sm font-semibold text-slate-200 group-hover:text-white transition-colors">
+                  {r.nom}
+                </p>
+                <p className="text-xs text-slate-500 mt-0.5">Remplace {r.originalApp}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="border-t border-white/5 bg-[#020817]">
