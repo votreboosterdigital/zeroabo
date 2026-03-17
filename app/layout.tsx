@@ -1,9 +1,11 @@
 // app/layout.tsx
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 
-const geist = Geist({ subsets: ["latin"] });
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist", display: "swap" });
+const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono", display: "swap" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://zeroabo.fr"),
@@ -37,8 +39,7 @@ export const metadata: Metadata = {
   },
   // ✅ Vérification Impact
   other: {
-    "impact-site-verification":
-      "caff8fda-d50d-4251-ad03-6c20eabcc500",
+    "impact-site-verification": "caff8fda-d50d-4251-ad03-6c20eabcc500",
   },
 };
 
@@ -48,8 +49,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr">
-      <body className={geist.className}>{children}</body>
+    <html lang="fr" className={`${geist.variable} ${geistMono.variable} ${inter.variable}`}>
+      <body className="bg-[#020817] text-slate-50">{children}</body>
     </html>
   );
 }

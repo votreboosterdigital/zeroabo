@@ -3,10 +3,32 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
+import { Search } from "lucide-react";
 import { TOOL_ALTERNATIVES } from "@/app/data/tools";
 import ToolLogo from "@/app/components/ToolLogo";
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+    },
+  },
+};
+
+const container = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.07 } },
+};
+
+const QUICK_FILTERS = ["Office", "PDF", "Antivirus", "Vidéo", "Audio", "Illustration"];
+
 export default function Home() {
+  const prefersReducedMotion = useReducedMotion();
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredTools = TOOL_ALTERNATIVES.filter((tool) => {
@@ -20,18 +42,22 @@ export default function Home() {
   });
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50 flex flex-col">
+    <div className="min-h-screen bg-[#020817] text-slate-50 flex flex-col">
 
-      {/* Header */}
-      <header className="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-10">
+      {/* Navbar */}
+      <header className="fixed inset-x-0 top-0 z-50 bg-[#020817]/80 backdrop-blur-md border-b border-white/5">
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/">
-            <span className="text-xl font-bold text-emerald-400 tracking-tight hover:text-emerald-300 transition-colors">
-              Zéro<span className="text-slate-50">Abo</span>
+            <span className="text-xl font-bold tracking-tight">
+              <span className="text-sky-400">Zéro</span>
+              <span className="text-slate-50">Abo</span>
             </span>
           </Link>
           <nav className="flex items-center gap-6 text-xs text-slate-400">
-            <Link href="/a-propos" className="hover:text-emerald-400 transition-colors">
+            <Link
+              href="/a-propos"
+              className="hover:text-slate-200 transition-colors"
+            >
               À propos
             </Link>
           </nav>
@@ -39,87 +65,130 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section className="max-w-5xl mx-auto px-4 pt-16 pb-12 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs text-emerald-400 mb-6">
-          🎉 {TOOL_ALTERNATIVES.length} alternatives en achat unique disponibles
+      <section className="relative max-w-5xl mx-auto px-4 pt-36 pb-16 text-center w-full">
+        {/* Gradient blobs */}
+        <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+          <div className="absolute inset-x-[-40%] top-[-10%] h-[360px] bg-gradient-to-br from-sky-500/20 via-emerald-500/10 to-transparent blur-3xl" />
+          <div className="absolute bottom-[-10%] right-[-10%] h-72 w-72 rounded-full bg-emerald-500/10 blur-3xl" />
         </div>
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
+
+        <motion.div
+          variants={fadeUp}
+          initial={prefersReducedMotion ? undefined : "hidden"}
+          animate={prefersReducedMotion ? undefined : "visible"}
+        >
+          <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-300 ring-1 ring-emerald-500/20 mb-6">
+            {TOOL_ALTERNATIVES.length} alternatives en achat unique
+          </span>
+        </motion.div>
+
+        <motion.h1
+          variants={fadeUp}
+          initial={prefersReducedMotion ? undefined : "hidden"}
+          animate={prefersReducedMotion ? undefined : "visible"}
+          className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-5 leading-tight"
+        >
           Arrêtez de payer{" "}
-          <span className="text-emerald-400">chaque mois</span>
+          <span className="bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">
+            chaque mois
+          </span>
           <br />
           pour vos logiciels.
-        </h1>
-        <p className="text-slate-400 text-base md:text-lg max-w-xl mx-auto mb-10">
+        </motion.h1>
+
+        <motion.p
+          variants={fadeUp}
+          initial={prefersReducedMotion ? undefined : "hidden"}
+          animate={prefersReducedMotion ? undefined : "visible"}
+          className="text-lg leading-relaxed text-slate-400 max-w-xl mx-auto mb-10"
+        >
           ZéroAbo recense les meilleures alternatives en{" "}
           <span className="text-slate-200 font-medium">achat unique</span> aux
           logiciels par abonnement. Payez une fois, utilisez pour toujours.
-        </p>
+        </motion.p>
 
-        {/* Barre de recherche */}
-        <div className="relative max-w-xl mx-auto">
-          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm">
-            🔍
-          </span>
+        {/* Search bar */}
+        <motion.div
+          variants={fadeUp}
+          initial={prefersReducedMotion ? undefined : "hidden"}
+          animate={prefersReducedMotion ? undefined : "visible"}
+          className="relative max-w-xl mx-auto"
+        >
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-500" />
           <input
             type="text"
             placeholder="Recherchez un logiciel (ex : Photoshop, Notion, antivirus…)"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full rounded-xl border border-slate-700 bg-slate-900 pl-10 pr-4 py-3.5 text-sm text-slate-50 placeholder:text-slate-500 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 transition"
+            className="w-full rounded-xl border border-white/10 bg-[#0d1526] pl-11 pr-4 py-3.5 text-sm text-slate-50 placeholder:text-slate-500 focus:border-sky-500/50 focus:outline-none focus:ring-1 focus:ring-sky-500/30 transition"
           />
-        </div>
+        </motion.div>
 
-        {/* Suggestions rapides */}
+        {/* Quick filters */}
         {!searchQuery && (
-          <div className="flex flex-wrap justify-center gap-2 mt-4">
-            {["Office", "PDF", "Antivirus", "Vidéo", "Audio", "Illustration"].map((s) => (
+          <motion.div
+            variants={fadeUp}
+            initial={prefersReducedMotion ? undefined : "hidden"}
+            animate={prefersReducedMotion ? undefined : "visible"}
+            className="flex flex-wrap justify-center gap-2 mt-4"
+          >
+            {QUICK_FILTERS.map((s) => (
               <button
                 key={s}
                 onClick={() => setSearchQuery(s)}
-                className="rounded-full border border-slate-700 bg-slate-900 px-3 py-1 text-xs text-slate-400 hover:border-emerald-500 hover:text-emerald-400 transition-colors"
+                className="inline-flex items-center gap-1.5 rounded-full bg-sky-400/10 px-3 py-1 text-xs font-semibold text-sky-300 ring-1 ring-sky-500/30 hover:bg-sky-400/20 transition-colors"
               >
                 {s}
               </button>
             ))}
-          </div>
+          </motion.div>
         )}
       </section>
 
-      {/* Résultats */}
-      <section className="max-w-5xl mx-auto px-4 pb-16 w-full flex-1">
+      {/* Results */}
+      <section className="max-w-5xl mx-auto px-4 pb-20 w-full flex-1">
         {searchQuery && (
-          <p className="text-xs text-slate-500 mb-4">
+          <p className="text-xs text-slate-500 mb-5">
             {filteredTools.length} résultat{filteredTools.length !== 1 ? "s" : ""} pour &quot;{searchQuery}&quot;
           </p>
         )}
 
         {filteredTools.length === 0 ? (
-          <div className="text-center py-16">
-            <p className="text-slate-400 text-sm mb-2">Aucune alternative trouvée.</p>
+          <div className="text-center py-20">
+            <p className="text-slate-400 text-sm mb-3">Aucune alternative trouvée.</p>
             <button
               onClick={() => setSearchQuery("")}
-              className="text-xs text-emerald-400 hover:underline"
+              className="text-xs text-sky-400 hover:underline"
             >
               Voir tous les outils
             </button>
           </div>
         ) : (
-          <div className="grid gap-4 md:grid-cols-2">
+          <motion.div
+            className="grid gap-4 md:grid-cols-2"
+            variants={container}
+            initial={prefersReducedMotion ? undefined : "hidden"}
+            whileInView={prefersReducedMotion ? undefined : "visible"}
+            viewport={{ once: true, margin: "-40px" }}
+          >
             {filteredTools.map((tool) => (
-              <div
+              <motion.div
                 key={tool.id}
-                className="group flex flex-col justify-between rounded-xl border border-slate-800 bg-slate-900/60 p-5 hover:border-emerald-500/50 hover:bg-slate-900 transition-all"
+                variants={fadeUp}
+                className="group flex flex-col justify-between rounded-xl border border-white/8 bg-[#0d1526] p-5 ring-1 ring-white/5 hover:ring-sky-500/20 transition-all"
               >
                 <div>
                   {/* Logo + Nom + badge */}
                   <div className="flex items-center gap-3 mb-3">
-                    <ToolLogo domain={tool.logoDomain} nom={tool.nom} size={36} />
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-sky-500/10">
+                      <ToolLogo domain={tool.logoDomain} nom={tool.nom} size={28} />
+                    </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <h2 className="text-base font-semibold text-slate-50 group-hover:text-emerald-400 transition-colors truncate">
+                        <h2 className="text-base font-semibold text-slate-50 group-hover:text-sky-400 transition-colors truncate">
                           {tool.nom}
                         </h2>
-                        <span className="shrink-0 rounded-full bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 text-[10px] font-semibold text-emerald-400">
+                        <span className="shrink-0 inline-flex items-center rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-semibold text-emerald-300 ring-1 ring-emerald-500/30">
                           Achat unique
                         </span>
                       </div>
@@ -136,33 +205,33 @@ export default function Home() {
                 </div>
 
                 {/* Prix + économies + CTA */}
-                <div className="flex items-center justify-between gap-3 pt-4 border-t border-slate-800">
+                <div className="flex items-center justify-between gap-3 pt-4 border-t border-white/5">
                   <div>
                     <p className="text-sm font-bold text-emerald-400">{tool.prix}</p>
                     {tool.savings > 0 && (
-                      <p className="text-[11px] text-slate-500">
-                        💸 ~{tool.savings} € économisés sur 3 ans
+                      <p className="text-[11px] text-slate-500 mt-0.5">
+                        ~{tool.savings} € économisés sur 3 ans
                       </p>
                     )}
                   </div>
                   <Link
                     href={`/outil/${tool.slug}`}
-                    className="shrink-0 inline-flex items-center gap-1 rounded-lg bg-emerald-500 px-3 py-2 text-xs font-semibold text-slate-950 hover:bg-emerald-400 transition-colors"
+                    className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium text-slate-300 backdrop-blur-sm transition-colors hover:border-sky-500/40 hover:text-sky-300"
                   >
-                    Voir →
+                    Voir l&apos;outil →
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         )}
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-slate-800 bg-slate-950">
+      <footer className="border-t border-white/5 bg-[#020817]">
         <div className="max-w-5xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-          <p>© 2026 ZéroAbo — Tous droits réservés.</p>
-          <div className="flex gap-4">
+          <p>© 2026 <span className="text-sky-400">Zéro</span>Abo — Tous droits réservés.</p>
+          <div className="flex gap-5">
             <Link href="/a-propos" className="hover:text-slate-300 transition-colors">
               À propos
             </Link>
