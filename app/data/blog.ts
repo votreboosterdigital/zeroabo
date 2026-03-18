@@ -671,6 +671,581 @@ Total économisé en remplaçant 2 abonnements par des alternatives en achat uni
     `.trim(),
   },
   {
+    slug: "gimp-vs-photoshop-alternative-gratuite",
+    titre: "GIMP vs Photoshop : la vraie alternative gratuite en 2026",
+    description:
+      "GIMP peut-il vraiment remplacer Photoshop ? Comparatif honnête des fonctionnalités, limites et cas d'usage.",
+    date: "2026-03-18",
+    categorie: "Créateurs",
+    tempsLecture: 5,
+    articlesLies: ["adobe-vs-alternatives-comparatif-couts", "outils-creation-contenu-achat-unique", "davinci-resolve-vs-premiere-pro-montage-sans-abonnement"],
+    contenu: `
+<p>GIMP est souvent cité comme "l'alternative gratuite à Photoshop". Mais est-ce que c'est vraiment vrai en 2026 ? Ou est-ce une simplification qui peut te décevoir si tu fais vraiment de la retouche photo sérieuse ?</p>
+
+<p>Ce comparatif est honnête : GIMP a des forces réelles, et des limites réelles. Voici ce que tu dois savoir avant de désinstaller Photoshop.</p>
+
+<h2>Tableau comparatif des fonctionnalités</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fonctionnalité</th>
+      <th>Photoshop CC</th>
+      <th>GIMP 2.10+</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Calques et masques</td>
+      <td>✅ Complet</td>
+      <td>✅ Complet</td>
+    </tr>
+    <tr>
+      <td>Retouche non-destructive</td>
+      <td>✅ Objets dynamiques</td>
+      <td>⚠️ Limité (GEGL partiel)</td>
+    </tr>
+    <tr>
+      <td>Compatibilité PSD</td>
+      <td>✅ Native</td>
+      <td>✅ Bonne (calques conservés)</td>
+    </tr>
+    <tr>
+      <td>Outil de sélection IA</td>
+      <td>✅ Sélection sujet, Firefly</td>
+      <td>❌ Pas d'IA native</td>
+    </tr>
+    <tr>
+      <td>Mode CMJN natif</td>
+      <td>✅ Oui</td>
+      <td>❌ Non (workaround possible)</td>
+    </tr>
+    <tr>
+      <td>Plugins et scripts</td>
+      <td>✅ Très large écosystème</td>
+      <td>✅ Nombreux plugins Script-Fu</td>
+    </tr>
+    <tr>
+      <td>Interface personnalisable</td>
+      <td>✅ Oui</td>
+      <td>✅ Oui (mais moins intuitive)</td>
+    </tr>
+    <tr>
+      <td>Prix</td>
+      <td>~27 €/mois</td>
+      <td>Gratuit</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Ce que GIMP fait vraiment bien</h2>
+
+<ul>
+  <li><strong>Retouche photo classique</strong> : recadrage, ajustements de couleurs, corrections d'exposition, nettoyage de photo. GIMP gère ça parfaitement.</li>
+  <li><strong>Compatibilité PSD</strong> : tu peux ouvrir des fichiers Photoshop, conserver les calques et les exporter. Les bases sont là.</li>
+  <li><strong>Scripts et automatisation</strong> : Script-Fu (basé sur Scheme) et Python-Fu permettent d'automatiser des tâches répétitives.</li>
+  <li><strong>Communauté massive</strong> : des milliers de tutoriels, de plugins, de ressources gratuites disponibles en ligne.</li>
+</ul>
+
+<h2>Les limites réelles qu'on ne te dit pas</h2>
+
+<ul>
+  <li><strong>Pas de mode CMJN natif</strong> : si tu travailles pour l'impression professionnelle, c'est un vrai problème. Un workaround existe via Scribus, mais c'est peu pratique.</li>
+  <li><strong>Retouche non-destructive incomplète</strong> : les objets dynamiques de Photoshop n'ont pas d'équivalent direct dans GIMP. Tu travailles souvent de façon destructive.</li>
+  <li><strong>Pas d'outils IA</strong> : la sélection automatique de sujet, Generative Fill, Adobe Firefly… tout ça n'existe pas dans GIMP.</li>
+  <li><strong>Interface datée</strong> : l'expérience utilisateur est fonctionnelle mais pas moderne. La courbe d'apprentissage est plus raide que Photoshop pour un débutant.</li>
+</ul>
+
+<h2>La courbe d'apprentissage</h2>
+
+<p>Si tu viens de Photoshop, compte <strong>1 à 3 semaines</strong> pour retrouver tes repères dans GIMP. Les raccourcis sont différents, l'interface est organisée autrement (fenêtres flottantes vs espace de travail unifié). Ce n'est pas insurmontable, mais c'est à prendre en compte.</p>
+
+<p>Si tu débutes from scratch, GIMP et Photoshop ont une courbe d'apprentissage comparable. Dans ce cas, la gratuité de GIMP est un avantage évident.</p>
+
+<h2>Qui devrait utiliser GIMP ?</h2>
+
+<ul>
+  <li>Les photographes amateurs qui font de la retouche basique</li>
+  <li>Les créateurs de contenu web qui n'ont pas besoin du CMJN</li>
+  <li>Les développeurs qui automatisent des traitements d'images</li>
+  <li>Tous ceux qui veulent sortir des abonnements Adobe sans avoir besoin des fonctions IA</li>
+</ul>
+
+<h2>Qui devrait rester sur Photoshop (ou aller vers Affinity Photo) ?</h2>
+
+<ul>
+  <li>Les graphistes print qui ont besoin du mode CMJN</li>
+  <li>Les retoucheurs pros qui utilisent les outils IA d'Adobe</li>
+  <li>Ceux qui collaborent avec des studios qui travaillent en PSD avec des fonctions avancées</li>
+</ul>
+
+<h2>Le verdict honnête</h2>
+
+<p>GIMP est une vraie alternative pour 60 à 70 % des usages Photoshop. Mais si tu as besoin du CMJN, des outils IA ou d'une expérience non-destructive complète, <strong>Affinity Photo 2</strong> (gratuit depuis 2025) est probablement un meilleur choix que GIMP — avec une interface bien plus proche de Photoshop.</p>
+
+<p><a href="/calculateur">Calcule ce que tu économises en quittant Adobe →</a></p>
+    `.trim(),
+  },
+  {
+    slug: "davinci-resolve-gratuit-guide-debutant",
+    titre: "DaVinci Resolve gratuit : guide complet pour débutants 2026",
+    description:
+      "DaVinci Resolve Free est-il suffisant ? Tout ce que vous pouvez faire sans payer avec le logiciel de montage vidéo professionnel.",
+    date: "2026-03-18",
+    categorie: "Créateurs",
+    tempsLecture: 6,
+    articlesLies: ["davinci-resolve-vs-premiere-pro-montage-sans-abonnement", "outils-creation-contenu-achat-unique", "adobe-vs-alternatives-comparatif-couts"],
+    contenu: `
+<p>DaVinci Resolve est le logiciel de montage vidéo utilisé sur les plus grandes productions mondiales — et sa version gratuite est disponible pour tout le monde. Mais que comprend-elle exactement ? Et où sont les limites ?</p>
+
+<p>Ce guide est fait pour les débutants qui veulent commencer avec DaVinci Resolve sans débourser le moindre euro.</p>
+
+<h2>Ce qui est inclus dans la version gratuite</h2>
+
+<p>La version Free de DaVinci Resolve n'est pas une version bridée symboliquement. Elle est véritablement complète pour la majorité des usages :</p>
+
+<ul>
+  <li><strong>Montage vidéo complet</strong> : timeline multicouches, découpe, transitions, effets de base</li>
+  <li><strong>Étalonnage couleur professionnel</strong> : roues colorimètriques, courbes, LUTs, nœuds de correction — c'est le point fort absolu de DaVinci</li>
+  <li><strong>Fusion</strong> : module de compositing et d'effets visuels intégré</li>
+  <li><strong>Fairlight</strong> : éditeur audio complet avec mixage multipiste, égaliseurs, effets audio</li>
+  <li><strong>Cut</strong> : interface de montage rapide optimisée pour les débutants</li>
+  <li><strong>Gestion des médias</strong> : bibliothèque organisée, proxies, gestion des formats</li>
+  <li><strong>Export multi-format</strong> : MP4, MOV, MKV et tous les formats courants</li>
+</ul>
+
+<h2>Ce que la version Studio (payante) ajoute</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fonctionnalité</th>
+      <th>Version gratuite</th>
+      <th>Studio (~380 €)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Rendu GPU multi-carte</td>
+      <td>❌</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Effets visuels avancés (DaVinci Neural Engine)</td>
+      <td>❌</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Collaboration multi-utilisateurs</td>
+      <td>❌</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Plugins VST audio</td>
+      <td>❌</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Résolution max export</td>
+      <td>Ultra HD 4K</td>
+      <td>Illimitée (8K, 12K…)</td>
+    </tr>
+    <tr>
+      <td>Nombre de projets</td>
+      <td>Illimité</td>
+      <td>Illimité</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Pour quel type de créateur la version gratuite suffit ?</h2>
+
+<ul>
+  <li><strong>YouTubeurs et créateurs de contenu</strong> : la version Free couvre tous les besoins de montage et d'étalonnage pour du contenu web.</li>
+  <li><strong>Créateurs de Reels et Shorts</strong> : l'interface Cut est taillée pour le montage rapide de contenu court.</li>
+  <li><strong>Freelances vidéo</strong> : pour des projets clients standards (institutionnel, événementiel, pub courte), la version gratuite tient la route.</li>
+  <li><strong>Apprenants</strong> : commencer sur la version gratuite, c'est apprendre sur le vrai logiciel utilisé en post-production professionnelle.</li>
+</ul>
+
+<h2>Prendre en main DaVinci Resolve : par où commencer ?</h2>
+
+<p>L'interface de DaVinci est divisée en 6 modules accessibles via des onglets en bas de l'écran :</p>
+
+<ul>
+  <li><strong>Media</strong> : import et organisation des fichiers sources</li>
+  <li><strong>Cut</strong> : montage rapide (idéal pour débuter)</li>
+  <li><strong>Edit</strong> : montage avancé avec timeline classique</li>
+  <li><strong>Fusion</strong> : effets visuels et compositing</li>
+  <li><strong>Color</strong> : étalonnage couleur</li>
+  <li><strong>Fairlight</strong> : audio</li>
+  <li><strong>Deliver</strong> : export final</li>
+</ul>
+
+<p>Pour débuter, commence par le module <strong>Cut</strong>. Il est conçu pour être intuitif et rapide — tu peux avoir une première vidéo exportée en moins d'une heure.</p>
+
+<h2>Ressources pour apprendre gratuitement</h2>
+
+<ul>
+  <li>La chaîne YouTube officielle de Blackmagic Design propose des tutoriels gratuits complets</li>
+  <li>Casey Faris, Learn Color Grading, Darren Mostyn — des créateurs YouTube dédiés à DaVinci</li>
+  <li>Le manuel officiel DaVinci Resolve est disponible gratuitement sur le site Blackmagic</li>
+</ul>
+
+<h2>Conclusion</h2>
+
+<p>DaVinci Resolve Free est l'un des rares cas où "gratuit" ne signifie pas "limité de façon frustrante". Pour 95 % des créateurs de contenu, la version gratuite est largement suffisante. Studio vaut l'investissement uniquement si tu as des besoins spécifiques : production à très haute résolution, travail en équipe, ou accélération GPU avancée.</p>
+
+<p><a href="/outil/davinci-resolve">Voir la fiche DaVinci Resolve →</a></p>
+    `.trim(),
+  },
+  {
+    slug: "librecalc-vs-excel-comparatif",
+    titre: "LibreOffice Calc vs Excel : peut-on vraiment s'en passer ?",
+    description:
+      "Comparatif complet LibreOffice Calc vs Microsoft Excel : compatibilité, fonctions, macros et verdict final.",
+    date: "2026-03-18",
+    categorie: "Entrepreneurs",
+    tempsLecture: 5,
+    articlesLies: ["remplacer-microsoft-365-entreprise-sans-abonnement", "logiciels-saas-alternatives-achat-unique-pme", "5-logiciels-remplacer-ce-weekend"],
+    contenu: `
+<p>Microsoft Excel est souvent perçu comme irremplaçable. Pourtant, LibreOffice Calc existe depuis plus de 20 ans, est entièrement gratuit et open-source, et ouvre les fichiers .xlsx sans broncher. Mais peut-on vraiment l'utiliser à la place d'Excel en 2026 ?</p>
+
+<p>Ce comparatif est honnête : il y a des cas où Calc suffit largement, et des cas où Excel reste indispensable.</p>
+
+<h2>Compatibilité des formats</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Format</th>
+      <th>LibreOffice Calc</th>
+      <th>Microsoft Excel</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ouverture .xlsx</td>
+      <td>✅ Bonne</td>
+      <td>✅ Native</td>
+    </tr>
+    <tr>
+      <td>Enregistrement .xlsx</td>
+      <td>✅ Compatible</td>
+      <td>✅ Native</td>
+    </tr>
+    <tr>
+      <td>Mise en forme complexe</td>
+      <td>⚠️ Quelques écarts</td>
+      <td>✅ Parfaite</td>
+    </tr>
+    <tr>
+      <td>Formules standard (SOMME, SI, RECHERCHEV…)</td>
+      <td>✅ Complètes</td>
+      <td>✅ Complètes</td>
+    </tr>
+    <tr>
+      <td>Fonctions récentes Excel (XLOOKUP, LAMBDA…)</td>
+      <td>⚠️ Partiellement</td>
+      <td>✅ Complètes</td>
+    </tr>
+    <tr>
+      <td>Tableaux croisés dynamiques</td>
+      <td>✅ Fonctionnel</td>
+      <td>✅ Plus avancé</td>
+    </tr>
+    <tr>
+      <td>Power Query / Power Pivot</td>
+      <td>❌ Non disponible</td>
+      <td>✅ Intégré</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Les fonctions avancées</h2>
+
+<p>LibreOffice Calc couvre les 95 % des formules qu'un utilisateur standard utilise : toutes les formules mathématiques, statistiques, de texte, de date, de recherche classiques (VLOOKUP/RECHERCHEV, INDEX/MATCH). Les fonctions plus récentes d'Excel comme XLOOKUP, LAMBDA, LET sont partiellement présentes dans les versions récentes de Calc — mais pas toutes.</p>
+
+<p>Si tes fichiers utilisent intensivement des formules Excel modernes, tu risques des erreurs à l'ouverture dans Calc.</p>
+
+<h2>Macros : VBA vs Basic</h2>
+
+<p>C'est le point de friction le plus courant pour les utilisateurs avancés :</p>
+
+<ul>
+  <li><strong>Excel</strong> utilise VBA (Visual Basic for Applications) pour les macros. C'est le standard dans la plupart des entreprises.</li>
+  <li><strong>LibreOffice Calc</strong> utilise LibreOffice Basic — une syntaxe proche du VBA mais pas identique. Les macros VBA complexes ne s'exécutent pas directement dans Calc.</li>
+</ul>
+
+<p>Si tu as des fichiers .xlsm avec des macros complexes, la migration vers Calc nécessite une réécriture partielle. Pour les macros simples (boucles, mises en forme automatiques), la conversion est souvent rapide. Pour les macros qui interagissent avec d'autres applications Office, c'est plus complexe.</p>
+
+<h2>Ce que LibreOffice Calc fait mieux qu'Excel</h2>
+
+<ul>
+  <li><strong>Format natif ODS</strong> : le format Open Document Spreadsheet est un standard ouvert, pérenne, non lié à un éditeur</li>
+  <li><strong>Export PDF intégré</strong> : sans passer par un outil tiers</li>
+  <li><strong>Gratuité et liberté</strong> : pas d'abonnement, pas de compte Microsoft requis, utilisable hors ligne sans activation</li>
+  <li><strong>Confidentialité</strong> : tes données ne sont pas synchronisées vers le cloud Microsoft par défaut</li>
+</ul>
+
+<h2>Verdict par profil d'usage</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Profil</th>
+      <th>LibreOffice Calc suffit ?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Usage personnel (budget, planning, listes)</td>
+      <td>✅ Largement</td>
+    </tr>
+    <tr>
+      <td>PME avec fichiers .xlsx standards</td>
+      <td>✅ En général oui</td>
+    </tr>
+    <tr>
+      <td>Utilisateurs de macros VBA complexes</td>
+      <td>⚠️ Migration à prévoir</td>
+    </tr>
+    <tr>
+      <td>Utilisateurs de Power Query / Power BI</td>
+      <td>❌ Non adapté</td>
+    </tr>
+    <tr>
+      <td>Collaboration en temps réel (cloud)</td>
+      <td>❌ Passer à OnlyOffice ou Google Sheets</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Conclusion</h2>
+
+<p>LibreOffice Calc est une alternative sérieuse pour la grande majorité des utilisateurs Excel. Si tu utilises Excel pour des tableaux, des calculs, des formules standard et des graphiques — Calc te coûtera 0 € et fera le même travail. Si tu dépends de macros VBA avancées ou de Power Query, la migration sera plus complexe et un audit préalable s'impose.</p>
+
+<p><a href="/calculateur">Calcule ce que tu économises en quittant Microsoft 365 →</a></p>
+    `.trim(),
+  },
+  {
+    slug: "bitwarden-gestionnaire-mots-de-passe-gratuit",
+    titre: "Bitwarden : le meilleur gestionnaire de mots de passe gratuit (et open source)",
+    description:
+      "Pourquoi Bitwarden est la meilleure alternative gratuite à 1Password et LastPass. Sécurité, fonctionnalités et configuration.",
+    date: "2026-03-18",
+    categorie: "Outils",
+    tempsLecture: 4,
+    articlesLies: ["antivirus-sans-abonnement-comparatif", "5-logiciels-remplacer-ce-weekend", "abonnements-invisibles-logiciels-comment-les-reperer"],
+    contenu: `
+<p>1Password coûte ~36 €/an. LastPass a connu plusieurs fuites de données majeures. Dashlane monte à 60 €/an. Et si la meilleure option était gratuite, open-source, et auditée publiquement ?</p>
+
+<p>C'est ce qu'est Bitwarden — et voici pourquoi c'est le choix que je recommande à tout le monde en 2026.</p>
+
+<h2>Qu'est-ce que Bitwarden ?</h2>
+
+<p>Bitwarden est un gestionnaire de mots de passe open-source. Son code est public, auditable, et régulièrement vérifié par des chercheurs en sécurité indépendants. Il est disponible sur tous les appareils (Windows, Mac, Linux, iOS, Android) et dans tous les navigateurs (Chrome, Firefox, Safari, Edge).</p>
+
+<h2>Comparatif Bitwarden vs 1Password vs LastPass</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Critère</th>
+      <th>Bitwarden Free</th>
+      <th>1Password</th>
+      <th>LastPass Free</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Prix</td>
+      <td>Gratuit</td>
+      <td>~36 €/an</td>
+      <td>Gratuit (limité)</td>
+    </tr>
+    <tr>
+      <td>Open source</td>
+      <td>✅ Oui</td>
+      <td>❌ Non</td>
+      <td>❌ Non</td>
+    </tr>
+    <tr>
+      <td>Audit de sécurité indépendant</td>
+      <td>✅ Régulier</td>
+      <td>✅ Oui</td>
+      <td>⚠️ Failles connues</td>
+    </tr>
+    <tr>
+      <td>Synchronisation multi-appareils</td>
+      <td>✅ Illimitée (gratuit)</td>
+      <td>✅ Oui</td>
+      <td>⚠️ Un type d'appareil (gratuit)</td>
+    </tr>
+    <tr>
+      <td>Partage de mots de passe</td>
+      <td>✅ Limité (gratuit) / illimité (Premium)</td>
+      <td>✅ Oui</td>
+      <td>⚠️ Limité</td>
+    </tr>
+    <tr>
+      <td>Authentification 2FA (TOTP)</td>
+      <td>✅ Premium (~10 €/an)</td>
+      <td>✅ Inclus</td>
+      <td>✅ Inclus</td>
+    </tr>
+    <tr>
+      <td>Auto-hébergement possible</td>
+      <td>✅ Oui</td>
+      <td>❌ Non</td>
+      <td>❌ Non</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>La sécurité de Bitwarden</h2>
+
+<p>Bitwarden utilise un chiffrement AES-256 bits côté client — ce qui signifie que tes mots de passe sont chiffrés sur ton appareil avant d'être envoyés vers les serveurs. Bitwarden lui-même ne peut pas lire tes données. C'est le même standard utilisé par 1Password.</p>
+
+<p>En 2022, Bitwarden a subi un audit de sécurité indépendant complet par Cure53. Les résultats sont publics. Aucune vulnérabilité critique n'a été trouvée. C'est une transparence que les solutions propriétaires n'offrent pas.</p>
+
+<h2>Ce que la version gratuite couvre</h2>
+
+<ul>
+  <li>Mots de passe illimités</li>
+  <li>Synchronisation sur tous tes appareils (illimitée)</li>
+  <li>Extension navigateur (tous les navigateurs majeurs)</li>
+  <li>Applications mobile et desktop</li>
+  <li>Notes sécurisées, informations de carte bancaire</li>
+  <li>Partage avec 1 autre utilisateur (Bitwarden Send)</li>
+</ul>
+
+<h2>Quand passer à Bitwarden Premium (~10 €/an) ?</h2>
+
+<p>Le plan Premium débloque le générateur TOTP intégré (pour l'authentification à deux facteurs), les rapports de sécurité avancés et le partage élargi. À 10 €/an, c'est le gestionnaire de mots de passe le plus compétitif du marché — même en version payante.</p>
+
+<h2>Comment commencer avec Bitwarden</h2>
+
+<ol>
+  <li>Va sur bitwarden.com et crée un compte gratuit</li>
+  <li>Installe l'extension dans ton navigateur principal</li>
+  <li>Importe tes mots de passe depuis Chrome, Firefox, ou ton gestionnaire actuel (LastPass, 1Password — Bitwarden supporte l'import depuis tous les formats courants)</li>
+  <li>Active l'authentification à deux facteurs sur ton compte Bitwarden</li>
+  <li>Installe l'application mobile sur ton téléphone</li>
+</ol>
+
+<p>La migration depuis 1Password ou LastPass prend généralement moins de 30 minutes.</p>
+
+<p><a href="/calculateur">Calcule ce que tu économises en quittant tes abonnements logiciels →</a></p>
+    `.trim(),
+  },
+  {
+    slug: "obsidian-notion-sans-abonnement",
+    titre: "Obsidian vs Notion : pourquoi j'ai arrêté de payer pour mes notes",
+    description:
+      "Obsidian est-il une vraie alternative à Notion ? Comparatif honnête sur la productivité, la synchronisation et le prix.",
+    date: "2026-03-18",
+    categorie: "Vie perso",
+    tempsLecture: 4,
+    articlesLies: ["alternatives-notion-sans-abonnement", "audit-abonnements-logiciels-methode-simple", "abonnements-invisibles-logiciels-comment-les-reperer"],
+    contenu: `
+<p>J'ai utilisé Notion pendant 2 ans. Des bases de données bien rangées, une belle interface, un système de notes complet. Et puis j'ai essayé Obsidian. Après 6 mois, je n'ai pas rouvert Notion.</p>
+
+<p>Voici un comparatif honnête — pas pour te vendre Obsidian à tout prix, mais pour t'aider à choisir selon ton usage réel.</p>
+
+<h2>La philosophie de chaque outil</h2>
+
+<p><strong>Notion</strong> est une application cloud-first. Tes notes sont stockées sur les serveurs de Notion. L'outil est conçu pour la collaboration, les bases de données relationnelles, et les espaces de travail d'équipe. L'interface est belle et l'expérience utilisateur est soignée.</p>
+
+<p><strong>Obsidian</strong> est une application local-first. Tes notes sont des fichiers Markdown stockés sur ton disque dur. Tu les possèdes. L'outil est conçu pour la pensée connectée — chaque note peut être liée à d'autres, et un graphe visuel représente tes connexions de pensée.</p>
+
+<h2>Comparatif pratique</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Critère</th>
+      <th>Notion</th>
+      <th>Obsidian</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Prix</td>
+      <td>Gratuit (limité) / ~96 €/an (Plus)</td>
+      <td>Gratuit (usage perso)</td>
+    </tr>
+    <tr>
+      <td>Stockage des données</td>
+      <td>Cloud (serveurs Notion)</td>
+      <td>Local (ton disque)</td>
+    </tr>
+    <tr>
+      <td>Vitesse d'ouverture</td>
+      <td>⚠️ Dépend de la connexion</td>
+      <td>✅ Instantanée</td>
+    </tr>
+    <tr>
+      <td>Collaboration temps réel</td>
+      <td>✅ Excellent</td>
+      <td>❌ Non natif</td>
+    </tr>
+    <tr>
+      <td>Bases de données relationnelles</td>
+      <td>✅ Puissantes</td>
+      <td>⚠️ Via plugins Dataview</td>
+    </tr>
+    <tr>
+      <td>Plugins et extensions</td>
+      <td>⚠️ Limité</td>
+      <td>✅ Écosystème immense (1000+)</td>
+    </tr>
+    <tr>
+      <td>Fonctionnement hors ligne</td>
+      <td>⚠️ Partiel</td>
+      <td>✅ Total</td>
+    </tr>
+    <tr>
+      <td>Pérennité des données</td>
+      <td>⚠️ Dépend de Notion Inc.</td>
+      <td>✅ Fichiers Markdown universels</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Les vrais avantages d'Obsidian</h2>
+
+<ul>
+  <li><strong>Vitesse</strong> : Obsidian s'ouvre en une seconde. Pas de chargement réseau, pas de spinner. Quand tu veux noter quelque chose vite, c'est critique.</li>
+  <li><strong>Propriété de tes données</strong> : tes notes sont des fichiers .md sur ton ordinateur. Tu peux les lire dans n'importe quel éditeur de texte, les exporter, les migrer. Elles ne disparaissent pas si Obsidian ferme.</li>
+  <li><strong>Plugins</strong> : l'écosystème Obsidian compte plus de 1 000 plugins communautaires. Calendrier, gestion de tâches, flashcards (Spaced Repetition), canvas visuel, Dataview pour des vues de bases de données…</li>
+  <li><strong>Graphe de connaissances</strong> : voir visuellement comment tes notes sont connectées est une façon différente de penser — utile pour les chercheurs, écrivains, étudiants.</li>
+</ul>
+
+<h2>Les limites d'Obsidian</h2>
+
+<ul>
+  <li><strong>Pas de collaboration native</strong> : si tu travailles en équipe, Obsidian n'est pas fait pour ça. Notion reste supérieur pour le travail collaboratif.</li>
+  <li><strong>Synchronisation payante</strong> : Obsidian Sync coûte ~48 €/an pour synchroniser entre appareils. Alternative gratuite : utiliser iCloud, Dropbox ou un repo Git.</li>
+  <li><strong>Courbe d'apprentissage</strong> : la puissance d'Obsidian vient avec une configuration initiale plus complexe que Notion.</li>
+  <li><strong>Pas de bases de données visuelles</strong> : les tables Notion sont plus intuitives que les requêtes Dataview d'Obsidian pour les non-techniciens.</li>
+</ul>
+
+<h2>La migration de Notion vers Obsidian</h2>
+
+<p>Notion permet d'exporter toutes tes pages en Markdown. Obsidian importe les fichiers Markdown nativement. La migration technique prend quelques minutes — mais la réorganisation de ton système de notes peut prendre quelques heures selon le volume.</p>
+
+<h2>Pour qui choisir quoi ?</h2>
+
+<ul>
+  <li><strong>Obsidian</strong> : tu prends des notes pour toi, tu veux vitesse et propriété de tes données, tu n'as pas besoin de collaboration</li>
+  <li><strong>Notion</strong> : tu travailles en équipe, tu as besoin de bases de données collaboratives, l'expérience utilisateur prête-à-l'emploi est importante</li>
+  <li><strong>Notion gratuit</strong> : si tu utilises Notion seul pour des notes simples, le plan gratuit couvre souvent les besoins — pas besoin de payer le Plus</li>
+</ul>
+
+<p><a href="/calculateur">Calcule ce que tu économises en optimisant tes abonnements →</a></p>
+    `.trim(),
+  },
+  {
     slug: "5-logiciels-remplacer-ce-weekend",
     titre: "5 logiciels que tu peux remplacer ce week-end (et arrêter de payer dès le mois prochain)",
     description:

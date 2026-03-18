@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/app/components/Header";
 import { BLOG_POSTS } from "@/app/data/blog";
 import BlogList from "./BlogList";
+import EmailCapture from "@/app/components/EmailCapture";
 
 export const metadata: Metadata = {
   title: "Blog — ZéroAbo",
@@ -22,6 +23,9 @@ export default function BlogPage() {
           Guides, comparatifs et conseils pour sortir des abonnements.
         </p>
         <BlogList posts={BLOG_POSTS} />
+        <div className="mt-16">
+          <EmailCapture />
+        </div>
       </div>
     </div>
   );

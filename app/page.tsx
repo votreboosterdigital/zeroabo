@@ -8,6 +8,7 @@ import { Search } from "lucide-react";
 import { TOOL_ALTERNATIVES } from "@/app/data/tools";
 import ToolLogo from "@/app/components/ToolLogo";
 import Header from "@/app/components/Header";
+import EmailCapture from "@/app/components/EmailCapture";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -233,6 +234,11 @@ export default function Home() {
             ))}
           </motion.div>
         )}
+      </section>
+
+      {/* Email capture */}
+      <section className="max-w-5xl mx-auto px-4 pb-16 w-full">
+        <EmailCapture />
       </section>
 
       {/* Footer */}
