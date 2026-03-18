@@ -15,6 +15,7 @@ export type ToolAlternative = {
   lien: string;
   affiliateUrl: string;
   logoDomain: string;
+  categorie: string;
 };
 
 export const TOOL_ALTERNATIVES: ToolAlternative[] = [
@@ -40,6 +41,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.onlyoffice.com",
     affiliateUrl: "https://www.onlyoffice.com/?via=Zeroabo",
     logoDomain: "onlyoffice.com",
+    categorie: "bureautique",
   },
   {
     id: "pdf-xchange-editor",
@@ -64,6 +66,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     affiliateUrl:
       "https://www.tracker-software.com/product/pdf-xchange-editor?ref=zeroabo",
     logoDomain: "tracker-software.com",
+    categorie: "bureautique",
   },
   {
     id: "movavi-video-suite",
@@ -87,6 +90,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.movavi.com/suite/",
     affiliateUrl: "https://www.movavi.com/suite/?ref=zeroabo",
     logoDomain: "movavi.com",
+    categorie: "video",
   },
   {
     id: "bitdefender-premium-security",
@@ -110,6 +114,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.bitdefender.com",
     affiliateUrl: "https://www.bitdefender.com/?affid=zeroabo",
     logoDomain: "bitdefender.com",
+    categorie: "securite",
   },
   {
     id: "xmind-pro",
@@ -133,6 +138,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://xmind.app",
     affiliateUrl: "https://xmind.app/?ref=zeroabo",
     logoDomain: "xmind.app",
+    categorie: "productivite",
   },
   {
     id: "affinity-publisher-2",
@@ -156,6 +162,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://affinity.serif.com/publisher",
     affiliateUrl: "https://affinity.serif.com/publisher",
     logoDomain: "affinity.serif.com",
+    categorie: "design",
   },
   {
     id: "clip-studio-paint",
@@ -179,6 +186,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.clipstudio.net",
     affiliateUrl: "https://www.clipstudio.net/?ref=zeroabo",
     logoDomain: "clipstudio.net",
+    categorie: "design",
   },
   {
     id: "vmix",
@@ -202,6 +210,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.vmix.com",
     affiliateUrl: "https://www.vmix.com/?ref=zeroabo",
     logoDomain: "vmix.com",
+    categorie: "video",
   },
   {
     id: "focusplan",
@@ -225,6 +234,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://focusplan.app",
     affiliateUrl: "https://focusplan.app/?ref=zeroabo",
     logoDomain: "focusplan.app",
+    categorie: "productivite",
   },
   {
     id: "sublime-text",
@@ -248,6 +258,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.sublimetext.com",
     affiliateUrl: "https://www.sublimetext.com",
     logoDomain: "sublimetext.com",
+    categorie: "utilitaires",
   },
   {
     id: "malwarebytes-lifetime",
@@ -271,6 +282,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.malwarebytes.com",
     affiliateUrl: "https://www.malwarebytes.com/?ref=zeroabo",
     logoDomain: "malwarebytes.com",
+    categorie: "securite",
   },
   {
     id: "magix-sound-forge",
@@ -294,6 +306,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.magix.com/sound-forge-audio-studio",
     affiliateUrl: "https://www.magix.com/sound-forge-audio-studio/?ref=zeroabo",
     logoDomain: "magix.com",
+    categorie: "audio",
   },
   {
     id: "techsmith-snagit",
@@ -317,6 +330,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.techsmith.com/snagit",
     affiliateUrl: "https://www.techsmith.com/snagit/?ref=zeroabo",
     logoDomain: "techsmith.com",
+    categorie: "utilitaires",
   },
   {
     id: "aiseesoft-screen-recorder",
@@ -340,6 +354,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.aiseesoft.com/screen-recorder/",
     affiliateUrl: "https://www.aiseesoft.com/screen-recorder/?ref=zeroabo",
     logoDomain: "aiseesoft.com",
+    categorie: "utilitaires",
   },
   {
     id: "aomei-backupper",
@@ -361,6 +376,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.aomeitech.com/aomei-backupper.html",
     affiliateUrl: "https://www.tkqlhce.com/click-101699471-17168804",
     logoDomain: "aomei.com",
+    categorie: "utilitaires",
   },
   {
     id: "kaspersky-standard",
@@ -382,6 +398,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.kaspersky.fr",
     affiliateUrl: "https://www.awin1.com/cread.php?s=3125435&v=19485&q=435785&r=2795782",
     logoDomain: "kaspersky.com",
+    categorie: "securite",
   },
   {
     id: "affinity-photo-2",
@@ -403,6 +420,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://affinity.serif.com/fr/photo/",
     affiliateUrl: "https://affinity.serif.com/fr/photo/",
     logoDomain: "affinity.serif.com",
+    categorie: "design",
   },
   {
     id: "davinci-resolve",
@@ -425,6 +443,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.blackmagicdesign.com/fr/products/davinciresolve",
     affiliateUrl: "https://www.blackmagicdesign.com/fr/products/davinciresolve",
     logoDomain: "blackmagicdesign.com",
+    categorie: "video",
   },
   {
     id: "libreoffice",
@@ -447,6 +466,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://fr.libreoffice.org/",
     affiliateUrl: "https://fr.libreoffice.org/",
     logoDomain: "libreoffice.org",
+    categorie: "bureautique",
   },
   {
     id: "bitwarden",
@@ -469,6 +489,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://bitwarden.com/",
     affiliateUrl: "https://bitwarden.com/",
     logoDomain: "bitwarden.com",
+    categorie: "securite",
   },
   {
     id: "vlc",
@@ -491,6 +512,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.videolan.org/vlc/",
     affiliateUrl: "https://www.videolan.org/vlc/",
     logoDomain: "videolan.org",
+    categorie: "utilitaires",
   },
   {
     id: "kdenlive",
@@ -513,6 +535,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://kdenlive.org/fr/",
     affiliateUrl: "https://kdenlive.org/fr/",
     logoDomain: "kdenlive.org",
+    categorie: "video",
   },
   {
     id: "gimp",
@@ -535,6 +558,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.gimp.org/",
     affiliateUrl: "https://www.gimp.org/",
     logoDomain: "gimp.org",
+    categorie: "design",
   },
   {
     id: "inkscape",
@@ -557,6 +581,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://inkscape.org/fr/",
     affiliateUrl: "https://inkscape.org/fr/",
     logoDomain: "inkscape.org",
+    categorie: "design",
   },
   {
     id: "audacity",
@@ -579,6 +604,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.audacityteam.org/",
     affiliateUrl: "https://www.audacityteam.org/",
     logoDomain: "audacityteam.org",
+    categorie: "audio",
   },
   {
     id: "obsidian",
@@ -601,6 +627,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://obsidian.md/",
     affiliateUrl: "https://obsidian.md/",
     logoDomain: "obsidian.md",
+    categorie: "productivite",
   },
   {
     id: "handbrake",
@@ -623,6 +650,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://handbrake.fr/",
     affiliateUrl: "https://handbrake.fr/",
     logoDomain: "handbrake.fr",
+    categorie: "video",
   },
   {
     id: "krita",
@@ -645,6 +673,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://krita.org/fr/",
     affiliateUrl: "https://krita.org/fr/",
     logoDomain: "krita.org",
+    categorie: "design",
   },
   {
     id: "blender",
@@ -667,6 +696,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.blender.org/",
     affiliateUrl: "https://www.blender.org/",
     logoDomain: "blender.org",
+    categorie: "design",
   },
   {
     id: "darktable",
@@ -689,6 +719,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.darktable.org/",
     affiliateUrl: "https://www.darktable.org/",
     logoDomain: "darktable.org",
+    categorie: "design",
   },
   {
     id: "scribus",
@@ -711,6 +742,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.scribus.net/",
     affiliateUrl: "https://www.scribus.net/",
     logoDomain: "scribus.net",
+    categorie: "design",
   },
   {
     id: "joplin",
@@ -733,6 +765,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://joplinapp.org/",
     affiliateUrl: "https://joplinapp.org/",
     logoDomain: "joplinapp.org",
+    categorie: "productivite",
   },
   {
     id: "virtualbox",
@@ -755,6 +788,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.virtualbox.org/",
     affiliateUrl: "https://www.virtualbox.org/",
     logoDomain: "virtualbox.org",
+    categorie: "utilitaires",
   },
   {
     id: "thunderbird",
@@ -777,6 +811,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.thunderbird.net/fr/",
     affiliateUrl: "https://www.thunderbird.net/fr/",
     logoDomain: "thunderbird.net",
+    categorie: "utilitaires",
   },
   {
     id: "7-zip",
@@ -799,6 +834,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.7-zip.org/",
     affiliateUrl: "https://www.7-zip.org/",
     logoDomain: "7-zip.org",
+    categorie: "utilitaires",
   },
   {
     id: "musescore",
@@ -821,6 +857,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://musescore.org/fr",
     affiliateUrl: "https://musescore.org/fr",
     logoDomain: "musescore.org",
+    categorie: "audio",
   },
   {
     id: "shotcut",
@@ -843,6 +880,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://www.shotcut.org/",
     affiliateUrl: "https://www.shotcut.org/",
     logoDomain: "shotcut.org",
+    categorie: "video",
   },
   {
     id: "rawtherapee",
@@ -865,6 +903,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://rawtherapee.com/",
     affiliateUrl: "https://rawtherapee.com/",
     logoDomain: "rawtherapee.com",
+    categorie: "design",
   },
   {
     id: "natron",
@@ -887,6 +926,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://natrongithub.github.io/",
     affiliateUrl: "https://natrongithub.github.io/",
     logoDomain: "natrongithub.github.io",
+    categorie: "video",
   },
   {
     id: "calibre",
@@ -909,5 +949,6 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     lien: "https://calibre-ebook.com/",
     affiliateUrl: "https://calibre-ebook.com/",
     logoDomain: "calibre-ebook.com",
+    categorie: "utilitaires",
   },
 ];

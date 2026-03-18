@@ -2,6 +2,7 @@
 import type { MetadataRoute } from "next";
 import { TOOL_ALTERNATIVES } from "@/app/data/tools";
 import { BLOG_POSTS } from "@/app/data/blog";
+import { CATEGORIES } from "@/app/data/categories";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const tools = TOOL_ALTERNATIVES.map((tool) => ({
@@ -45,5 +46,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...tools,
     ...blogPosts,
+    ...CATEGORIES.map((cat) => ({
+      url: `https://zeroabo.fr/outils/${cat.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+    {
+      url: "https://zeroabo.fr/faq",
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
   ];
 }
