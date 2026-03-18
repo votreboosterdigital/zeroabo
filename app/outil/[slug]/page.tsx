@@ -11,9 +11,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const outil = TOOL_ALTERNATIVES.find((t: ToolItem) => t.slug === slug);
   if (!outil) return {};
+  const url = `https://zeroabo.fr/outil/${slug}`;
+  const title = `${outil.nom} — Alternative à ${outil.originalApp} | ZéroAbo`;
   return {
-    title: `${outil.nom} — Alternative à ${outil.originalApp} | ZéroAbo`,
+    title,
     description: outil.longDescription,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description: outil.longDescription,
+      url,
+      type: "website",
+      images: [`https://zeroabo.fr/outil/${slug}/opengraph-image`],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: outil.longDescription,
+      images: [`https://zeroabo.fr/outil/${slug}/opengraph-image`],
+    },
   };
 }
 

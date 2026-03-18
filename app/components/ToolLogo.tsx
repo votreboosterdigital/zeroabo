@@ -2,6 +2,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 type Props = {
   domain: string;
@@ -24,8 +25,7 @@ export default function ToolLogo({ domain, nom, size = 32 }: Props) {
   }
 
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
+    <Image
       src={`https://www.google.com/s2/favicons?domain=${domain}&sz=64`}
       alt={`Logo ${nom}`}
       width={size}

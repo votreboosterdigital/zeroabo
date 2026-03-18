@@ -64,6 +64,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className={`${geist.variable} ${geistMono.variable} ${inter.variable}`}>
+      <head>
+        <link rel="dns-prefetch" href="//www.google.com" />
+        <link rel="dns-prefetch" href="//logo.clearbit.com" />
+        <link rel="dns-prefetch" href="//t3.gstatic.com" />
+      </head>
       <body className="bg-[#020817] text-slate-50">
         <script
           type="application/ld+json"

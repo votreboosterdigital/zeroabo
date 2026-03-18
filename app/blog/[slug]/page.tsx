@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import sanitizeHtml from "sanitize-html";
 import Header from "@/app/components/Header";
+import Breadcrumb from "@/app/components/Breadcrumb";
 import { BLOG_POSTS } from "@/app/data/blog";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -14,9 +15,27 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = BLOG_POSTS.find((p) => p.slug === slug);
+  if (!post) return { title: "Article — ZéroAbo" };
+  const url = `https://zeroabo.fr/blog/${slug}`;
+  const title = `${post.titre} — ZéroAbo`;
   return {
-    title: post ? `${post.titre} — ZéroAbo` : "Article — ZéroAbo",
-    description: post?.description,
+    title,
+    description: post.description,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description: post.description,
+      url,
+      type: "article",
+      publishedTime: post.date,
+      images: [`https://zeroabo.fr/blog/${slug}/opengraph-image`],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: post.description,
+      images: [`https://zeroabo.fr/blog/${slug}/opengraph-image`],
+    },
   };
 }
 
@@ -43,6 +62,7 @@ export default async function BlogArticlePage({ params }: Props) {
     headline: post.titre,
     description: post.description,
     datePublished: post.date,
+    dateModified: post.date,
     author: { "@type": "Organization", name: "ZéroAbo", url: "https://zeroabo.fr" },
     publisher: { "@type": "Organization", name: "ZéroAbo", url: "https://zeroabo.fr" },
     mainEntityOfPage: { "@type": "WebPage", "@id": `https://zeroabo.fr/blog/${post.slug}` },
@@ -71,13 +91,11 @@ export default async function BlogArticlePage({ params }: Props) {
       <Header />
       <div className="max-w-2xl mx-auto px-4 pt-20 md:pt-[108px] py-16">
 
-        {/* Retour */}
-        <Link
-          href="/blog"
-          className="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-slate-50 transition-colors mb-8"
-        >
-          ← Blog
-        </Link>
+        <Breadcrumb items={[
+          { label: "Accueil", href: "/" },
+          { label: "Blog", href: "/blog" },
+          { label: post.titre },
+        ]} />
 
         {/* En-tête article */}
         <div className="flex items-center gap-2 mb-4">

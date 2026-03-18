@@ -7,6 +7,7 @@ import { CheckCircle, ArrowLeft, Banknote } from "lucide-react";
 import type { ToolAlternative } from "@/app/data/tools";
 import ToolLogoWrapper from "@/app/components/ToolLogoWrapper";
 import Header from "@/app/components/Header";
+import Breadcrumb from "@/app/components/Breadcrumb";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -34,6 +35,11 @@ export default function ToolDetailClient({ outil, related = [] }: { outil: ToolA
       <Header />
 
       <main className="flex-1 max-w-3xl mx-auto px-4 pt-20 md:pt-[108px] pb-20 w-full">
+
+        <Breadcrumb items={[
+          { label: "Accueil", href: "/" },
+          { label: outil.nom },
+        ]} />
 
         {/* Hero avec gradient blobs */}
         <div className="relative mb-10">

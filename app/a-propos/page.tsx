@@ -1,6 +1,13 @@
 // app/a-propos/page.tsx
+import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/app/components/Header";
+
+export const metadata: Metadata = {
+  title: "À propos — ZéroAbo",
+  description: "ZéroAbo recense les meilleures alternatives en achat unique aux logiciels par abonnement. Découvrez notre mission et nos critères de sélection.",
+  alternates: { canonical: "https://zeroabo.fr/a-propos" },
+};
 
 export default function APropos() {
   return (
