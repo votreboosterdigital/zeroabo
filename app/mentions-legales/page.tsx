@@ -98,14 +98,48 @@ export default function MentionsLegales() {
         {/* Cookies */}
         <section className="mb-8">
           <h2 className="text-lg font-semibold text-slate-50 mb-3">
-            Cookies et données personnelles
+            Cookies et mesure d&apos;audience
           </h2>
           <div className="rounded-xl border border-white/10 bg-white/5 p-5 text-sm text-slate-300 space-y-3">
             <p>
               ZéroAbo ne collecte aucune donnée personnelle directement. Aucun compte utilisateur n&apos;est requis pour utiliser le site.
             </p>
             <p>
-              Des cookies techniques peuvent être déposés par Vercel (hébergeur) pour le bon fonctionnement du site. Les liens affiliés peuvent également utiliser des cookies de suivi propres aux programmes d&apos;affiliation concernés.
+              <strong className="text-slate-200">Vercel Analytics</strong> — Ce site utilise Vercel Analytics pour mesurer les performances et le trafic (pages visitées, métriques de performance, type d&apos;appareil). Cet outil est <strong className="text-slate-200">sans cookie</strong> et ne collecte aucune donnée nominative. Durée de conservation : 90 jours. Sous-traitant : Vercel Inc., San Francisco, États-Unis.{" "}
+              <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">
+                Politique de confidentialité Vercel →
+              </a>
+            </p>
+            <p>
+              <strong className="text-slate-200">Cookies techniques Vercel</strong> — Des cookies peuvent être déposés par Vercel (hébergeur) pour le bon fonctionnement du site (sécurité, performance).
+            </p>
+            <p>
+              <strong className="text-slate-200">Cookies des programmes d&apos;affiliation</strong> — Les liens affiliés peuvent utiliser des cookies de suivi propres aux programmes concernés (Amazon, etc.). ZéroAbo ne contrôle pas ces cookies tiers.
+            </p>
+          </div>
+        </section>
+
+        {/* Droits Loi 25 */}
+        <section className="mb-8">
+          <h2 className="text-lg font-semibold text-slate-50 mb-3">
+            Vos droits (Loi 25 — Protection des renseignements personnels)
+          </h2>
+          <div className="rounded-xl border border-white/10 bg-white/5 p-5 text-sm text-slate-300 space-y-3">
+            <p>
+              Conformément à la Loi modernisant des dispositions législatives en matière de protection des renseignements personnels (Loi 25, Québec), vous disposez des droits suivants :
+            </p>
+            <ul className="space-y-1.5 pl-4 list-disc">
+              <li><strong className="text-slate-200">Droit d&apos;accès</strong> — connaître les renseignements que nous détenons sur vous</li>
+              <li><strong className="text-slate-200">Droit de rectification</strong> — faire corriger des renseignements inexacts ou incomplets</li>
+              <li><strong className="text-slate-200">Droit à l&apos;effacement</strong> — demander la suppression de vos données</li>
+              <li><strong className="text-slate-200">Droit à la portabilité</strong> — recevoir vos données dans un format structuré</li>
+            </ul>
+            <p>
+              Pour exercer ces droits :{" "}
+              <a href="mailto:contact@zeroabo.fr" className="text-emerald-400 hover:underline">
+                contact@zeroabo.fr
+              </a>{" "}
+              — Réponse garantie sous 30 jours.
             </p>
           </div>
         </section>
@@ -121,6 +155,7 @@ export default function MentionsLegales() {
           <div className="flex gap-5">
             <Link href="/a-propos" className="hover:text-slate-300 transition-colors">À propos</Link>
             <Link href="/mentions-legales" className="hover:text-slate-300 transition-colors">Mentions légales</Link>
+            <Link href="/politique-de-confidentialite" className="hover:text-slate-300 transition-colors">Confidentialité</Link>
           </div>
         </div>
       </footer>

@@ -246,6 +246,9 @@ export default function Home() {
             <Link href="/mentions-legales" className="hover:text-slate-300 transition-colors">
               Mentions légales
             </Link>
+            <Link href="/politique-de-confidentialite" className="hover:text-slate-300 transition-colors">
+              Confidentialité
+            </Link>
           </div>
         </div>
       </footer>
