@@ -9,10 +9,16 @@ export type BlogPost = {
   tempsLecture: number;   // en minutes
   contenu: string;        // HTML string
   articlesLies: string[]; // slugs
+  faq?: { q: string; a: string }[];
 };
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    faq: [
+      { q: "Adobe Creative Cloud est-il vraiment moins cher qu'un achat unique ?", a: "Non. Adobe Creative Cloud coûte entre 260 € et 660 €/an selon le plan. Sur 3 ans, c'est 780 € à 2 000 €. Les alternatives en achat unique (Affinity Photo gratuit, DaVinci Resolve gratuit, ONLYOFFICE ~100 €) permettent d'économiser entre 500 € et 1 500 € sur la même période." },
+      { q: "Les alternatives Adobe sont-elles compatibles avec les fichiers PSD, AI ou PRPROJ ?", a: "Partiellement. Affinity Photo lit les fichiers PSD. Affinity Publisher lit les fichiers INDD basiques. DaVinci Resolve ne lit pas les fichiers .prproj Premiere, mais tes fichiers sources (vidéos, audio) sont réutilisables. La compatibilité est suffisante pour 80% des workflows courants." },
+      { q: "Que se passe-t-il si Adobe augmente encore ses prix ?", a: "C'est déjà arrivé plusieurs fois — Adobe a augmenté ses tarifs de 20 à 30% entre 2022 et 2024. Avec un achat unique, tu es protégé : tu as payé une fois, le logiciel reste fonctionnel. C'est l'avantage principal du modèle perpétuel face à l'inflation tarifaire des SaaS." },
+    ],
     slug: "adobe-vs-alternatives-comparatif-couts",
     titre: "Adobe vs alternatives : le vrai comparatif des coûts sur 3 ans",
     description:
@@ -593,6 +599,11 @@ Total économisé en remplaçant 2 abonnements par des alternatives en achat uni
     `.trim(),
   },
   {
+    faq: [
+      { q: "Windows Defender est-il suffisant comme seul antivirus en 2026 ?", a: "Pour un usage standard (navigation web, emails, téléchargements classiques), Windows Defender offre une protection correcte et gratuite. Selon AV-TEST, il obtient des scores solides. Si tu travailles avec des données sensibles ou sur des réseaux professionnels, un antivirus dédié comme Kaspersky Standard apporte une couche supplémentaire." },
+      { q: "Comment éviter le renouvellement automatique d'un antivirus ?", a: "Désactive le renouvellement automatique dès l'achat dans ton espace client. Avec Kaspersky, tu peux acheter des licences à durée fixe (1 ou 2 ans) sans renouvellement automatique. Avec Norton ou McAfee, le renouvellement est souvent activé par défaut et difficile à désactiver." },
+      { q: "Un antivirus moins cher est-il aussi efficace qu'un antivirus premium ?", a: "Le prix ne reflète pas toujours la qualité de protection. Kaspersky Standard, moins cher que Norton 360, obtient régulièrement de meilleures notes dans les tests indépendants AV-TEST et AV-Comparatives. La différence de prix vient souvent des fonctionnalités supplémentaires (VPN, stockage cloud) dont tu n'as pas forcément besoin." },
+    ],
     slug: "antivirus-sans-abonnement-comparatif",
     titre: "Antivirus sans abonnement en 2026 : les meilleures options pour ne plus renouveler chaque année",
     description:
@@ -671,6 +682,11 @@ Total économisé en remplaçant 2 abonnements par des alternatives en achat uni
     `.trim(),
   },
   {
+    faq: [
+      { q: "GIMP peut-il vraiment remplacer Photoshop pour un usage professionnel ?", a: "Pour la retouche photo, la création de visuels web et la manipulation d'images, GIMP couvre l'essentiel. Ses limites : pas de support CMJN natif pour l'impression offset, interface moins intuitive, et absence de certains outils IA récents de Photoshop. Pour les photographes et créateurs web, GIMP est suffisant. Pour l'impression professionnelle, complète avec Scribus." },
+      { q: "GIMP peut-il ouvrir et enregistrer des fichiers PSD Photoshop ?", a: "Oui. GIMP lit et écrit les fichiers .PSD, incluant les calques. La compatibilité est bonne pour la plupart des projets, avec quelques limites sur les effets de calques complexes ou les objets dynamiques Photoshop." },
+      { q: "Quelle est la courbe d'apprentissage de GIMP pour quelqu'un habitué à Photoshop ?", a: "GIMP a une interface différente de Photoshop, ce qui demande 1 à 2 semaines d'adaptation. Les concepts de base (calques, sélections, masques) sont similaires. Le principal obstacle est le raccourci et l'ergonomie — plusieurs plugins et thèmes existent pour rendre GIMP plus proche de l'expérience Photoshop." },
+    ],
     slug: "gimp-vs-photoshop-alternative-gratuite",
     titre: "GIMP vs Photoshop : la vraie alternative gratuite en 2026",
     description:
@@ -1301,6 +1317,11 @@ Total économisé en remplaçant 2 abonnements par des alternatives en achat uni
     `.trim(),
   },
   {
+    faq: [
+      { q: "Adobe Premiere Pro est-il vraiment indispensable pour monter des vidéos professionnelles ?", a: "Non. Adobe Premiere Pro est un outil puissant, mais des alternatives en achat unique comme Movavi Video Suite ou DaVinci Resolve (gratuit) couvrent 95% des besoins des créateurs de contenu, YouTubeurs et freelances. Le \"professionnel\" ne se résume pas à l'outil utilisé." },
+      { q: "Quelle est la vraie différence de prix entre Premiere Pro et ses alternatives ?", a: "Adobe Premiere Pro coûte ~260 €/an en abonnement, soit ~1 300 € sur 5 ans. Movavi Video Suite s'achète ~80 € une seule fois. DaVinci Resolve est gratuit. La différence sur 5 ans peut dépasser 1 200 €." },
+      { q: "Est-ce qu'on peut migrer ses projets Premiere Pro vers une autre application ?", a: "Les projets Adobe Premiere Pro (.prproj) ne s'importent pas directement dans d'autres logiciels. En revanche, tes fichiers sources (vidéos, audio, images) sont accessibles dans n'importe quel éditeur. La migration nécessite de reconstruire le montage, ce qui est une bonne occasion de simplifier sa chaîne de production." },
+    ],
     slug: "movavi-video-suite-alternative-premiere-pro-achat-unique",
     titre: "Movavi Video Suite : l'alternative à Adobe Premiere Pro sans abonnement",
     description:
@@ -1390,6 +1411,11 @@ Total économisé en remplaçant 2 abonnements par des alternatives en achat uni
     `.trim(),
   },
   {
+    faq: [
+      { q: "AOMEI Backupper peut-il remplacer complètement Acronis True Image ?", a: "Oui, pour la grande majorité des usages : sauvegarde système, clonage de disque, migration SSD, restauration complète. La seule différence notable est l'absence de sauvegarde cloud intégrée dans AOMEI, que tu peux contourner en pointant ta sauvegarde vers un dossier OneDrive ou Google Drive." },
+      { q: "Que se passe-t-il si on arrête de payer Acronis ?", a: "Avec Acronis en abonnement, si tu ne renouvelles pas, tu perds l'accès au logiciel et à ses fonctionnalités de restauration. Tes sauvegardes existantes restent accessibles localement, mais tu ne peux plus créer de nouvelles sauvegardes ni restaurer via l'interface Acronis." },
+      { q: "AOMEI Backupper fonctionne-t-il pour cloner un disque dur vers un SSD ?", a: "Oui, c'est même l'un des cas d'usage les plus populaires d'AOMEI Backupper. Il clone l'intégralité de ton disque (OS, applications, données) vers le nouveau SSD sans réinstallation. Compatible avec la plupart des SSD du marché (SATA, NVMe)." },
+    ],
     slug: "aomei-backupper-vs-acronis-sauvegarde-sans-abonnement",
     titre: "AOMEI Backupper vs Acronis : la sauvegarde PC sans abonnement en 2026",
     description:
@@ -1481,6 +1507,11 @@ Total économisé en remplaçant 2 abonnements par des alternatives en achat uni
     `.trim(),
   },
   {
+    faq: [
+      { q: "Snagit peut-il vraiment remplacer Loom pour partager des vidéos avec son équipe ?", a: "Snagit enregistre et exporte tes vidéos en local. Tu peux les partager via Google Drive, OneDrive, Dropbox ou tout hébergement vidéo (YouTube non-répertorié, Vimeo). La différence avec Loom : pas d'hébergement intégré, mais tu gardes le contrôle total de tes fichiers." },
+      { q: "Quelle est la limite de durée d'enregistrement vidéo avec Snagit ?", a: "Snagit n'a pas de limite de durée pour l'enregistrement vidéo — contrairement à Loom gratuit qui plafonne à 5 minutes. La seule limite est l'espace disque disponible sur ton ordinateur." },
+      { q: "Snagit est-il utile si on n'a pas besoin de capturer des pages longues ?", a: "Oui. Au-delà de la capture avec défilement, Snagit est l'outil de référence pour annoter rapidement des captures d'écran (flèches, callouts, zones de texte) et les partager dans des tickets, emails ou documentations. C'est souvent ce qui justifie l'achat unique même sans le besoin de scroll capture." },
+    ],
     slug: "snagit-vs-loom-capture-ecran-sans-abonnement",
     titre: "Snagit vs Loom : la capture d'écran sans abonnement en 2026",
     description:

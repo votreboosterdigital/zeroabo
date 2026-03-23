@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { CheckCircle, ArrowLeft, Banknote } from "lucide-react";
 import type { ToolAlternative } from "@/app/data/tools";
+import type { BlogPost } from "@/app/data/blog";
 import ToolLogoWrapper from "@/app/components/ToolLogoWrapper";
 import Header from "@/app/components/Header";
 import Breadcrumb from "@/app/components/Breadcrumb";
@@ -26,7 +27,7 @@ const container = {
   visible: { transition: { staggerChildren: 0.08 } },
 };
 
-export default function ToolDetailClient({ outil, related = [] }: { outil: ToolAlternative; related?: ToolAlternative[] }) {
+export default function ToolDetailClient({ outil, related = [], relatedArticles = [] }: { outil: ToolAlternative; related?: ToolAlternative[]; relatedArticles?: BlogPost[] }) {
   const prefersReducedMotion = useReducedMotion();
 
   return (
@@ -162,6 +163,29 @@ export default function ToolDetailClient({ outil, related = [] }: { outil: ToolA
           </p>
         </motion.div>
       </main>
+
+      {/* Articles liés */}
+      {relatedArticles.length > 0 && (
+        <div className="max-w-3xl mx-auto px-4 pb-10 w-full">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 mb-4">
+            À lire aussi
+          </p>
+          <div className="flex flex-col gap-3">
+            {relatedArticles.map((a) => (
+              <Link
+                key={a.slug}
+                href={`/blog/${a.slug}`}
+                className="group rounded-xl border border-white/10 bg-white/5 px-4 py-3 hover:border-white/20 transition-colors"
+              >
+                <p className="text-sm font-semibold text-slate-200 group-hover:text-white transition-colors">
+                  {a.titre}
+                </p>
+                <p className="text-xs text-slate-500 mt-0.5">{a.tempsLecture} min de lecture</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Outils similaires */}
       {related.length > 0 && (

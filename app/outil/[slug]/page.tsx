@@ -2,6 +2,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { TOOL_ALTERNATIVES } from "@/app/data/tools";
+import { BLOG_POSTS } from "@/app/data/blog";
 import ToolDetailClient from "./ToolDetailClient";
 
 type ToolItem = (typeof TOOL_ALTERNATIVES)[number];
@@ -49,6 +50,10 @@ export default async function PageOutil({ params }: Props) {
     ))
     .slice(0, 3);
 
+  const relatedArticles = BLOG_POSTS
+    .filter((p) => p.contenu.includes(`/outil/${outil.slug}`))
+    .slice(0, 2);
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -84,7 +89,7 @@ export default async function PageOutil({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
-      <ToolDetailClient outil={outil} related={related} />
+      <ToolDetailClient outil={outil} related={related} relatedArticles={relatedArticles} />
     </>
   );
 }
