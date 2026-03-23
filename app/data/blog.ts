@@ -337,6 +337,11 @@ Annotation, signature, modification de texte dans les PDF. Fait tout ce que fait
     `.trim(),
   },
   {
+    faq: [
+      { q: "OnlyOffice est-il vraiment compatible avec les fichiers Word, Excel et PowerPoint ?", a: "Oui. OnlyOffice lit et écrit les formats .docx, .xlsx et .pptx avec une excellente fidélité. Les tableaux, styles et formules sont préservés dans la grande majorité des cas. Les mises en forme complexes (macros avancées, contrôles ActiveX) peuvent nécessiter des ajustements." },
+      { q: "Comment convaincre ses équipes de passer de Microsoft 365 à une alternative ?", a: "La transition la plus efficace : commencer par les usages simples (rédaction, tableaux basiques) avec les profils les moins dépendants d'Excel avancé. Prévoir une formation courte d'1-2h. Garder Microsoft 365 pour les collaborateurs avec des besoins très spécifiques (macros VBA complexes, intégration Teams intensive) le temps de la migration." },
+      { q: "Peut-on collaborer en temps réel avec OnlyOffice comme avec Google Docs ?", a: "Oui. OnlyOffice propose une édition collaborative en temps réel sur sa version cloud et self-hosted. En mode desktop, les fichiers peuvent être partagés via un serveur OnlyOffice ou via n'importe quel service de stockage cloud (Nextcloud, OwnCloud)." },
+    ],
     slug: "remplacer-microsoft-365-entreprise-sans-abonnement",
     titre: "Remplacer Microsoft 365 en entreprise : les alternatives sans abonnement qui tiennent la route",
     description:
@@ -803,6 +808,11 @@ Total économisé en remplaçant 2 abonnements par des alternatives en achat uni
     `.trim(),
   },
   {
+    faq: [
+      { q: "DaVinci Resolve gratuit est-il suffisant pour YouTube et les réseaux sociaux ?", a: "Oui, largement. La version gratuite de DaVinci Resolve inclut le montage multi-piste, l'étalonnage colorimétrique, l'export 4K sans filigrane et le mixage audio Fairlight. Pour 95% des créateurs YouTube et réseaux sociaux, la version gratuite couvre tous les besoins sans limitation visible." },
+      { q: "Quelle est la différence entre DaVinci Resolve gratuit et la version Studio ?", a: "La version Studio (~295 € achat unique) ajoute principalement : rendu GPU accéléré multi-carte, effets visuels Fusion avancés, débruitage IA, certains plugins tiers et le support technique Blackmagic. Pour les débutants et créateurs indépendants, la version gratuite suffit amplement." },
+      { q: "DaVinci Resolve peut-il ouvrir des projets Adobe Premiere Pro ?", a: "Non directement. DaVinci Resolve ne lit pas les fichiers .prproj de Premiere Pro. En revanche, il peut importer des fichiers XML Final Cut Pro et EDL. Tes fichiers sources (vidéos, audio) sont réutilisables sans problème dans un nouveau projet DaVinci." },
+    ],
     slug: "davinci-resolve-gratuit-guide-debutant",
     titre: "DaVinci Resolve gratuit : guide complet pour débutants 2026",
     description:
@@ -915,6 +925,11 @@ Total économisé en remplaçant 2 abonnements par des alternatives en achat uni
     `.trim(),
   },
   {
+    faq: [
+      { q: "LibreOffice Calc peut-il ouvrir et modifier des fichiers Excel .xlsx ?", a: "Oui. LibreOffice Calc ouvre, modifie et sauvegarde les fichiers .xlsx avec une compatibilité élevée. Les formules standard, tableaux croisés dynamiques et mises en forme sont bien gérés. Les macros VBA complexes et certains graphiques avancés peuvent nécessiter des ajustements." },
+      { q: "LibreOffice Calc supporte-t-il les macros Excel ?", a: "LibreOffice Calc dispose de son propre langage de macros (Basic) qui couvre la majorité des besoins. Les macros VBA d'Excel ne s'exécutent pas nativement, mais LibreOffice inclut un convertisseur partiel. Pour les entreprises très dépendantes des macros VBA complexes, une période de migration et de réécriture des macros est à prévoir." },
+      { q: "Est-ce que LibreOffice reçoit des mises à jour de sécurité régulières ?", a: "Oui. LibreOffice est maintenu par la Document Foundation avec des mises à jour de sécurité régulières et des versions majeures tous les 6 mois environ. C'est un projet open source actif avec une large communauté internationale." },
+    ],
     slug: "librecalc-vs-excel-comparatif",
     titre: "LibreOffice Calc vs Excel : peut-on vraiment s'en passer ?",
     description:
@@ -1044,6 +1059,11 @@ Total économisé en remplaçant 2 abonnements par des alternatives en achat uni
     `.trim(),
   },
   {
+    faq: [
+      { q: "Bitwarden est-il vraiment sécurisé pour stocker ses mots de passe ?", a: "Oui. Bitwarden utilise un chiffrement AES-256 bout en bout. Vos mots de passe sont chiffrés sur votre appareil avant d'être envoyés aux serveurs — même Bitwarden ne peut pas les lire. Le code source est open source et régulièrement audité par des cabinets de sécurité indépendants." },
+      { q: "Que se passe-t-il si Bitwarden ferme ses services ?", a: "Bitwarden étant open source, vous pouvez auto-héberger votre propre instance sur un serveur personnel. De plus, vous pouvez exporter vos mots de passe à tout moment en format JSON ou CSV chiffré. Vous n'êtes jamais bloqué — contrairement à 1Password ou LastPass qui sont propriétaires." },
+      { q: "La version gratuite de Bitwarden est-elle vraiment suffisante ?", a: "Pour la grande majorité des utilisateurs, oui. La version gratuite inclut : coffre-fort illimité, sync multi-appareils illimitée, extension navigateur, app mobile, générateur de mots de passe. La version Premium (~10€/an) ajoute les authentificateurs TOTP intégrés, les rapports de sécurité et 1 Go de stockage chiffré." },
+    ],
     slug: "bitwarden-gestionnaire-mots-de-passe-gratuit",
     titre: "Bitwarden : le meilleur gestionnaire de mots de passe gratuit (et open source)",
     description:
@@ -1155,6 +1175,11 @@ Total économisé en remplaçant 2 abonnements par des alternatives en achat uni
     `.trim(),
   },
   {
+    faq: [
+      { q: "Obsidian peut-il synchroniser les notes entre appareils comme Notion ?", a: "Oui, via Obsidian Sync (~48€/an, optionnel) ou gratuitement avec iCloud, Dropbox, OneDrive, ou tout service qui synchronise un dossier local. Contrairement à Notion, vos notes sont des fichiers Markdown standards que vous pouvez synchroniser avec n'importe quel outil." },
+      { q: "Est-ce qu'Obsidian peut importer des notes depuis Notion ?", a: "Oui. Notion permet d'exporter vos pages en Markdown. Ces fichiers s'importent directement dans Obsidian. Des outils comme notion-to-obsidian automatisent la conversion et préservent la structure des pages et bases de données." },
+      { q: "Obsidian fonctionne-t-il sans connexion internet ?", a: "Oui, entièrement. Obsidian est une application desktop qui travaille sur des fichiers locaux. Zéro connexion requise pour créer, éditer et consulter vos notes. C'est l'un de ses avantages principaux face à Notion qui nécessite une connexion pour fonctionner normalement." },
+    ],
     slug: "obsidian-notion-sans-abonnement",
     titre: "Obsidian vs Notion : pourquoi j'ai arrêté de payer pour mes notes",
     description:

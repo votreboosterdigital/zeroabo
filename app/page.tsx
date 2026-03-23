@@ -29,6 +29,39 @@ const container = {
 
 const QUICK_FILTERS = ["Adobe", "Office", "PDF", "Antivirus", "Vidéo", "Audio", "Photo", "3D", "Notes", "Email"];
 
+const FAQ_ITEMS = [
+  { q: "Qu'est-ce qu'un logiciel en achat unique ?", a: "Un logiciel en achat unique (aussi appelé licence perpétuelle) se paie une seule fois et vous appartient pour toujours. Contrairement aux abonnements, vous continuez à l'utiliser même si vous arrêtez de payer. Les mises à jour majeures futures peuvent être payantes, mais la version achetée reste fonctionnelle indéfiniment." },
+  { q: "Peut-on vraiment remplacer Adobe Creative Cloud sans perdre en qualité ?", a: "Pour la majorité des usages, oui. Affinity Photo 2 (désormais gratuit) remplace Photoshop, DaVinci Resolve (gratuit) remplace Premiere Pro, Inkscape remplace Illustrator. Les professionnels ayant des workflows très spécifiques (intégration Adobe, certains plugins) peuvent rencontrer des limitations, mais 80% des créateurs font la transition sans problème." },
+  { q: "Les fichiers créés avec les alternatives sont-ils compatibles avec Adobe et Microsoft ?", a: "Majoritairement oui. Affinity Photo lit les .PSD, OnlyOffice et LibreOffice lisent les .docx/.xlsx/.pptx, GIMP lit les .PSD. La compatibilité est suffisante pour les échanges courants. Les macros VBA Excel complexes et les effets de calques avancés Photoshop peuvent nécessiter des ajustements." },
+  { q: "Un achat unique inclut-il les mises à jour ?", a: "Cela dépend de l'éditeur. Certains incluent toutes les mises à jour de la version majeure achetée (Sublime Text, Affinity). D'autres proposent une année de mises à jour incluse puis des upgrades payants optionnels. Dans tous les cas, la version achetée reste fonctionnelle sans payer davantage." },
+  { q: "Combien peut-on économiser en passant aux alternatives en achat unique ?", a: "En moyenne 200 à 500 € par an pour un créateur indépendant. Sur 3 ans : Photoshop seul coûte ~780 € en abonnement vs Affinity Photo 2 à 0 €. Premiere Pro : ~780 € vs DaVinci Resolve à 0 €. Microsoft 365 : ~100 € vs LibreOffice à 0 €. Un passage complet aux alternatives open source peut économiser 1 000 à 2 000 € sur 3 ans." },
+  { q: "Que se passe-t-il si l'éditeur d'un logiciel acheté fait faillite ?", a: "Le logiciel continue de fonctionner — vous avez le fichier d'installation. C'est d'ailleurs l'un des avantages du modèle achat unique : vous n'êtes pas dépendant d'un serveur tiers pour utiliser ce que vous avez payé. Pour les logiciels open source (GIMP, LibreOffice, Blender), la communauté continue le développement indépendamment de tout éditeur commercial." },
+  { q: "ZéroAbo est-il rémunéré par les éditeurs de logiciels ?", a: "Certains liens sur ZéroAbo sont des liens affiliés — si vous achetez via notre lien, nous touchons une commission sans que cela change votre prix. Ces liens sont clairement identifiés. Les outils gratuits et open source (GIMP, LibreOffice, DaVinci Resolve) sont listés sans commission car ils méritent d'être connus." },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "Comment remplacer ses logiciels par abonnement par des alternatives en achat unique",
+  description: "Guide étape par étape pour identifier vos abonnements logiciels coûteux et les remplacer par des alternatives pérennes.",
+  step: [
+    { "@type": "HowToStep", position: 1, name: "Lister vos abonnements actuels", text: "Utilisez notre calculateur pour identifier tous vos abonnements logiciels et calculer leur coût réel sur 3 ans." },
+    { "@type": "HowToStep", position: 2, name: "Trouver l'alternative correspondante", text: "Recherchez l'alternative en achat unique à votre logiciel actuel dans notre catalogue de plus de 40 outils testés." },
+    { "@type": "HowToStep", position: 3, name: "Tester avant de migrer", text: "Téléchargez et testez l'alternative pendant 1 à 2 semaines en parallèle de votre logiciel actuel pour valider qu'elle couvre vos besoins." },
+    { "@type": "HowToStep", position: 4, name: "Résilier l'abonnement", text: "Une fois l'alternative validée, résiliez l'abonnement avant le prochain renouvellement automatique." },
+  ],
+};
+
 export default function Home() {
   const prefersReducedMotion = useReducedMotion();
   const [searchQuery, setSearchQuery] = useState("");
@@ -52,6 +85,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#020817] text-slate-50 flex flex-col">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
 
       <Header />
 
@@ -234,6 +269,23 @@ export default function Home() {
             ))}
           </motion.div>
         )}
+      </section>
+
+      {/* FAQ */}
+      <section className="max-w-3xl mx-auto px-4 pb-16 w-full">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-400 mb-4">Questions fréquentes</p>
+        <h2 className="text-2xl font-black text-slate-50 mb-8">Tout ce que vous voulez savoir sur les logiciels sans abonnement</h2>
+        <div className="flex flex-col divide-y divide-white/8">
+          {FAQ_ITEMS.map((item, i) => (
+            <details key={i} className="group py-4">
+              <summary className="cursor-pointer list-none flex items-center justify-between gap-4 text-sm font-semibold text-slate-200 hover:text-white transition-colors">
+                {item.q}
+                <span className="shrink-0 text-slate-500 group-open:rotate-45 transition-transform duration-200 text-lg leading-none">+</span>
+              </summary>
+              <p className="mt-3 text-sm text-slate-400 leading-relaxed">{item.a}</p>
+            </details>
+          ))}
+        </div>
       </section>
 
       {/* Email capture */}
