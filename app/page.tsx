@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { Search } from "lucide-react";
 import { TOOL_ALTERNATIVES } from "@/app/data/tools";
+import { BLOG_POSTS } from "@/app/data/blog";
 import ToolLogo from "@/app/components/ToolLogo";
 import Header from "@/app/components/Header";
 import EmailCapture from "@/app/components/EmailCapture";
@@ -37,6 +38,7 @@ const FAQ_ITEMS = [
   { q: "Combien peut-on économiser en passant aux alternatives en achat unique ?", a: "En moyenne 200 à 500 € par an pour un créateur indépendant. Sur 3 ans : Photoshop seul coûte ~780 € en abonnement vs Affinity Photo 2 à 0 €. Premiere Pro : ~780 € vs DaVinci Resolve à 0 €. Microsoft 365 : ~100 € vs LibreOffice à 0 €. Un passage complet aux alternatives open source peut économiser 1 000 à 2 000 € sur 3 ans." },
   { q: "Que se passe-t-il si l'éditeur d'un logiciel acheté fait faillite ?", a: "Le logiciel continue de fonctionner — vous avez le fichier d'installation. C'est d'ailleurs l'un des avantages du modèle achat unique : vous n'êtes pas dépendant d'un serveur tiers pour utiliser ce que vous avez payé. Pour les logiciels open source (GIMP, LibreOffice, Blender), la communauté continue le développement indépendamment de tout éditeur commercial." },
   { q: "ZéroAbo est-il rémunéré par les éditeurs de logiciels ?", a: "Certains liens sur ZéroAbo sont des liens affiliés — si vous achetez via notre lien, nous touchons une commission sans que cela change votre prix. Ces liens sont clairement identifiés. Les outils gratuits et open source (GIMP, LibreOffice, DaVinci Resolve) sont listés sans commission car ils méritent d'être connus." },
+  { q: "Comment ZéroAbo reste-t-il gratuit et sans pub ?", a: "Certains liens sont des liens affiliés — si vous achetez via notre lien, nous touchons une commission sans que cela change votre prix. Les outils gratuits et open source sont listés sans commission car ils méritent d'être connus. Aucune publicité tierce, aucun tracking intrusif." },
 ];
 
 const faqSchema = {
@@ -104,7 +106,7 @@ export default function Home() {
           animate={prefersReducedMotion ? undefined : "visible"}
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-300 ring-1 ring-emerald-500/20 mb-6">
-            {TOOL_ALTERNATIVES.length} alternatives en achat unique
+            {TOOL_ALTERNATIVES.length} alternatives triées par économies — jusqu&apos;à 1 800 € sur 3 ans
           </span>
         </motion.div>
 
@@ -181,6 +183,11 @@ export default function Home() {
         </motion.div>
       </section>
 
+      {/* Email capture — position 2 */}
+      <section className="max-w-2xl mx-auto px-4 pb-10 w-full">
+        <EmailCapture />
+      </section>
+
       {/* Results */}
       <section className="max-w-5xl mx-auto px-4 pb-20 w-full flex-1">
         {searchQuery && (
@@ -240,6 +247,13 @@ export default function Home() {
                   </p>
                 </div>
 
+                {/* Badge affilié — uniquement sur outils payants */}
+                {!tool.prix.startsWith("Gratuit") && (
+                  <p className="text-[10px] text-slate-600 mb-2">
+                    🔗 Lien affilié — commission sans surcoût pour vous
+                  </p>
+                )}
+
                 {/* Prix + économies + CTA */}
                 <div className="flex items-center justify-between gap-3 pt-4 border-t border-white/5">
                   <div>
@@ -250,18 +264,26 @@ export default function Home() {
                       </p>
                     )}
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-col items-end gap-1.5">
+                    <div className="flex items-center gap-2">
+                      <Link
+                        href={`/outil/${tool.slug}`}
+                        className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium text-slate-300 backdrop-blur-sm transition-colors hover:border-sky-500/40 hover:text-sky-300"
+                      >
+                        Voir l&apos;outil →
+                      </Link>
+                      <Link
+                        href={`/comparer?a=${tool.slug}`}
+                        className="text-xs text-slate-500 hover:text-sky-400 transition-colors"
+                      >
+                        Comparer →
+                      </Link>
+                    </div>
                     <Link
-                      href={`/outil/${tool.slug}`}
-                      className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium text-slate-300 backdrop-blur-sm transition-colors hover:border-sky-500/40 hover:text-sky-300"
+                      href="/calculateur"
+                      className="text-[11px] text-emerald-500 hover:text-emerald-400 transition-colors"
                     >
-                      Voir l&apos;outil →
-                    </Link>
-                    <Link
-                      href={`/comparer?a=${tool.slug}`}
-                      className="text-xs text-slate-500 hover:text-sky-400 transition-colors"
-                    >
-                      Comparer →
+                      → Calcule ton économie sur 3 ans
                     </Link>
                   </div>
                 </div>
@@ -288,10 +310,36 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Email capture */}
-      <section className="max-w-5xl mx-auto px-4 pb-16 w-full">
-        <EmailCapture />
-      </section>
+      {/* Blog — 3 articles récents */}
+      {(() => {
+        const recentPosts = [...BLOG_POSTS].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3);
+        return (
+          <section className="max-w-5xl mx-auto px-4 pb-16 w-full">
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-400 mb-1">Blog</p>
+                <h2 className="text-2xl font-black text-slate-50">Guides &amp; conseils</h2>
+              </div>
+              <Link href="/blog" className="text-sm text-sky-400 hover:text-sky-300 transition-colors">
+                Voir tous les guides →
+              </Link>
+            </div>
+            <div className="grid gap-4 md:grid-cols-3">
+              {recentPosts.map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="group flex flex-col gap-3 rounded-xl border border-white/8 bg-[#0d1526] p-5 ring-1 ring-white/5 hover:ring-sky-500/20 transition-all"
+                >
+                  <p className="text-[11px] text-slate-500">{new Date(post.date).toLocaleDateString("fr-FR", { year: "numeric", month: "long", day: "numeric" })}</p>
+                  <h3 className="text-sm font-semibold text-slate-200 group-hover:text-sky-400 transition-colors leading-snug">{post.titre}</h3>
+                  <span className="mt-auto text-xs text-sky-400 group-hover:text-sky-300 transition-colors">Lire →</span>
+                </Link>
+              ))}
+            </div>
+          </section>
+        );
+      })()}
 
       {/* Footer */}
       <footer className="border-t border-white/5 bg-[#020817]">

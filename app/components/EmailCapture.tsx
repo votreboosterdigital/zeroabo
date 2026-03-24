@@ -32,14 +32,14 @@ export default function EmailCapture() {
   return (
     <section className="rounded-2xl border border-white/10 bg-white/5 p-8 text-center">
       <p className="text-sky-400 text-xs font-semibold uppercase tracking-widest mb-2">
-        Gratuit
+        Gratuit · Une seule fois
       </p>
       <h2 className="text-xl font-black mb-2">
-        La checklist des 10 logiciels à remplacer
+        La checklist gratuite des 10 remplacements les plus faciles
       </h2>
       <p className="text-slate-400 text-sm mb-6">
-        Reçois gratuitement la liste des 10 abonnements les plus faciles à
-        remplacer cette semaine.
+        Reçois la liste des 10 abonnements les plus simples à remplacer cette semaine.
+        Gratuit, une seule fois.
       </p>
 
       {status === "success" ? (
