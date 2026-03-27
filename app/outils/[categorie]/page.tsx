@@ -106,8 +106,20 @@ export default async function CategoriePage({ params }: Props) {
                         <h2 className="text-base font-semibold text-slate-50 group-hover:text-sky-400 transition-colors truncate">
                           {tool.nom}
                         </h2>
-                        <span className="shrink-0 inline-flex items-center rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-semibold text-emerald-300 ring-1 ring-emerald-500/30">
-                          Achat unique
+                        <span className={`shrink-0 inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-semibold ring-1 ${
+                          tool.pricingModel === "subscription"
+                            ? "bg-amber-500/10 text-amber-300 ring-amber-500/30"
+                            : tool.pricingModel === "open-source" || tool.pricingModel === "freemium"
+                            ? "bg-sky-500/10 text-sky-300 ring-sky-500/30"
+                            : "bg-emerald-500/10 text-emerald-300 ring-emerald-500/30"
+                        }`}>
+                          {tool.pricingModel === "subscription"
+                            ? "Abonnement long terme"
+                            : tool.pricingModel === "open-source"
+                            ? "Gratuit"
+                            : tool.pricingModel === "freemium"
+                            ? "Freemium"
+                            : "Achat unique"}
                         </span>
                       </div>
                       <p className="text-xs text-slate-500 mt-0.5">

@@ -247,8 +247,8 @@ export default function Home() {
                   </p>
                 </div>
 
-                {/* Badge affilié — uniquement sur outils payants */}
-                {!tool.prix.startsWith("Gratuit") && (
+                {/* Badge affilié — uniquement si vrai lien de tracking */}
+                {tool.affiliateUrl !== tool.lien && (
                   <p className="text-[10px] text-slate-600 mb-2">
                     🔗 Lien affilié — commission sans surcoût pour vous
                   </p>

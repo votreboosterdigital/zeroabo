@@ -73,8 +73,20 @@ export default function ToolDetailClient({ outil, related = [], relatedArticles 
                 <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-50">
                   {outil.nom}
                 </h1>
-                <span className="inline-flex items-center rounded-full bg-emerald-500/10 px-2.5 py-1 text-xs font-semibold text-emerald-300 ring-1 ring-emerald-500/30">
-                  Achat unique
+                <span className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold ring-1 ${
+                  outil.pricingModel === "subscription"
+                    ? "bg-amber-500/10 text-amber-300 ring-amber-500/30"
+                    : outil.pricingModel === "open-source" || outil.pricingModel === "freemium"
+                    ? "bg-sky-500/10 text-sky-300 ring-sky-500/30"
+                    : "bg-emerald-500/10 text-emerald-300 ring-emerald-500/30"
+                }`}>
+                  {outil.pricingModel === "subscription"
+                    ? "Abonnement long terme"
+                    : outil.pricingModel === "open-source"
+                    ? "Gratuit / Open source"
+                    : outil.pricingModel === "freemium"
+                    ? "Freemium"
+                    : "Achat unique"}
                 </span>
               </div>
               <p className="text-sm text-slate-400 mt-1">

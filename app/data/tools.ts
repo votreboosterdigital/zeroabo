@@ -23,7 +23,7 @@ export type ToolAlternative = {
   metaDescription?: string;
   rating?: number;
   featured?: boolean;
-  pricingModel?: "one-time" | "freemium" | "open-source";
+  pricingModel?: "one-time" | "freemium" | "open-source" | "subscription";
 };
 
 export const TOOL_ALTERNATIVES: ToolAlternative[] = [
@@ -131,12 +131,12 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     originalApp: "Antivirus par abonnement",
     motsCles: ["antivirus", "sécurité", "vpn", "protection", "malware"],
     nom: "Bitdefender Premium Security",
-    prix: "Offres 2–3 ans à prix réduit",
+    prix: "Abonnement longue durée (2–3 ans)",
     savings: 150,
     description:
-      "Suite de sécurité complète avec antivirus, VPN et protections avancées, en offres longues durées.",
+      "Suite de sécurité complète avec antivirus et VPN, vendue en abonnement 2-3 ans sans renouvellement automatique.",
     longDescription:
-      "Bitdefender Premium Security combine antivirus, pare-feu, protection web et VPN dans une suite tout-en-un. Les offres multi-années permettent de réduire fortement le coût moyen par an.",
+      "Bitdefender Premium Security combine antivirus, pare-feu, protection web et VPN dans une suite tout-en-un. Attention : ce n'est pas un achat unique mais un abonnement longue durée (2-3 ans) sans renouvellement automatique, ce qui permet de maîtriser le coût sur la durée.",
     features: [
       "Protection temps réel contre virus et ransomwares",
       "VPN inclus avec quota généreux",
@@ -150,11 +150,11 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     pros: ["Taux de détection en tête des tests AV-TEST et AV-Comparatives", "VPN illimité inclus dans la suite", "Interface claire et impact minimal sur les performances"],
     cons: ["Renouvellement automatique activé par défaut (à désactiver manuellement)", "Prix augmente significativement après la première année", "Certains modules de protection peuvent être intrusifs"],
     alternatives: ["kaspersky-standard", "malwarebytes-lifetime"],
-    metaTitle: "Bitdefender Premium Security — Offre multi-ans | Avis 2025",
-    metaDescription: "Bitdefender Premium Security : antivirus top mondial + VPN illimité. Offres 2-3 ans pour éviter l'abonnement annuel. Économisez ~150 € sur 3 ans.",
+    metaTitle: "Bitdefender Premium Security — Abonnement 2-3 ans | Avis 2025",
+    metaDescription: "Bitdefender Premium Security : antivirus top mondial + VPN illimité en abonnement longue durée (2-3 ans) sans renouvellement auto. Économisez ~150 € sur 3 ans.",
     rating: 4.5,
     featured: false,
-    pricingModel: "one-time",
+    pricingModel: "subscription",
   },
   {
     id: "xmind-pro",
@@ -515,7 +515,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     logoDomain: "kaspersky.com",
     categorie: "securite",
     pros: ["Taux de détection régulièrement 1er dans les tests indépendants (AV-TEST)", "Très léger sur les ressources système", "Prix d'entrée accessible pour une licence 1-2 ans sans renouvellement auto"],
-    cons: ["Concerns géopolitiques liés à son origine russe (déconseillé dans certains contextes professionnels)", "Gamme de produits confuse (Standard, Plus, Premium...)", "Renouvellement automatique activé par défaut"],
+    cons: ["Banni dans certains pays (UE, US) — vérifier la réglementation locale avant achat", "Gamme de produits confuse (Standard, Plus, Premium...)", "Renouvellement automatique activé par défaut"],
     alternatives: ["bitdefender-premium-security", "malwarebytes-lifetime"],
     metaTitle: "Kaspersky Standard — Licence fixe sans engagement | Avis 2025",
     metaDescription: "Kaspersky Standard : antivirus top mondial en licence durée fixe sans renouvellement automatique. Économisez ~100 € sur 3 ans vs Norton ou McAfee.",
