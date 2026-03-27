@@ -195,7 +195,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     originalApp: "Adobe InDesign",
     motsCles: ["mise en page", "publication", "indesign", "adobe", "design print"],
     nom: "Affinity Publisher 2",
-    prix: "Gratuit (racheté par Canva)",
+    prix: "Gratuit",
     savings: 360,
     description:
       "Logiciel de mise en page professionnelle, désormais gratuit depuis le rachat par Canva.",
@@ -211,6 +211,9 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     affiliateUrl: "https://affinity.serif.com/publisher",
     logoDomain: "affinity.serif.com",
     categorie: "design",
+    cons: ["Nécessite un compte Canva gratuit depuis 2025"],
+    metaDescription: "Affinity Publisher 2 est désormais gratuit suite au rachat par Canva. Alternative professionnelle à Adobe InDesign sans abonnement. Téléchargez gratuitement sur affinity.serif.com.",
+    pricingModel: "open-source",
   },
   {
     id: "clip-studio-paint",
@@ -527,7 +530,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     originalApp: "Adobe Photoshop",
     motsCles: ["retouche photo", "photoshop", "adobe", "photo editing", "design", "affinity"],
     nom: "Affinity Photo 2",
-    prix: "Gratuit depuis le rachat par Canva",
+    prix: "Gratuit",
     savings: 780,
     description: "Alternative professionnelle à Photoshop, désormais gratuite depuis le rachat par Canva en 2025.",
     longDescription: "Affinity Photo 2 est une suite complète de retouche photo et de création digitale. Depuis son rachat par Canva en 2025, il est disponible gratuitement, ce qui en fait l'alternative la plus rentable à Adobe Photoshop sur le marché.",
@@ -541,6 +544,9 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     affiliateUrl: "https://affinity.serif.com/fr/photo/",
     logoDomain: "affinity.serif.com",
     categorie: "design",
+    cons: ["Nécessite un compte Canva gratuit depuis 2025"],
+    metaDescription: "Affinity Photo 2 est désormais gratuit suite au rachat par Canva. Alternative professionnelle à Adobe Photoshop sans abonnement ni achat. Téléchargez gratuitement sur affinity.serif.com.",
+    pricingModel: "open-source",
   },
   {
     id: "davinci-resolve",
