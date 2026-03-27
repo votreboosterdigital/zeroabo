@@ -26,6 +26,13 @@ export type ToolAlternative = {
   pricingModel?: "one-time" | "freemium" | "open-source" | "subscription";
 };
 
+// AFFILIÉS EN ATTENTE — à mettre à jour dès réception :
+// - Foxit PDF Editor         → PartnerStack (candidature soumise)
+// - CyberLink PowerDirector  → CJ Affiliate (candidature soumise)
+// - ElevenLabs               → programme en attente
+// - Wondershare Filmora      → CJ Affiliate Link ID 11008486 — récupérer URL finale dans dashboard CJ
+// - Wondershare PDFelement   → CJ Affiliate Link ID 15295376 — récupérer URL finale dans dashboard CJ
+
 export const TOOL_ALTERNATIVES: ToolAlternative[] = [
   {
     id: "onlyoffice",
@@ -123,38 +130,6 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     rating: 4.2,
     featured: true,
     pricingModel: "one-time",
-  },
-  {
-    id: "bitdefender-premium-security",
-    slug: "bitdefender-premium-security",
-    abonnement: "Antivirus annuel classique",
-    originalApp: "Antivirus par abonnement",
-    motsCles: ["antivirus", "sécurité", "vpn", "protection", "malware"],
-    nom: "Bitdefender Premium Security",
-    prix: "Abonnement longue durée (2–3 ans)",
-    savings: 150,
-    description:
-      "Suite de sécurité complète avec antivirus et VPN, vendue en abonnement 2-3 ans sans renouvellement automatique.",
-    longDescription:
-      "Bitdefender Premium Security combine antivirus, pare-feu, protection web et VPN dans une suite tout-en-un. Attention : ce n'est pas un achat unique mais un abonnement longue durée (2-3 ans) sans renouvellement automatique, ce qui permet de maîtriser le coût sur la durée.",
-    features: [
-      "Protection temps réel contre virus et ransomwares",
-      "VPN inclus avec quota généreux",
-      "Protection web et anti-phishing",
-      "Gestion multi-appareils (PC, Mac, mobile)",
-    ],
-    lien: "https://www.bitdefender.com",
-    affiliateUrl: "https://www.bitdefender.com/?affid=zeroabo",
-    logoDomain: "bitdefender.com",
-    categorie: "securite",
-    pros: ["Taux de détection en tête des tests AV-TEST et AV-Comparatives", "VPN illimité inclus dans la suite", "Interface claire et impact minimal sur les performances"],
-    cons: ["Renouvellement automatique activé par défaut (à désactiver manuellement)", "Prix augmente significativement après la première année", "Certains modules de protection peuvent être intrusifs"],
-    alternatives: ["kaspersky-standard", "malwarebytes-lifetime"],
-    metaTitle: "Bitdefender Premium Security — Abonnement 2-3 ans | Avis 2025",
-    metaDescription: "Bitdefender Premium Security : antivirus top mondial + VPN illimité en abonnement longue durée (2-3 ans) sans renouvellement auto. Économisez ~150 € sur 3 ans.",
-    rating: 4.5,
-    featured: false,
-    pricingModel: "subscription",
   },
   {
     id: "xmind-pro",
@@ -360,7 +335,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     categorie: "securite",
     pros: ["Complément anti-malware léger et non intrusif", "Réputation solide depuis plus de 15 ans", "Détection heuristique performante contre les menaces récentes"],
     cons: ["L'offre lifetime disponible uniquement via des revendeurs tiers (ex: StackSocial)", "Ne remplace pas seul un antivirus complet (VPN et pare-feu non inclus)", "Détection parfois trop agressive — faux positifs occasionnels"],
-    alternatives: ["bitdefender-premium-security", "kaspersky-standard"],
+    alternatives: ["kaspersky-standard"],
     metaTitle: "Malwarebytes Premium — Licence à vie | Avis & Prix 2025",
     metaDescription: "Malwarebytes Premium en licence à vie via StackSocial. Anti-malware reconnu mondial sans abonnement. Économisez ~200 € sur 3 ans vs Norton ou McAfee.",
     rating: 4.3,
@@ -419,7 +394,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
       "Bibliothèque de captures organisée",
     ],
     lien: "https://www.techsmith.com/snagit",
-    affiliateUrl: "https://www.techsmith.com/snagit/?ref=zeroabo",
+    affiliateUrl: "https://techsmith.z6rjha.net/aNNjjM",
     logoDomain: "techsmith.com",
     categorie: "utilitaires",
     pros: ["Référence absolue pour la capture d'écran professionnelle", "Bibliothèque de captures organisée et recherchable", "Intégration native avec Teams, Slack et Google Drive"],
@@ -516,7 +491,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     categorie: "securite",
     pros: ["Taux de détection régulièrement 1er dans les tests indépendants (AV-TEST)", "Très léger sur les ressources système", "Prix d'entrée accessible pour une licence 1-2 ans sans renouvellement auto"],
     cons: ["Banni dans certains pays (UE, US) — vérifier la réglementation locale avant achat", "Gamme de produits confuse (Standard, Plus, Premium...)", "Renouvellement automatique activé par défaut"],
-    alternatives: ["bitdefender-premium-security", "malwarebytes-lifetime"],
+    alternatives: ["malwarebytes-lifetime"],
     metaTitle: "Kaspersky Standard — Licence fixe sans engagement | Avis 2025",
     metaDescription: "Kaspersky Standard : antivirus top mondial en licence durée fixe sans renouvellement automatique. Économisez ~100 € sur 3 ans vs Norton ou McAfee.",
     rating: 4.2,
@@ -1076,5 +1051,69 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
     affiliateUrl: "https://calibre-ebook.com/",
     logoDomain: "calibre-ebook.com",
     categorie: "utilitaires",
+  },
+  {
+    id: "wondershare-filmora",
+    slug: "wondershare-filmora",
+    abonnement: "Adobe Premiere Rush, iMovie",
+    originalApp: "Adobe Premiere Rush",
+    motsCles: ["montage vidéo", "premiere rush", "imovie", "créateurs", "youtube", "filmora"],
+    nom: "Wondershare Filmora",
+    prix: "~70 € licence perpétuelle",
+    savings: 290,
+    description: "Logiciel de montage vidéo accessible et complet, disponible en licence perpétuelle pour créateurs de contenu.",
+    longDescription: "Wondershare Filmora est conçu pour les créateurs de contenu qui veulent un montage vidéo rapide et soigné sans la complexité de Premiere Pro. Sa licence perpétuelle à ~70 € est une alternative claire aux abonnements Adobe Premiere Rush ou aux offres SaaS d'édition vidéo.",
+    features: [
+      "Interface intuitive adaptée aux débutants et créateurs",
+      "Bibliothèque de templates, effets et transitions intégrée",
+      "Export 4K sans filigrane (version payante)",
+      "Outils IA : suppression bruit, amélioration automatique",
+    ],
+    lien: "https://filmora.wondershare.fr/",
+    // TODO: remplacer par URL CJ finale — Publisher ID + Link ID 11008486
+    // Format : https://www.anrdoezrs.net/click-XXXXXXX-11008486
+    affiliateUrl: "https://filmora.wondershare.fr/",
+    logoDomain: "filmora.wondershare.fr",
+    categorie: "video",
+    pros: ["Interface intuitive idéale débutants et créateurs", "Licence perpétuelle disponible clairement", "Bibliothèque templates et effets intégrée", "Export 4K inclus"],
+    cons: ["Filigrane sur la version gratuite d'essai", "Moins adapté aux workflows professionnels complexes", "Certaines ressources créatives nécessitent un abonnement séparé"],
+    alternatives: ["davinci-resolve", "movavi-video-suite"],
+    metaTitle: "Wondershare Filmora — Licence perpétuelle | Avis & Prix 2025",
+    metaDescription: "Wondershare Filmora : montage vidéo accessible à ~70 € en licence perpétuelle. Alternative à Adobe Premiere Rush sans abonnement. Économisez ~290 € sur 3 ans.",
+    rating: 4.1,
+    featured: false,
+    pricingModel: "one-time",
+  },
+  {
+    id: "wondershare-pdfelement",
+    slug: "wondershare-pdfelement",
+    abonnement: "Adobe Acrobat Pro",
+    originalApp: "Adobe Acrobat Pro",
+    motsCles: ["pdf", "éditeur pdf", "adobe acrobat", "ocr", "signature", "formulaire"],
+    nom: "Wondershare PDFelement",
+    prix: "~79 € licence perpétuelle",
+    savings: 460,
+    description: "Éditeur PDF complet avec IA intégrée, disponible en licence perpétuelle, alternative directe à Adobe Acrobat Pro.",
+    longDescription: "Wondershare PDFelement propose OCR, signatures électroniques, formulaires et un assistant IA (résumé, Q&A, traduction) dans une interface moderne. Sa licence perpétuelle à ~79 € en fait une alternative solide à Adobe Acrobat Pro, notamment pour les utilisateurs qui veulent une interface plus moderne que PDF-XChange Editor.",
+    features: [
+      "OCR, édition, annotation et signature PDF",
+      "IA intégrée : résumé, questions-réponses, traduction",
+      "Interface moderne et intuitive",
+      "Formulaires PDF interactifs",
+    ],
+    lien: "https://pdf.wondershare.fr/",
+    // TODO: remplacer par URL CJ finale — Publisher ID + Link ID 15295376
+    // Format : https://www.anrdoezrs.net/click-XXXXXXX-15295376
+    affiliateUrl: "https://pdf.wondershare.fr/",
+    logoDomain: "pdf.wondershare.fr",
+    categorie: "bureautique",
+    pros: ["OCR, signatures et formulaires inclus", "Interface moderne et intuitive", "Version perpétuelle disponible", "IA intégrée (résumé, Q&A, traduction)"],
+    cons: ["Certaines fonctionnalités avancées réservées à l'abonnement", "Moins répandu que Foxit en contexte entreprise"],
+    alternatives: ["pdf-xchange-editor"],
+    metaTitle: "Wondershare PDFelement — Licence perpétuelle | Avis & Prix 2025",
+    metaDescription: "Wondershare PDFelement : éditeur PDF avec IA à ~79 € en achat unique. Alternative moderne à Adobe Acrobat Pro. Économisez ~460 € sur 3 ans.",
+    rating: 4.2,
+    featured: false,
+    pricingModel: "one-time",
   },
 ];
