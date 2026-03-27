@@ -3,7 +3,7 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { CheckCircle, ArrowLeft, Banknote } from "lucide-react";
+import { CheckCircle, ArrowLeft, Banknote, XCircle } from "lucide-react";
 import type { ToolAlternative } from "@/app/data/tools";
 import type { BlogPost } from "@/app/data/blog";
 import ToolLogoWrapper from "@/app/components/ToolLogoWrapper";
@@ -39,6 +39,7 @@ export default function ToolDetailClient({ outil, related = [], relatedArticles 
 
         <Breadcrumb items={[
           { label: "Accueil", href: "/" },
+          { label: "Outils", href: "/outils" },
           { label: outil.nom },
         ]} />
 
@@ -117,6 +118,48 @@ export default function ToolDetailClient({ outil, related = [], relatedArticles 
             ))}
           </ul>
         </motion.div>
+
+        {/* Pros / Cons */}
+        {(outil.pros?.length || outil.cons?.length) && (
+          <motion.div
+            className="mb-8 grid grid-cols-1 sm:grid-cols-2 gap-4"
+            variants={container}
+            initial={prefersReducedMotion ? undefined : "hidden"}
+            whileInView={prefersReducedMotion ? undefined : "visible"}
+            viewport={{ once: true, margin: "-60px" }}
+          >
+            {outil.pros?.length ? (
+              <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-400 mb-3">
+                  Avantages
+                </p>
+                <ul className="space-y-2">
+                  {outil.pros.map((pro, i) => (
+                    <motion.li key={i} variants={fadeUp} className="flex items-start gap-2 text-sm text-slate-200">
+                      <CheckCircle className="h-4 w-4 shrink-0 text-emerald-400 mt-0.5" />
+                      {pro}
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+            {outil.cons?.length ? (
+              <div className="rounded-xl border border-red-500/20 bg-red-500/5 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-red-400 mb-3">
+                  Inconvénients
+                </p>
+                <ul className="space-y-2">
+                  {outil.cons.map((con, i) => (
+                    <motion.li key={i} variants={fadeUp} className="flex items-start gap-2 text-sm text-slate-300">
+                      <XCircle className="h-4 w-4 shrink-0 text-red-400 mt-0.5" />
+                      {con}
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </motion.div>
+        )}
 
         {/* Bloc économies */}
         {outil.savings > 0 && (

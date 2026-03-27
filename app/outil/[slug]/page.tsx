@@ -75,7 +75,8 @@ export default async function PageOutil({ params }: Props) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Accueil", item: "https://zeroabo.fr" },
-      { "@type": "ListItem", position: 2, name: outil.nom, item: `https://zeroabo.fr/outil/${outil.slug}` },
+      { "@type": "ListItem", position: 2, name: "Outils", item: "https://zeroabo.fr/outils" },
+      { "@type": "ListItem", position: 3, name: outil.nom, item: `https://zeroabo.fr/outil/${outil.slug}` },
     ],
   };
 
