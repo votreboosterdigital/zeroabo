@@ -1194,7 +1194,7 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
       "Calques et retouche avancée intégrés",
     ],
     lien: "https://www.on1.com/products/photo-raw/",
-    affiliateUrl: "", // TODO: à renseigner — vérifier on1.com/affiliate
+    affiliateUrl: "https://on1.sjv.io/3kkaon",
     logoDomain: "on1.com",
     categorie: "design",
     pros: ["Catalogue + développement RAW dans une seule app", "Outils IA intégrés (masques, redimensionnement)", "Lit les catalogues Lightroom à l'import", "Mises à jour gratuites dans la version majeure"],
