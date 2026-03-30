@@ -2146,4 +2146,310 @@ Total économisé en remplaçant 2 abonnements par des alternatives en achat uni
 <p><a href="/calculateur">Calcule tes économies sur tes abonnements SaaS →</a></p>
     `.trim(),
   },
+  {
+    slug: "on1-photo-raw-vs-lightroom-comparatif",
+    titre: "ON1 Photo RAW vs Adobe Lightroom : le vrai comparatif sur 3 ans",
+    description:
+      "Adobe Lightroom coûte ~360 € sur 3 ans. ON1 Photo RAW fait exactement la même chose en licence perpétuelle à ~100 €. Comparatif honnête, chiffres à l'appui.",
+    date: "2026-03-30",
+    categorie: "Créateurs",
+    tempsLecture: 6,
+    articlesLies: ["adobe-vs-alternatives-comparatif-couts", "gimp-vs-photoshop-alternative-gratuite", "outils-creation-contenu-achat-unique"],
+    faq: [
+      { q: "ON1 Photo RAW peut-il importer mes catalogues Lightroom existants ?", a: "Oui. ON1 Photo RAW importe directement les catalogues Lightroom (.lrcat) avec les métadonnées, les collections et les modifications de base. La migration prend quelques minutes pour une bibliothèque standard. Les presets Lightroom ne sont pas compatibles directement, mais ON1 propose ses propres presets IA en remplacement." },
+      { q: "ON1 Photo RAW fonctionne-t-il sur Mac et Windows ?", a: "Oui, ON1 Photo RAW est disponible sur Windows 10/11 et macOS 12+. Une seule licence couvre 2 installations simultanées. Il est optimisé pour les puces Apple Silicon (M1/M2/M3)." },
+      { q: "Faut-il payer pour les mises à jour d'ON1 Photo RAW ?", a: "La mise à jour majeure annuelle (ex : Photo RAW 2025 → 2026) est payante, aux alentours de 60-80 €. Les mises à jour mineures dans la même version sont gratuites. Sur 3 ans, même en achetant les 2 upgrades, tu restes largement en dessous du coût d'un abonnement Lightroom." },
+    ],
+    contenu: `
+<p>Adobe Lightroom est le logiciel de référence pour les photographes. Gestion de bibliothèque, développement RAW, corrections en lot, presets — il fait tout. Mais il coûte <strong>~11,99 €/mois</strong>, soit <strong>~432 € sur 3 ans</strong>. Et si tu arrêtes de payer, tu n'accèdes plus à tes fichiers édités.</p>
+
+<p>ON1 Photo RAW fait exactement la même chose. En licence perpétuelle. Tu paies une fois, tu gardes le logiciel pour toujours.</p>
+
+<h2>Le comparatif chiffré sur 3 ans</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Logiciel</th>
+      <th>Coût année 1</th>
+      <th>Coût total 3 ans</th>
+      <th>Modèle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Adobe Lightroom Classic</td>
+      <td>~144 €/an</td>
+      <td><strong>~432 €</strong></td>
+      <td>Abonnement mensuel</td>
+    </tr>
+    <tr>
+      <td>ON1 Photo RAW MAX 2026</td>
+      <td>~129 €</td>
+      <td><strong>~189 € (avec 1 upgrade)</strong></td>
+      <td>Licence perpétuelle</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Économie estimée sur 3 ans : ~240 €.</strong> Et après 3 ans, Lightroom continue de te facturer. ON1 non.</p>
+
+<h2>Ce qu'ON1 Photo RAW fait aussi bien que Lightroom</h2>
+
+<ul>
+  <li><strong>Catalogue et gestion de bibliothèque</strong> — organisation par dossiers, collections, mots-clés, filtres</li>
+  <li><strong>Développement RAW</strong> — courbes, balance des blancs, exposition, réduction de bruit IA</li>
+  <li><strong>Masques automatiques par IA</strong> — sélection ciel, sujet, fond en un clic, comme Lightroom Masking</li>
+  <li><strong>Retouche par calques</strong> — Lightroom ne fait pas ça nativement, ON1 si</li>
+  <li><strong>Import catalogues Lightroom</strong> — migration en quelques minutes</li>
+  <li><strong>Presets et profils</strong> — bibliothèque incluse + possibilité d'importer des presets tiers</li>
+</ul>
+
+<h2>Ce que Lightroom fait mieux</h2>
+
+<ul>
+  <li><strong>Synchronisation cloud</strong> — Lightroom CC synchronise automatiquement sur mobile. ON1 nécessite un accès réseau local ou Dropbox.</li>
+  <li><strong>Écosystème de plugins tiers</strong> — la bibliothèque de presets et plugins Lightroom est immense.</li>
+  <li><strong>Intégration Photoshop</strong> — si tu utilises les deux, le workflow Adobe est fluide.</li>
+</ul>
+
+<h2>Pour qui est ON1 Photo RAW ?</h2>
+
+<p>ON1 est le bon choix si tu :</p>
+<ul>
+  <li>Travailles principalement depuis un ordinateur fixe ou portable (pas besoin de sync mobile)</li>
+  <li>Veux arrêter de payer un abonnement pour ton logiciel photo</li>
+  <li>Migres depuis Lightroom et veux garder ton catalogue existant</li>
+  <li>Veux de la retouche par calques sans ouvrir Photoshop</li>
+</ul>
+
+<p>Si tu as besoin de synchronisation cloud permanente entre mobile et desktop, Lightroom reste plus pratique. Mais pour la grande majorité des photographes amateurs et semipros qui éditent sur ordi, ON1 est un remplacement direct.</p>
+
+<p><a href="/outil/on1-photo-raw">Voir ON1 Photo RAW et les offres disponibles →</a></p>
+
+<p><a href="/calculateur">Calcule tes économies sur tes abonnements photo →</a></p>
+    `.trim(),
+  },
+  {
+    slug: "kaspersky-vs-norton-mcafee-antivirus-comparatif",
+    titre: "Kaspersky vs Norton vs McAfee : lequel choisir sans se faire piéger par l'abonnement ?",
+    description:
+      "Norton et McAfee se renouvellent automatiquement à prix fort. Kaspersky propose une licence à durée fixe sans engagement. Comparatif honnête pour choisir sans mauvaises surprises.",
+    date: "2026-03-30",
+    categorie: "Entrepreneurs",
+    tempsLecture: 5,
+    articlesLies: ["antivirus-sans-abonnement-comparatif", "audit-abonnements-logiciels-methode-simple", "5-logiciels-remplacer-ce-weekend"],
+    faq: [
+      { q: "Kaspersky est-il sûr à utiliser en France ?", a: "Kaspersky n'est pas banni en France. L'ANSSI française a émis une recommandation de vigilance en mars 2022 (contexte guerre en Ukraine), sans interdiction formelle. Kaspersky a depuis migré le traitement des données européennes vers des serveurs en Suisse. La décision reste personnelle selon ton niveau de sensibilité au risque géopolitique." },
+      { q: "Comment éviter le renouvellement automatique Norton ou McAfee ?", a: "Les deux activent le renouvellement automatique par défaut à l'achat. Pour le désactiver : Norton → Mon compte → Paramètres → Renouvellement automatique. McAfee → Mon compte → Abonnements → Désactiver le renouvellement. À faire immédiatement après l'achat, sinon tu seras débité sans préavis suffisant." },
+      { q: "Quel antivirus pour un usage professionnel PME ?", a: "Pour un usage PME, Kaspersky Small Office Security ou Bitdefender GravityZone sont les références avec gestion centralisée. Les offres grand public (Norton, McAfee) ne proposent pas de console d'administration multi-postes. Budget : prévoir ~15-25 €/poste/an pour une protection PME sérieuse." },
+    ],
+    contenu: `
+<p>Tu as acheté un antivirus l'an dernier. Norton, McAfee, ou même Kaspersky. Et cette année, tu as reçu un prélèvement automatique que tu n'attendais pas, souvent au double du prix d'entrée.</p>
+
+<p>C'est le modèle de ces éditeurs : prix d'appel attractif la première année, renouvellement automatique silencieux ensuite. Voici ce que ça coûte réellement — et comment en sortir.</p>
+
+<h2>Le comparatif sur 3 ans</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Antivirus</th>
+      <th>Prix an 1 (promo)</th>
+      <th>Prix an 2-3 (plein tarif)</th>
+      <th>Total 3 ans estimé</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Norton 360 Standard</td>
+      <td>~30 €</td>
+      <td>~90 €/an</td>
+      <td><strong>~210 €</strong></td>
+    </tr>
+    <tr>
+      <td>McAfee Total Protection</td>
+      <td>~40 €</td>
+      <td>~100 €/an</td>
+      <td><strong>~240 €</strong></td>
+    </tr>
+    <tr>
+      <td>Kaspersky Standard (1 an)</td>
+      <td>~30 €</td>
+      <td>~30-40 €/an (licence fixe)</td>
+      <td><strong>~100 €</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>La différence tient à un seul mécanisme : Norton et McAfee activent le <strong>renouvellement automatique par défaut</strong>, au tarif plein, sans notification suffisante. Kaspersky vend des licences à durée fixe — tu paies, ça expire, tu décides si tu renouvelles.</p>
+
+<h2>Performance : qui protège le mieux ?</h2>
+
+<p>Les tests indépendants d'<strong>AV-TEST</strong> et <strong>AV-Comparatives</strong> (les deux références du secteur) placent régulièrement Kaspersky en tête pour la détection des menaces :</p>
+
+<ul>
+  <li><strong>Kaspersky</strong> — Score AV-TEST 2025 : 6/6 protection, 6/6 performance</li>
+  <li><strong>Norton</strong> — Score AV-TEST 2025 : 6/6 protection, 5.5/6 performance</li>
+  <li><strong>McAfee</strong> — Score AV-TEST 2025 : 6/6 protection, 5/6 performance (plus lourd sur les ressources)</li>
+</ul>
+
+<p>En termes de protection pure, les trois sont excellents. La vraie différence est dans le modèle commercial et l'impact sur les performances système.</p>
+
+<h2>Le piège du renouvellement automatique</h2>
+
+<p>Norton et McAfee prélèvent automatiquement à l'échéance, souvent avec seulement un email d'avertissement 30 jours avant — que beaucoup ne lisent pas. Le tarif de renouvellement est systématiquement <strong>2 à 3 fois plus cher</strong> que le prix d'entrée affiché sur les comparateurs.</p>
+
+<p>Comment désactiver :</p>
+<ul>
+  <li><strong>Norton</strong> → Mon compte → Paramètres → Désactiver le renouvellement automatique</li>
+  <li><strong>McAfee</strong> → Mon compte → Abonnements → Désactiver le renouvellement</li>
+</ul>
+
+<p>À faire <strong>immédiatement après l'achat</strong>, pas au moment du renouvellement.</p>
+
+<h2>Le verdict</h2>
+
+<p>Si la protection est ta priorité et que tu veux éviter les mauvaises surprises sur ton relevé bancaire : <strong>Kaspersky Standard</strong> est le choix le plus transparent. Licence à durée fixe, pas de renouvellement automatique, performances en tête des tests indépendants.</p>
+
+<p>La seule réserve : la question géopolitique (contexte russo-ukrainien). L'ANSSI française n'a pas interdit Kaspersky mais a recommandé la vigilance en 2022. Les données européennes sont traitées en Suisse depuis. À toi d'évaluer si c'est un facteur bloquant.</p>
+
+<p><a href="/outil/kaspersky-standard">Voir Kaspersky Standard et les offres disponibles →</a></p>
+
+<p><a href="/calculateur">Calcule combien tu peux économiser sur tes logiciels →</a></p>
+    `.trim(),
+  },
+  {
+    slug: "logiciels-photo-raw-sans-abonnement-2026",
+    titre: "Les 4 meilleurs logiciels photo RAW sans abonnement en 2026",
+    description:
+      "Lightroom n'est pas une fatalité. Voici les meilleures alternatives RAW en achat unique ou gratuites — avec les cas d'usage concrets pour choisir le bon.",
+    date: "2026-03-30",
+    categorie: "Créateurs",
+    tempsLecture: 7,
+    articlesLies: ["on1-photo-raw-vs-lightroom-comparatif", "adobe-vs-alternatives-comparatif-couts", "gimp-vs-photoshop-alternative-gratuite"],
+    faq: [
+      { q: "Peut-on vraiment remplacer Lightroom sans perdre en qualité ?", a: "Oui. Darktable, ON1 Photo RAW et RawTherapee utilisent tous des moteurs de traitement RAW de haute qualité, certains surpassant Lightroom sur certains capteurs. La courbe d'apprentissage est réelle, surtout depuis Lightroom, mais la qualité finale est équivalente voire supérieure pour les photographes expérimentés." },
+      { q: "Quel logiciel RAW est le plus proche de Lightroom pour la migration ?", a: "ON1 Photo RAW est le plus proche de Lightroom : même interface catalogue + développement dans une seule app, import des catalogues LR, outils IA similaires. Darktable est plus puissant techniquement mais la courbe d'apprentissage est plus raide." },
+      { q: "Capture One vaut-il son prix élevé comparé aux autres ?", a: "Capture One est la référence pour les photographes commerciaux et de mode — la gestion des couleurs et du rendu peau est sans équivalent. À ~329 €, c'est cher mais légitime si tu travailles avec des clients exigeants sur le rendu couleur. Pour la photographie de loisir ou semi-pro, ON1 Photo RAW à ~100 € est suffisant." },
+    ],
+    contenu: `
+<p>Adobe Lightroom coûte ~144 €/an. Sur 5 ans, c'est ~720 € — pour un logiciel que tu ne possèdes jamais vraiment. Si tu arrêtes de payer, tu perds l'accès à tes modifications. En 2026, plusieurs alternatives solides existent. Voici un comparatif honnête.</p>
+
+<h2>Les 4 meilleures alternatives RAW sans abonnement</h2>
+
+<h3>1. ON1 Photo RAW MAX — Le remplacement direct (~100 €)</h3>
+
+<p>C'est l'alternative la plus proche de Lightroom en termes d'expérience. ON1 combine catalogue, développement RAW et retouche par calques dans une seule application — exactement comme Lightroom Classic.</p>
+
+<ul>
+  <li>✅ Import des catalogues Lightroom existants</li>
+  <li>✅ Masques IA (ciel, sujet, fond) équivalents à Lightroom</li>
+  <li>✅ Retouche par calques intégrée (Lightroom ne propose pas ça)</li>
+  <li>✅ Compatible Windows et macOS (M1/M2/M3)</li>
+  <li>❌ Pas de synchronisation cloud mobile native</li>
+</ul>
+
+<p><strong>Pour qui :</strong> tout photographe qui édite principalement sur ordi et veut garder son workflow catalogue intact.</p>
+
+<p><a href="/outil/on1-photo-raw">Voir ON1 Photo RAW →</a></p>
+
+<h3>2. Darktable — Le gratuit open source (0 €)</h3>
+
+<p>Darktable est un logiciel de développement RAW open source, utilisé par des photographes professionnels dans le monde entier. Il est gratuit, sans limitation, et maintenu activement.</p>
+
+<ul>
+  <li>✅ Entièrement gratuit, open source</li>
+  <li>✅ Pipeline de traitement non-destructif très puissant</li>
+  <li>✅ Compatible avec la quasi-totalité des appareils reflex et hybrides</li>
+  <li>✅ Disponible Windows, macOS, Linux</li>
+  <li>❌ Interface radicalement différente de Lightroom — courbe d'apprentissage réelle</li>
+  <li>❌ Pas de gestion catalogue aussi intuitive que Lightroom ou ON1</li>
+</ul>
+
+<p><strong>Pour qui :</strong> photographes à l'aise techniquement, qui veulent zéro dépense et une liberté totale.</p>
+
+<p><a href="/outil/darktable">Voir Darktable →</a></p>
+
+<h3>3. RawTherapee — Le spécialiste RAW (0 €)</h3>
+
+<p>RawTherapee est plus spécialisé que Darktable — il se concentre sur le développement RAW pur, sans catalogue. Son moteur de traitement est reconnu comme l'un des meilleurs pour certains profils couleur.</p>
+
+<ul>
+  <li>✅ Gratuit, open source</li>
+  <li>✅ Réduction de bruit et netteté parmi les meilleures du marché</li>
+  <li>✅ Traitement par lot puissant</li>
+  <li>❌ Pas de gestion de bibliothèque (à combiner avec un gestionnaire séparé)</li>
+  <li>❌ Interface austère, pas idéale pour les débutants</li>
+</ul>
+
+<p><strong>Pour qui :</strong> photographes techniques qui veulent extraire le maximum de leurs fichiers RAW et gèrent leur bibliothèque autrement (par dossiers, Digikam, etc.).</p>
+
+<p><a href="/outil/rawtherapee">Voir RawTherapee →</a></p>
+
+<h3>4. Capture One — Le haut de gamme (~329 €)</h3>
+
+<p>Capture One est la référence pour les photographes de studio et de mode. Sa gestion des couleurs, son rendu des tons chair et son tethering natif n'ont pas d'équivalent. C'est aussi le plus cher de cette liste.</p>
+
+<ul>
+  <li>✅ Rendu couleur et tons chair inégalé dans l'industrie</li>
+  <li>✅ Tethering professionnel (prise de vue connectée en studio)</li>
+  <li>✅ Licence perpétuelle disponible (~329 € — chercher l'option au checkout)</li>
+  <li>❌ Prix d'entrée élevé</li>
+  <li>❌ Capture One pousse par défaut vers l'abonnement — bien chercher l'option licence au checkout</li>
+</ul>
+
+<p><strong>Pour qui :</strong> photographes commerciaux, de mode ou de studio avec des clients exigeants sur le rendu couleur.</p>
+
+<p><a href="/outil/capture-one">Voir Capture One →</a></p>
+
+<h2>Tableau de synthèse</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Logiciel</th>
+      <th>Prix</th>
+      <th>Catalogue</th>
+      <th>Difficulté</th>
+      <th>Meilleur pour</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ON1 Photo RAW</td>
+      <td>~100 €</td>
+      <td>✅</td>
+      <td>Facile</td>
+      <td>Migration depuis Lightroom</td>
+    </tr>
+    <tr>
+      <td>Darktable</td>
+      <td>Gratuit</td>
+      <td>✅</td>
+      <td>Moyen</td>
+      <td>Utilisateurs techniques, Linux</td>
+    </tr>
+    <tr>
+      <td>RawTherapee</td>
+      <td>Gratuit</td>
+      <td>❌</td>
+      <td>Avancé</td>
+      <td>Qualité RAW maximale</td>
+    </tr>
+    <tr>
+      <td>Capture One</td>
+      <td>~329 €</td>
+      <td>✅</td>
+      <td>Moyen</td>
+      <td>Photographie professionnelle</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Si tu viens de Lightroom et que tu veux la transition la plus douce : <strong>ON1 Photo RAW</strong>. Si tu veux payer zéro et que tu n'as pas peur d'apprendre : <strong>Darktable</strong>. Si tu es photographe commercial et que le rendu couleur est critique : <strong>Capture One</strong>.</p>
+
+<p><a href="/calculateur">Calcule combien tu économises en quittant Lightroom →</a></p>
+    `.trim(),
+  },
 ];
