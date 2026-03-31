@@ -2154,7 +2154,7 @@ Total économisé en remplaçant 2 abonnements par des alternatives en achat uni
     date: "2026-03-30",
     categorie: "Créateurs",
     tempsLecture: 6,
-    articlesLies: ["adobe-vs-alternatives-comparatif-couts", "gimp-vs-photoshop-alternative-gratuite", "outils-creation-contenu-achat-unique"],
+    articlesLies: ["logiciels-photo-raw-sans-abonnement-2026", "adobe-vs-alternatives-comparatif-couts", "gimp-vs-photoshop-alternative-gratuite"],
     faq: [
       { q: "ON1 Photo RAW peut-il importer mes catalogues Lightroom existants ?", a: "Oui. ON1 Photo RAW importe directement les catalogues Lightroom (.lrcat) avec les métadonnées, les collections et les modifications de base. La migration prend quelques minutes pour une bibliothèque standard. Les presets Lightroom ne sont pas compatibles directement, mais ON1 propose ses propres presets IA en remplacement." },
       { q: "ON1 Photo RAW fonctionne-t-il sur Mac et Windows ?", a: "Oui, ON1 Photo RAW est disponible sur Windows 10/11 et macOS 12+. Une seule licence couvre 2 installations simultanées. Il est optimisé pour les puces Apple Silicon (M1/M2/M3)." },
@@ -2225,7 +2225,9 @@ Total économisé en remplaçant 2 abonnements par des alternatives en achat uni
 
 <p>Si tu as besoin de synchronisation cloud permanente entre mobile et desktop, Lightroom reste plus pratique. Mais pour la grande majorité des photographes amateurs et semipros qui éditent sur ordi, ON1 est un remplacement direct.</p>
 
-<p><a href="/outil/on1-photo-raw">Voir ON1 Photo RAW et les offres disponibles →</a></p>
+<p><a href="https://on1.sjv.io/3kkaon" target="_blank" rel="noopener noreferrer sponsored">Essayer ON1 Photo RAW MAX 2026 →</a></p>
+
+<p><a href="/outil/on1-photo-raw">Voir la fiche complète ON1 Photo RAW →</a></p>
 
 <p><a href="/calculateur">Calcule tes économies sur tes abonnements photo →</a></p>
     `.trim(),
@@ -2352,6 +2354,8 @@ Total économisé en remplaçant 2 abonnements par des alternatives en achat uni
 
 <p><strong>Pour qui :</strong> tout photographe qui édite principalement sur ordi et veut garder son workflow catalogue intact.</p>
 
+<p><a href="/blog/on1-photo-raw-vs-lightroom-comparatif">Comparatif détaillé ON1 vs Lightroom sur 3 ans →</a></p>
+
 <p><a href="/outil/on1-photo-raw">Voir ON1 Photo RAW →</a></p>
 
 <h3>2. Darktable — Le gratuit open source (0 €)</h3>
@@ -2448,6 +2452,8 @@ Total économisé en remplaçant 2 abonnements par des alternatives en achat uni
 </table>
 
 <p>Si tu viens de Lightroom et que tu veux la transition la plus douce : <strong>ON1 Photo RAW</strong>. Si tu veux payer zéro et que tu n'as pas peur d'apprendre : <strong>Darktable</strong>. Si tu es photographe commercial et que le rendu couleur est critique : <strong>Capture One</strong>.</p>
+
+<p><a href="/blog/on1-photo-raw-vs-lightroom-comparatif">ON1 vs Lightroom : comparatif chiffré sur 3 ans →</a></p>
 
 <p><a href="/calculateur">Calcule combien tu économises en quittant Lightroom →</a></p>
     `.trim(),

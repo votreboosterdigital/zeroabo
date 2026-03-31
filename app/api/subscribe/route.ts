@@ -143,7 +143,8 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { email } = body as { email?: string };
 
-    if (!email || typeof email !== "string" || !email.includes("@")) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || typeof email !== "string" || !emailRegex.test(email)) {
       return NextResponse.json({ success: false, error: "Email invalide" }, { status: 400 });
     }
 
@@ -155,7 +156,7 @@ export async function POST(request: NextRequest) {
       sendChecklistEmail(sanitized),
     ]);
 
-    console.log(`[subscribe] Contact Brevo créé + checklist envoyée : ${sanitized}`);
+    // Succès — pas de log de l'email (données personnelles)
 
     return NextResponse.json({ success: true });
   } catch (error) {
