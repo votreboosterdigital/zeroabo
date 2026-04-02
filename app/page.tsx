@@ -10,23 +10,7 @@ import { BLOG_POSTS } from "@/app/data/blog";
 import ToolLogo from "@/app/components/ToolLogo";
 import Header from "@/app/components/Header";
 import EmailCapture from "@/app/components/EmailCapture";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
-    },
-  },
-};
-
-const container = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.07 } },
-};
+import { fadeUpVariants as fadeUp, containerVariants as container } from "@/app/constants/animations";
 
 const QUICK_FILTERS = ["Adobe", "Office", "PDF", "Antivirus", "Vidéo", "Audio", "Photo", "3D", "Notes", "Email"];
 

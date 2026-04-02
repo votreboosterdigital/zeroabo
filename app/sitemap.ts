@@ -25,12 +25,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: "https://zeroabo.fr", lastModified: new Date(latestPostDate), changeFrequency: "weekly", priority: 1 },
-    { url: "https://zeroabo.fr/calculateur", lastModified: new Date("2026-03-18"), changeFrequency: "monthly" as const, priority: 0.9 },
+    { url: "https://zeroabo.fr/calculateur", lastModified: new Date(latestPostDate), changeFrequency: "monthly" as const, priority: 0.9 },
     { url: "https://zeroabo.fr/blog", lastModified: new Date(latestPostDate), changeFrequency: "weekly" as const, priority: 0.8 },
-    { url: "https://zeroabo.fr/faq", lastModified: new Date("2026-03-18"), changeFrequency: "monthly" as const, priority: 0.7 },
-    { url: "https://zeroabo.fr/a-propos", lastModified: new Date("2026-03-18"), changeFrequency: "yearly" as const, priority: 0.5 },
-    { url: "https://zeroabo.fr/mon-histoire", lastModified: new Date("2026-03-18"), changeFrequency: "yearly" as const, priority: 0.5 },
-    { url: "https://zeroabo.fr/comparer", lastModified: new Date("2026-03-18"), changeFrequency: "monthly" as const, priority: 0.6 },
+    { url: "https://zeroabo.fr/faq", lastModified: new Date(latestPostDate), changeFrequency: "monthly" as const, priority: 0.7 },
+    { url: "https://zeroabo.fr/a-propos", lastModified: new Date(latestPostDate), changeFrequency: "yearly" as const, priority: 0.5 },
+    { url: "https://zeroabo.fr/mon-histoire", lastModified: new Date(latestPostDate), changeFrequency: "yearly" as const, priority: 0.5 },
+    { url: "https://zeroabo.fr/comparer", lastModified: new Date(latestPostDate), changeFrequency: "monthly" as const, priority: 0.6 },
     ...tools,
     ...blogPosts,
     ...CATEGORIES.map((cat) => ({
