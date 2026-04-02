@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   title: "À propos — ZéroAbo",
   description: "ZéroAbo recense les meilleures alternatives en achat unique aux logiciels par abonnement. Découvrez notre mission et nos critères de sélection.",
   alternates: { canonical: "https://zeroabo.fr/a-propos" },
+  openGraph: {
+    title: "À propos — ZéroAbo",
+    description: "ZéroAbo recense les meilleures alternatives en achat unique aux logiciels par abonnement.",
+    url: "https://zeroabo.fr/a-propos",
+    siteName: "ZéroAbo",
+    type: "website",
+    images: [{ url: "https://zeroabo.fr/opengraph-image", width: 1200, height: 630, alt: "ZéroAbo — À propos" }],
+  },
 };
 
 export default function APropos() {

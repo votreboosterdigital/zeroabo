@@ -17,6 +17,13 @@ export const metadata: Metadata = {
       "Comparatifs détaillés pour remplacer Adobe, Microsoft 365, Norton et autres abonnements par des logiciels en achat unique.",
     url,
     type: "website",
+    images: [{ url: "https://zeroabo.fr/opengraph-image", width: 1200, height: 630, alt: "ZéroAbo — Guides logiciels sans abonnement" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Guides logiciels sans abonnement — Comparatifs et alternatives | ZéroAbo",
+    description: "Comparatifs détaillés pour remplacer Adobe, Microsoft 365, Norton et autres abonnements par des logiciels en achat unique.",
+    images: ["https://zeroabo.fr/opengraph-image"],
   },
 };
 

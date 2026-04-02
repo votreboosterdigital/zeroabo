@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   title: "Mon histoire — ZéroAbo",
   description:
     "Comment j'ai réalisé que je payais des centaines d'euros par an pour des logiciels que je n'utilisais plus — et pourquoi j'ai créé ZéroAbo.",
+  alternates: { canonical: "https://zeroabo.fr/mon-histoire" },
+  openGraph: {
+    title: "Mon histoire — ZéroAbo",
+    description: "Comment j'ai réalisé que je payais des centaines d'euros par an pour des logiciels que je n'utilisais plus — et pourquoi j'ai créé ZéroAbo.",
+    url: "https://zeroabo.fr/mon-histoire",
+    siteName: "ZéroAbo",
+    type: "article",
+    images: [{ url: "https://zeroabo.fr/opengraph-image", width: 1200, height: 630, alt: "ZéroAbo — Mon histoire" }],
+  },
 };
 
 export default function MonHistoire() {

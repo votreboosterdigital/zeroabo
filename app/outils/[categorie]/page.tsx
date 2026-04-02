@@ -31,6 +31,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `https://zeroabo.fr/outils/${cat.slug}`,
       siteName: "ZéroAbo",
       type: "website",
+      images: [{ url: "https://zeroabo.fr/opengraph-image", width: 1200, height: 630, alt: `ZéroAbo — ${cat.nom} sans abonnement` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `Logiciels ${cat.nom} sans abonnement | ZéroAbo`,
+      description: cat.description,
+      images: ["https://zeroabo.fr/opengraph-image"],
     },
   };
 }

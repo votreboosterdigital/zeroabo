@@ -15,6 +15,25 @@ export async function generateMetadata({
       ? `Tu pourrais économiser ${savings} € — ZéroAbo`
       : "Calculateur d'économies — ZéroAbo",
     description: "Sélectionne tes abonnements logiciels et découvre combien tu pourrais économiser en passant à des alternatives en achat unique.",
+    openGraph: {
+      title: savings > 0
+        ? `Tu pourrais économiser ${savings} € — ZéroAbo`
+        : "Calculateur d'économies logicielles — ZéroAbo",
+      description: "Sélectionne tes abonnements logiciels et découvre combien tu pourrais économiser en passant à des alternatives en achat unique.",
+      url: "https://zeroabo.fr/calculateur",
+      siteName: "ZéroAbo",
+      type: "website",
+      images: [{ url: "https://zeroabo.fr/opengraph-image", width: 1200, height: 630, alt: "ZéroAbo — Calculateur d'économies" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: savings > 0
+        ? `Tu pourrais économiser ${savings} € — ZéroAbo`
+        : "Calculateur d'économies — ZéroAbo",
+      description: "Sélectionne tes abonnements logiciels et découvre combien tu pourrais économiser.",
+      images: ["https://zeroabo.fr/opengraph-image"],
+    },
+    alternates: { canonical: "https://zeroabo.fr/calculateur" },
   };
 }
 

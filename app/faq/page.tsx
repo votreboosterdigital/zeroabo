@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     url: "https://zeroabo.fr/faq",
     siteName: "ZéroAbo",
     type: "website",
+    images: [{ url: "https://zeroabo.fr/opengraph-image", width: 1200, height: 630, alt: "ZéroAbo — FAQ" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FAQ — Logiciels sans abonnement | ZéroAbo",
+    description: "Toutes vos questions sur les alternatives logicielles en achat unique et licences perpétuelles.",
+    images: ["https://zeroabo.fr/opengraph-image"],
   },
 };
 
