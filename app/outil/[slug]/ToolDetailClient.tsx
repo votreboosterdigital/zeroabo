@@ -9,23 +9,7 @@ import type { BlogPost } from "@/app/data/blog";
 import ToolLogoWrapper from "@/app/components/ToolLogoWrapper";
 import Header from "@/app/components/Header";
 import Breadcrumb from "@/app/components/Breadcrumb";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
-    },
-  },
-};
-
-const container = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.08 } },
-};
+import { fadeUpVariants as fadeUp, containerVariants as container } from "@/app/constants/animations";
 
 export default function ToolDetailClient({ outil, related = [], relatedArticles = [] }: { outil: ToolAlternative; related?: ToolAlternative[]; relatedArticles?: BlogPost[] }) {
   const prefersReducedMotion = useReducedMotion();
@@ -208,7 +192,7 @@ export default function ToolDetailClient({ outil, related = [], relatedArticles 
           <a
             href={outil.affiliateUrl}
             target="_blank"
-            rel="noopener noreferrer sponsored"
+            rel="noopener noreferrer sponsored nofollow"
             className="inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-[0_0_30px_rgba(16,185,129,0.3)] transition-all hover:bg-emerald-400 hover:shadow-[0_0_50px_rgba(16,185,129,0.5)]"
           >
             Voir l&apos;alternative →

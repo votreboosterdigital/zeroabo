@@ -39,7 +39,7 @@ export function ResultsList({ terme, resultats, aCherche }: ResultsListProps) {
               <a
                 href={alt.lien}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="inline-flex mt-3 text-sm font-medium text-emerald-400 hover:text-emerald-300 underline underline-offset-4"
               >
                 Voir l&apos;alternative

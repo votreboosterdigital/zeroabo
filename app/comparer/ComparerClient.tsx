@@ -134,13 +134,13 @@ function CompareTable({ a, b }: { a: ToolAlternative; b: ToolAlternative }) {
           <tr>
             <th scope="row" className="px-5 py-3.5 text-left text-xs text-slate-500 font-normal">Lien</th>
             <td className="px-5 py-3.5 border-l border-white/5">
-              <a href={a.affiliateUrl} target="_blank" rel="noopener noreferrer sponsored"
+              <a href={a.affiliateUrl} target="_blank" rel="noopener noreferrer sponsored nofollow"
                 className="inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 transition-colors text-xs font-semibold">
                 Voir {a.nom} →
               </a>
             </td>
             <td className="px-5 py-3.5 border-l border-white/5">
-              <a href={b.affiliateUrl} target="_blank" rel="noopener noreferrer sponsored"
+              <a href={b.affiliateUrl} target="_blank" rel="noopener noreferrer sponsored nofollow"
                 className="inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 transition-colors text-xs font-semibold">
                 Voir {b.nom} →
               </a>

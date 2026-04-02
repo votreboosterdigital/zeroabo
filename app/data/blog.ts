@@ -2225,7 +2225,7 @@ Total économisé en remplaçant 2 abonnements par des alternatives en achat uni
 
 <p>Si tu as besoin de synchronisation cloud permanente entre mobile et desktop, Lightroom reste plus pratique. Mais pour la grande majorité des photographes amateurs et semipros qui éditent sur ordi, ON1 est un remplacement direct.</p>
 
-<p><a href="https://on1.sjv.io/3kkaon" target="_blank" rel="noopener noreferrer sponsored">Essayer ON1 Photo RAW MAX 2026 →</a></p>
+<p><a href="https://on1.sjv.io/3kkaon" target="_blank" rel="noopener noreferrer sponsored nofollow">Essayer ON1 Photo RAW MAX 2026 →</a></p>
 
 <p><a href="/outil/on1-photo-raw">Voir la fiche complète ON1 Photo RAW →</a></p>
 
