@@ -487,9 +487,8 @@ export const TOOL_ALTERNATIVES: ToolAlternative[] = [
       "Surveillance des données personnelles (dark web)",
       "Compatible Windows, Mac, Android, iOS",
     ],
-    lien: "https://www.bitdefender.com/fr/",
-    // TODO : remplacer par le lien affilié Impact (récupérer dans dashboard Impact)
-    affiliateUrl: "https://www.bitdefender.com/fr/",
+    lien: "https://bitdefender.f9tmep.net/yZrgnG",
+    affiliateUrl: "https://bitdefender.f9tmep.net/yZrgnG",
     logoDomain: "bitdefender.com",
     categorie: "securite",
     pros: [

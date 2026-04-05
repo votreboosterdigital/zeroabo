@@ -2318,6 +2318,14 @@ Total économisé en remplaçant 2 abonnements par des alternatives en achat uni
 
 <p><a href="/outil/kaspersky-standard">Voir Kaspersky Standard et les offres disponibles →</a></p>
 
+<h2>Si Kaspersky te pose un problème : Bitdefender</h2>
+
+<p><strong>À noter :</strong> Bitdefender est un antivirus annuel — ce n'est pas un achat unique. Mais contrairement à Norton ou McAfee, il n'y a pas de doublement de prix à l'échéance ni de renouvellement automatique agressif. Siège en Roumanie, données traitées en UE — pas de question géopolitique.</p>
+
+<p>Bitdefender Premium Security inclut un VPN illimité et un gestionnaire de mots de passe intégrés. En termes de protection, il est régulièrement co-leader avec Kaspersky dans les tests AV-TEST et AV-Comparatives.</p>
+
+<p><a href="https://bitdefender.f9tmep.net/yZrgnG" target="_blank" rel="noopener noreferrer sponsored nofollow">Voir Bitdefender Premium Security →</a></p>
+
 <p><a href="/calculateur">Calcule combien tu peux économiser sur tes logiciels →</a></p>
     `.trim(),
   },
